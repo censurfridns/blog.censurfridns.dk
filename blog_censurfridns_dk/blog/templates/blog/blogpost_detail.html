@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load commonmark_filters %}
 {% block head_title %}{{ blogpost.title }}{% endblock head_title %}
 {% block content %}
             <div class="row">
@@ -18,7 +19,7 @@
                     <hr>
 
                     <!-- Post Content -->
-                    {{ blogpost.body|safe }}
+                    {{ blogpost.body|markdown|safe }}
                 </div>
 
                 <!-- Blog Sidebar Widgets Column -->
