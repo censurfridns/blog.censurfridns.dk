@@ -17,7 +17,7 @@ class BlogPost(models.Model):
         ordering = ['-created_date']
 
     def __unicode__(self):
-        return unicode(self.title)
+        return unicode(self.title_en)
 
     def get_absolute_url(self):
         return reverse('blogpost_detail', kwargs={'slug': self.slug})
@@ -25,7 +25,7 @@ class BlogPost(models.Model):
     def save(self, *args, **kwargs):
         ### set/update slugs for all enabled languages
         for code, language in settings.LANGUAGES:
-            setattr(self, 'slug_%s' % code, slugify(getattr(self, 'title_%s' % code)))
+            setattr(self, 'slug_%s' % code, '%s-%s' % (self.id, slugify(getattr(self, 'title_%s' % code))))
         ### save forreal
         super(BlogPost, self).save(*args, **kwargs)
 

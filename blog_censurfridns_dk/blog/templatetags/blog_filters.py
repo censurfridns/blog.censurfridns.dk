@@ -16,17 +16,26 @@ def markdown(input):
 
 @register.filter
 def get_i18n_url(url, lang):
+    ### parse languages from arg
     from_lang, to_lang = lang.split(",")
+
+    ### resolve url to ResolverMatch object
     match = resolve(url)
+
     if match.func.func_name == 'blogpost_detail':
-        ### handle url translation for blogpost_detail views
+        ### create a filter to find the blogpost from the current url
         filter = {
             'slug_%s' % from_lang: match.kwargs['slug'],
         }
         blogpost = BlogPost.objects.get(**filter)
+        ### get slug for this blogpost in the new language
         slug = getattr(blogpost, 'slug_%s' % to_lang)
+        ### get url for this blogpost with the slug in the new language
         path = reverse(match.func, kwargs={'slug': slug})
     else:
         path = reverse(match.func, args=match.args, kwargs=match.kwargs)
-    return '//' + settings.LANGUAGE_DOMAINS[to_lang] + url
+    if settings.DEBUG:
+        return path
+    else:
+        return 'https://' + settings.LANGUAGE_DOMAINS[to_lang] + path
 

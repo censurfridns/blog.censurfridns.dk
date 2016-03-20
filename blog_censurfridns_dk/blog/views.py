@@ -23,7 +23,6 @@ class BlogPostList(ListView):
 
 
 def blogpost_detail(request, slug):
-    print "slug is %s" % slug
     ### initialize empty var
     blogpost = None
 

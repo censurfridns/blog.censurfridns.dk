@@ -66,8 +66,8 @@ LANGUAGES = (
     ('da', gettext('Danish')),
 )
 LANGUAGE_DOMAINS = {
-    'en': 'blog.censurfridns.dk',
-    'da': 'blog.uncensoreddns.org',
+    'da': 'blog.censurfridns.dk',
+    'en': 'blog.uncensoreddns.org',
 }
 
 # Static files (CSS, JavaScript, Images)
