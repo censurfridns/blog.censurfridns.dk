@@ -15,7 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap3',
     'taggit',
-    #'taggit_templatetags', # does not work with 1.9?
+    'taggit_templatetags2',
     'blog',
 )
 
@@ -65,7 +65,10 @@ LANGUAGES = (
     ('en', gettext('English')),
     ('da', gettext('Danish')),
 )
-
+LANGUAGE_DOMAINS = {
+    'en': 'blog.censurfridns.dk',
+    'da': 'blog.uncensoreddns.org',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/

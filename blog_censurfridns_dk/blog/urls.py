@@ -14,7 +14,7 @@ urlpatterns = [
 
     ### blog
     url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),
-    url(r'^blog/(?P<slug>[\w-]+)/$', blog.views.BlogPostDetail.as_view(), name='blogpost_detail'),
+    url(r'^blog/(?P<slug>[\w-]+)/$', blog.views.blogpost_detail, name='blogpost_detail'),
 
     ### tags
     url(r'^tags/(?P<slug>[\w-]+)/$', blog.views.tag_lookup, name='tag_lookup'),

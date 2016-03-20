@@ -1,17 +1,16 @@
 {% extends "base.html" %}
-{% load 'commonmark_filters' %}
-{% block head_title %}Blog{% endblock head_title %}
+{% load blog_filters i18n taggit_templatetags2_tags %}
+{% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %}
 {% block content %}
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
                 <h1 class="page-header">
-                    Tyklings blog
-                    <small>Witty but descriptive text goes here</small>
+                    {% trans 'UncensoredDNS Blog' %}
+                    <small>{% trans 'Rants and service information' %}</small>
                 </h1>
 
-                <!-- First Blog Post -->
                 {% for blogpost in blogpost_list %}
                     <h2>
                         <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
@@ -46,7 +45,7 @@
                     </span>
                 </div>
             {% else %}
-                <p><i>Showing {{ blogpost_list.count }} of {{ blogpost_list.count }} blogposts</i></p>
+                <p><i>{% blocktrans with blogpost_list.count as count %}Showing {{ count }} of {{ count }} blogposts{% endblocktrans %}</i></p>
             {% endif %}
             </div>
 
@@ -55,6 +54,21 @@
 
                 <!-- Blog Search Well -->
                 {% include 'searchpanel.html' %}
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Tags used on this blog</h4>
+                    <div class="row">
+                    <p>
+                    {% get_taglist as tags %}
+                    <div class="text-center">
+                    {% for tag in tags %}
+                    <a href="{% url 'tag_lookup' slug=tag.slug %}"><font size={{tag.num_times|floatformat:0|add:"2"}}><span class="label label-primary">{{tag}}</span></font></a>
+                    {% endfor %}
+                    </div>
+                    </p>
+                    </div> <!-- /.row -->
+                </div>
             </div>
         </div>
 {% endblock content %}

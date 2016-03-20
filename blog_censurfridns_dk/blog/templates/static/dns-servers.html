@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans 'DNS Servers' %}{% endblock head_title %}
+{% block content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p><b>{% trans 'DNS Servers' %}</b></p>
+                        <ul>
+                            <li>91.239.100.100 (anycast.censurfridns.dk)</li>
+                            <li>89.233.43.71 (ns1.censurfridns.dk)</li>
+                            <li>2001:67c:28a4:: (anycast.censurfridns.dk)</li>
+                            <li>2002:d596:2a92:1:71:53:: (ns1.censurfridns.dk)</li>
+                        </ul>
+                    </div>
+                </div> <!-- /.row -->
+{% endblock content %}

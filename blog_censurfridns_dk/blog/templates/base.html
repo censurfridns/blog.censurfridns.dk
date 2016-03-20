@@ -1,7 +1,7 @@
-{% load i18n %}
+{% load blog_filters i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="{{LANGUAGE_CODE}}">
+<html lang="{{ LANGUAGE_CODE }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,26 +45,30 @@
                             <a href="{% url 'about' %}">{% trans 'About' %}</a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right navbar-form">
+                        {% if LANGUAGE_CODE == 'da' %}
                         <li>
                             <form action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
                                 <div>
-                                    <input type="hidden" name="language" value="en"/>
+                                    <input type="hidden" name="language" value="en">
+                                    <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'da,en' }}">
                                     <button class="btn btn-default" id="enlanguage" type="submit"><img src="/static/images/en.png" alt="english"> English</button>
                                 </div>
                             </form>
                         </li>
-                        <li>&nbsp;</li>
+                        {% elif LANGUAGE_CODE == 'en' %}
                         <li>
                             <form action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
                                 <div>
                                     <input type="hidden" name="language" value="da"/>
+                                    <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'en,da' }}">
                                     <button class="btn btn-default" id="dalanguage" type="submit"><img src="/static/images/da.png" alt="dansk"> Dansk</button>
                                 </div>
                             </form>
                         </li>
+                        {% endif %}
                     </ul>
                 </div> <!-- /.navbar-collapse -->
             </div> <!-- /.container -->
