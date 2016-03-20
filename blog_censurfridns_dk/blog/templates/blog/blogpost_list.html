@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block head_title %}Blog{% endblock head_title %}
+{% block content %}
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    Tyklings blog
+                    <small>Witty but descriptive text goes here</small>
+                </h1>
+
+                <!-- First Blog Post -->
+                {% for blogpost in blogpost_list %}
+                    <h2>
+                        <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
+                    </h2>
+                    <p class="lead">
+                        by <a href="{% url 'about_me' %}">Tykling</a>
+                    </p>
+                    <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
+                    <hr>
+                    {% if blogpost.body|safe|length > 500 %}
+                        {{ blogpost.body|safe|truncatechars:500 }}
+                        <p><a class="btn btn-primary" href="{% url 'blogpost_detail' slug=blogpost.slug %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                    {% else %}
+                        {{ blogpost.body|safe }}
+                    {% endif %}
+                    <hr>
+                {% endfor %}
+
+            {% if is_paginated %}
+                <!-- Pager -->
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}">&larr; previous</a>
+                        {% endif %}
+                        <span class="page-current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next &rarr;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% else %}
+                <p><i>Showing {{ blogpost_list.count }} of {{ blogpost_list.count }} blogposts</i></p>
+            {% endif %}
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                {% include 'searchpanel.html' %}
+            </div>
+        </div>
+{% endblock content %}

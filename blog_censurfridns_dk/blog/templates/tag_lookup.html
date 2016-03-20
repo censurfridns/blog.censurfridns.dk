@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head_title %}{% if tag %}Blogposts tagged {{ tag.name }}{% else %}Tag not found{% endif %}{% endblock head_title %}
+{% block content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% if blogposts %}
+                            <h3>Blogposts tagged '{{ tag.name }}'</h3>
+                            <ul>
+                                {% for post in blogposts %}
+                                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> written on {{ post.created_date }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>Tag not found</p>
+                        {% endif %}
+                    </div>
+                </div> <!-- /.row -->
+{% endblock content %}
