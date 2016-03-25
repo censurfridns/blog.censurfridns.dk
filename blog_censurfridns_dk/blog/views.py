@@ -2,11 +2,13 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 from django.utils import translation
 from django.http import HttpResponseRedirect
+from django.views.decorators.http import require_POST
 from .models import BlogPost
 from .forms import SetLanguageForm
 from taggit.models import Tag
 
 
+@require_POST
 def setlang(request):
     form = SetLanguageForm(request.post or None)
     if form.is_valid():
