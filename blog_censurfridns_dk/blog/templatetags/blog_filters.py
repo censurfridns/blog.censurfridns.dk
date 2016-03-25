@@ -1,8 +1,9 @@
 from django import template
 from django.core.urlresolvers import resolve, reverse
 from django.conf import settings
-import CommonMark
+from django.utils.translation import ugettext_lazy as _
 from blog.models import BlogPost
+import CommonMark
 
 register = template.Library()
 
@@ -28,12 +29,14 @@ def get_i18n_url(url, lang):
             'slug_%s' % from_lang: match.kwargs['slug'],
         }
         blogpost = BlogPost.objects.get(**filter)
+
         ### get slug for this blogpost in the new language
         slug = getattr(blogpost, 'slug_%s' % to_lang)
+
         ### get url for this blogpost with the slug in the new language
         path = reverse(match.func, kwargs={'slug': slug})
     else:
-        path = reverse(match.func, args=match.args, kwargs=match.kwargs)
+        path = _(reverse(match.func, args=match.args, kwargs=match.kwargs))
     
     if settings.DEBUG:
         return path
