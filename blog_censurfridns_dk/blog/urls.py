@@ -4,6 +4,8 @@ from django.views.generic import TemplateView
 from django.conf import settings
 import blog.views
 from django.utils.translation import ugettext_lazy as _
+from .feeds import BlogPostRssFeed, BlogPostAtomFeed
+
 
 urlpatterns = [
     ### admin site
@@ -18,6 +20,10 @@ urlpatterns = [
 
     ### tags
     url(r'^tags/(?P<slug>[\w-]+)/$', blog.views.tag_lookup, name='tag_lookup'),
+
+    ### syndication
+    url(_(r'^feeds/rss/$'), BlogPostRssFeed(), name='rssfeed'),
+    url(_(r'^feeds/atom/$'), BlogPostAtomFeed(), name='atomfeed'),
 
     ### static pages
     url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="static/dns-servers.html"), name='dns_servers'),
