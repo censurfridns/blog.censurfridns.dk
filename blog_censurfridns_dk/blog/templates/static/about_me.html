@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block head_title %}About me{% endblock head_title %}
+{% block head_title %}{% trans 'About me' %}{% endblock head_title %}
 {% block content %}
                 <div class="row">
                     <div class="col-lg-12">
-                        <p><b>Thomas Steen Rasmussen aka Tykling</b></p>
-                        <p>Living in Copenhagen, Denmark. Born 1979.</p>
-                        <p>Developer and sysadmin with a healthy interest in network and security.</p>
-                        <p>Prefers: FreeBSD, Django, PostgreSQL, Nginx.</p>
+                        <h2>{% trans 'Who is behind this service?' %}</h2>
+                        <p><b>{% trans 'Thomas Steen Rasmussen aka Tykling' %}</b></p>
+                        <p>{% trans 'I live in Copenhagen, Denmark. Born 1979.' %}</p>
+                        <p>{% trans 'I am a sysadmin and developer with a healthy interest in network and security. I also care a great deal about online freedom and censorship which is the reason why I run this service.' %}</p>
                     </div>
-                </div> <!-- /.row -->
+                </div>
 {% endblock content %}
