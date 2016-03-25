@@ -12,7 +12,8 @@ urlpatterns = [
     url(r'^%s/' % settings.ADMIN_PREFIX, include(admin.site.urls)),
 
     ### i18n
-    url(r'^i18n/', include('django.conf.urls.i18n')),
+    #url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^i18n/setlang/', blog.views.setlang, name='setlang'),
 
     ### blog
     url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),

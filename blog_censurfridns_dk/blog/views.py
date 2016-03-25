@@ -1,8 +1,19 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 from django.utils import translation
+from django.http import HttpResponseRedirect
 from .models import BlogPost
 from taggit.models import Tag
+
+
+def setlang(request):
+    form = SetLanguageForm(request.post or None)
+    if form.is_valid():
+        user_language = form.cleaned_data['language']
+        translation.activate(user_language)
+        request.session['LANGUAGE_SESSION_KEY'] = user_language
+        return HttpResponseRedirect(form.cleaned_data['next'])
+
 
 def tag_lookup(request, slug):
     try:
