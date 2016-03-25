@@ -10,7 +10,7 @@ from taggit.models import Tag
 
 @require_POST
 def setlang(request):
-    form = SetLanguageForm(request.post or None)
+    form = SetLanguageForm(request.POST or None)
     if form.is_valid():
         user_language = form.cleaned_data['language']
         translation.activate(user_language)
