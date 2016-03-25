@@ -15,6 +15,9 @@ urlpatterns = [
     #url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^i18n/setlang/', blog.views.setlang, name='set_language'),
 
+    ### search
+    url(_(r'^search/'), include('haystack.urls')),
+
     ### blog
     url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),
     url(r'^blog/(?P<slug>[\w-]+)/$', blog.views.blogpost_detail, name='blogpost_detail'),
