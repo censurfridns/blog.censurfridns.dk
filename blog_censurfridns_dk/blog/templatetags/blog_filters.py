@@ -37,5 +37,5 @@ def get_i18n_url(url, lang):
     if settings.DEBUG:
         return path
     else:
-        return 'https://' + settings.LANGUAGE_DOMAINS[to_lang] + path
+        return 'https://' + settings.PRIMARY_LANGUAGE_DOMAINS[to_lang] + path
 

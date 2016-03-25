@@ -21,8 +21,9 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'blog.middleware.SetLanguageFromDomainMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -65,11 +66,17 @@ LANGUAGES = (
     ('en', gettext('English')),
     ('da', gettext('Danish')),
 )
-LANGUAGE_DOMAINS = {
+
+PRIMARY_LANGUAGE_DOMAINS = {
     'da': 'blog.censurfridns.dk',
     'en': 'blog.uncensoreddns.org',
-    'da': 'blog.censurfridns.nu',
-    'en': 'blog.uncensoreddns.dk',
+}
+
+LANGUAGE_BY_DOMAIN = {
+    'blog.censurfridns.dk': 'da',
+    'blog.censurfridns.nu': 'da',
+    'blog.uncensoreddns.org': 'en',
+    'blog.uncensoreddns.dk': 'en',
 }
 
 # Static files (CSS, JavaScript, Images)
