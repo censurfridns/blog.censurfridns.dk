@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import translation
 from django.http import HttpResponseRedirect
 from .models import BlogPost
+from .forms import SetLanguageForm
 from taggit.models import Tag
 
 
