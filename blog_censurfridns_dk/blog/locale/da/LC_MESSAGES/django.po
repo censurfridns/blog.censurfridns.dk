@@ -1,0 +1,107 @@
+# Translation for UncensoredDNS blog
+# Copyright (C) 2016 Thomas Steen Rasmussen
+# This file is distributed under the same license as the rest of the blog.
+# Thomas Steen Rasmussen <thomas@gibfest.dk>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-25 15:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/feeds.py:8
+msgid "UncensoredDNS Blog Posts"
+msgstr "CensurfriDNS blogindlæg"
+
+#: blog/feeds.py:10
+msgid "Blog posts and system information from UncensoredDNS"
+msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
+
+#: blog/settings.py:66
+msgid "English"
+msgstr "Engelsk"
+
+#: blog/settings.py:67
+msgid "Danish"
+msgstr "Dansk"
+
+#: blog/templates/base.html:9 blog/templates/base.html.py:32
+#: blog/templates/blog/blogpost_list.html:3
+#: blog/templates/blog/blogpost_list.html:10
+msgid "UncensoredDNS Blog"
+msgstr "CensurfriDNS Blog"
+
+#: blog/templates/base.html:11
+msgid "uncensoreddns blog"
+msgstr "censurfridns blog"
+
+#: blog/templates/base.html:27
+msgid "Toggle navigation"
+msgstr "Vis/skjul navigation"
+
+#: blog/templates/base.html:39
+msgid "Blog"
+msgstr "Blog"
+
+#: blog/templates/base.html:42 blog/templates/static/dns-servers.html.py:3
+#: blog/templates/static/dns-servers.html:7
+msgid "DNS Servers"
+msgstr "DNS Servere"
+
+#: blog/templates/base.html:45
+msgid "About"
+msgstr "Om"
+
+#: blog/templates/base.html:86
+msgid "Copyright &copy; Thomas Steen Rasmussen 2015"
+msgstr ""
+
+#: blog/templates/blog/blogpost_list.html:11
+msgid "Rants and service information"
+msgstr "Brok og driftsinformation"
+
+#: blog/templates/blog/blogpost_list.html:48
+#, python-format
+msgid "Showing %(count)s of %(count)s blogposts"
+msgstr "Viser %(count)s af %(count)s blogindlæg"
+
+#: blog/templates/static/about.html:3
+msgid "About this service"
+msgstr "Om denne tjeneste"
+
+#: blog/templates/static/about.html:7
+msgid "Uncensored DNS servers yay"
+msgstr ""
+
+#: blog/urls.py:25
+msgid "^feeds/rss/$"
+msgstr ""
+
+#: blog/urls.py:26
+msgid "^feeds/atom/$"
+msgstr ""
+
+#: blog/urls.py:29
+msgid "^dns-servers/$"
+msgstr "^dns-servere/$"
+
+#: blog/urls.py:30
+msgid "^contact/$"
+msgstr "^kontakt/$"
+
+#: blog/urls.py:31
+msgid "^about/$"
+msgstr "^om/$"
+
+#: blog/urls.py:32
+msgid "^about-me/$"
+msgstr "^om-mig/$"
