@@ -68,6 +68,8 @@ LANGUAGES = (
 LANGUAGE_DOMAINS = {
     'da': 'blog.censurfridns.dk',
     'en': 'blog.uncensoreddns.org',
+    'da': 'blog.censurfridns.nu',
+    'en': 'blog.uncensoreddns.dk',
 }
 
 # Static files (CSS, JavaScript, Images)
