@@ -2,9 +2,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.conf import settings
-import blog.views
 from django.utils.translation import ugettext_lazy as _
 from .feeds import BlogPostRssFeed, BlogPostAtomFeed
+import blog.views
 
 
 urlpatterns = [
