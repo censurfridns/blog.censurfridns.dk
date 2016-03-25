@@ -34,6 +34,7 @@ def get_i18n_url(url, lang):
         path = reverse(match.func, kwargs={'slug': slug})
     else:
         path = reverse(match.func, args=match.args, kwargs=match.kwargs)
+    
     if settings.DEBUG:
         return path
     else:

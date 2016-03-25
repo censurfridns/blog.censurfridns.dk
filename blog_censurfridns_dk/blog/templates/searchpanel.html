@@ -1,5 +1,6 @@
+{% load blog_filters i18n %}
                 <div class="well">
-                    <h4>Search this blog</h4>
+                    <h4>{% trans 'Search this blog' %}</h4>
                     <form action='/search/' method='GET'>
                         <div class="input-group">
                             <input type="text" class="form-control" name="q">
