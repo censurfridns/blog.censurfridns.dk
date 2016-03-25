@@ -13,7 +13,7 @@ urlpatterns = [
 
     ### i18n
     #url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^i18n/setlang/', blog.views.setlang, name='setlang'),
+    url(r'^i18n/setlang/', blog.views.setlang, name='set_language'),
 
     ### blog
     url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),
