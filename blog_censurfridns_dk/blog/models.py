@@ -23,11 +23,14 @@ class BlogPost(models.Model):
         return reverse('blogpost_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
-        ### super saver!
-        super(BlogPost, self).save(*args, **kwargs)
-        
+        if self.pk is None:
+            ### save to make sure we have an id for the slug
+            super(BlogPost, self).save(*args, **kwargs)
+
         ### set/update slugs for all enabled languages
         for code, language in settings.LANGUAGES:
             setattr(self, 'slug_%s' % code, '%s-%s' % (self.id, slugify(getattr(self, 'title_%s' % code))))
-            self.save()
+
+        ### save
+        super(BlogPost, self).save(*args, **kwargs)
 
