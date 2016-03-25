@@ -37,7 +37,7 @@
                             <a href="?page={{ page_obj.previous_page_number }}">&larr; {% trans 'previous' %}</a>
                         {% endif %}
                         <span class="page-current">
-                            {% blocktrans with page_obj.number as number, page_obj.paginator.num_pages as total %}Page {{ number }} of {{ total }}{% endblocktrans %}
+                            {% blocktrans with number=page_obj.number, total=page_obj.paginator.num_pages %}Page {{ number }} of {{ total }}{% endblocktrans %}
                         </span>
                         {% if page_obj.has_next %}
                             <a href="?page={{ page_obj.next_page_number }}">{% trans 'next' %} &rarr;</a>
@@ -45,7 +45,7 @@
                     </span>
                 </div>
             {% else %}
-                <p><i>{% blocktrans with blogpost_list.count as count %}Showing {{ count }} of {{ count }} blogposts{% endblocktrans %}</i></p>
+                <p><i>{% blocktrans with count=blogpost_list.count %}Showing {{ count }} of {{ count }} blogposts{% endblocktrans %}</i></p>
             {% endif %}
             </div>
 
