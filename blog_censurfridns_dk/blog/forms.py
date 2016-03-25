@@ -2,9 +2,9 @@ from django import forms
 from django.conf import settings
 
 
-class AdminCSVExportForm(forms.Form):
-    language = forms.HiddenField()
-    next = forms.HiddenField()
+class SetLanguageForm(forms.Form):
+    language = forms.CharField(widget=forms.HiddenInput())
+    next = forms.CharField(widget=forms.HiddenInput())
 
     def clean(self):
         cleaned_data = super(SetLanguageForm, self).clean()
