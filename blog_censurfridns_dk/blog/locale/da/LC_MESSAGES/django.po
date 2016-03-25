@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-25 15:32+0000\n"
+"POT-Creation-Date: 2016-03-25 22:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,10 @@ msgstr "CensurfriDNS blogindlæg"
 #: blog/feeds.py:10
 msgid "Blog posts and system information from UncensoredDNS"
 msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
+
+#: blog/forms.py:15
+msgid "Invalid language"
+msgstr "Ugyldigt sprog"
 
 #: blog/settings.py:66
 msgid "English"
@@ -62,46 +66,164 @@ msgid "About"
 msgstr "Om"
 
 #: blog/templates/base.html:86
-msgid "Copyright &copy; Thomas Steen Rasmussen 2015"
+msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
 msgstr ""
 
 #: blog/templates/blog/blogpost_list.html:11
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
+#: blog/templates/blog/blogpost_list.html:37
+msgid "previous"
+msgstr "forrige"
+
+#: blog/templates/blog/blogpost_list.html:40
+#, python-format
+msgid "Page %(number)s of %(total)s"
+msgstr "Side %(number)s af %(total)s"
+
+#: blog/templates/blog/blogpost_list.html:43
+msgid "next"
+msgstr "næste"
+
 #: blog/templates/blog/blogpost_list.html:48
 #, python-format
 msgid "Showing %(count)s of %(count)s blogposts"
 msgstr "Viser %(count)s af %(count)s blogindlæg"
 
-#: blog/templates/static/about.html:3
+#: blog/templates/blog/blogpost_list.html:60
+msgid "Tags used on this blog"
+msgstr "Tags brugt på denne blog"
+
+#: blog/templates/searchpanel.html:3
+msgid "Search this blog"
+msgstr "Søg denne blog"
+
+#: blog/templates/static/about.html:3 blog/templates/static/about.html.py:7
 msgid "About this service"
 msgstr "Om denne tjeneste"
 
-#: blog/templates/static/about.html:7
-msgid "Uncensored DNS servers yay"
+#: blog/templates/static/about.html:9
+msgid ""
+"UncensoredDNS was started in November 2009 shortly after I began working at "
+"an ISP where one of my responsibilities was to administer the censored DNS "
+"servers that all Danish ISPs run for their customers."
 msgstr ""
+"CensurfriDNS blev startet i november 2009 kort tid efter jeg begyndte at "
+"arbejde hos en ISP hvor et af mine ansvarsområder var at administrere de "
+"censurerede DNS servere som alle danske internetudbydere kører til deres "
+"kunder."
 
-#: blog/urls.py:25
+#: blog/templates/static/about.html:11
+msgid ""
+"I had never been a fan of the Danish DNS censorship system, and working with "
+"it first hand didn't exactly help. At the time OpenDNS was kind of new and "
+"Google DNS didn't exist yet. Friends and family were coming to me asking for "
+"a recommendation for an alternative to the censored ISP DNS servers."
+msgstr ""
+"Jeg havde aldrig været tilhænger af det danske DNS censursystem, og det "
+"hjalp bestemt ikke at arbejde med det. På tidspunktet var OpenDNS ret nye, "
+"og Google DNS fandtes ikke endnu. Familie og venner spurgte efter "
+"anbefalinger til alternativer til internetudbydernes censurerede DNS servere."
+
+#: blog/templates/static/about.html:13
+msgid ""
+"Back then OpenDNS did NXDOMAIN redirection, an advertising trick where "
+"misspelled nonexistant domains are redirected to a search page with ads "
+"instead of returning an NXDOMAIN error. To a DNS purist like myself this "
+"made OpenDNS as appealing as a turd on a stick. They also didn't have ipv6 "
+"or DNSSEC, both of which were mandatory on a modern DNS server, even back in "
+"2009."
+msgstr ""
+"Dengang lavede OpenDNS NXDOMAIN redirection, en reklameteknik hvor domæner der "
+"ikke findes (f.eks. grundet en stavefejl) bliver viderestillet til en søgeside "
+"med reklamer istedet for at give en NXDOMAIN fejl. For en DNS puritaner som mig "
+"gjorde det OpenDNS omtrent så tiltalende som en lort på en pind. De havde "
+"desuden hverken ipv6 eller DNSSEC, begge dele var selv i 2009 nødvendige dele "
+"af en moderne DNS server."
+
+#: blog/templates/static/about.html:15
+msgid ""
+"Even if Google DNS had existed back then I wouldn't have felt comfortable "
+"recommending them either. While they do run a stable, fast and uncensored "
+"service, I am not convinced that it is a good idea to hand over all your DNS "
+"lookups to Google. They already have all your searches, you might have one "
+"of their phones in your pocket, and so on."
+msgstr ""
+"Selv hvis Google DNS havde eksisteret dengang ville jeg ikke have det godt med "
+"at anbefale dem heller. De kører en stabil, hurtig og ucensureret DNS tjeneste, "
+"men jeg er ikke overbevist om at det er en god ide at aflevere alle ens DNS opslag "
+"til dem. De har allerede alle ens søgninger, og mange har en af deres telefoner "
+"i lommen, og så videre."
+
+#: blog/templates/static/about.html:17
+msgid ""
+"All this prompted me to do something about the situation so I started "
+"UncensoredDNS with help from friends. After a while I also started giving "
+"talks about the service at various conferences, since people naturally have "
+"an easier time trusting a service if they know who is behind it. You can see "
+"some of my old talks online, for example from"
+msgstr ""
+"Alt dette gjorde at jeg startede CensurfriDNS med hjælp fra venner. Efter lidt tid "
+"begyndte jeg også at holde foredrag på diverse konferencer, da folk naturligt har "
+"lettere ved at stole på en tjeneste hvis de ved hvem der står bag. Du kan se nogen "
+"af mine gamle foredrag online, for eksempel fra"
+
+#: blog/templates/static/about_me.html:2
+msgid "About me"
+msgstr "Om mig"
+
+#: blog/templates/static/about_me.html:6
+msgid "Who is behind this service?"
+msgstr "Hvem er bag denne tjeneste?"
+
+#: blog/templates/static/about_me.html:7
+msgid "Thomas Steen Rasmussen aka Tykling"
+msgstr "Thomas Steen Rasmussen / Tykling"
+
+#: blog/templates/static/about_me.html:8
+msgid "I live in Copenhagen, Denmark. Born 1979."
+msgstr "Jeg bor i København, Danmark. Født 1979."
+
+#: blog/templates/static/about_me.html:9
+msgid ""
+"I am a sysadmin and developer with a healthy interest in network and "
+"security. I also care a great deal about online freedom and censorship which "
+"is the reason why I run this service."
+msgstr ""
+"Jeg er sysadmin og udvikler med en sund interesse i netværk og sikkerhed. "
+"Jeg går også meget op i online frihed og censur, hvilket er grunden til "
+"at jeg har startet denne tjeneste."
+
+#: blog/templates/tag_lookup.html:2 blog/templates/tag_lookup.html.py:7
+#, python-format
+msgid "Blogposts tagged %(name)s"
+msgstr "Blogindlæg tagget %(name)s"
+
+#: blog/templates/tag_lookup.html:2 blog/templates/tag_lookup.html.py:14
+msgid "Tag not found"
+msgstr "Tag ikke fundet"
+
+#: blog/urls.py:26
 msgid "^feeds/rss/$"
 msgstr ""
 
-#: blog/urls.py:26
+#: blog/urls.py:27
 msgid "^feeds/atom/$"
 msgstr ""
 
-#: blog/urls.py:29
+#: blog/urls.py:30
 msgid "^dns-servers/$"
 msgstr "^dns-servere/$"
 
-#: blog/urls.py:30
+#: blog/urls.py:31
 msgid "^contact/$"
 msgstr "^kontakt/$"
 
-#: blog/urls.py:31
+#: blog/urls.py:32
 msgid "^about/$"
 msgstr "^om/$"
 
-#: blog/urls.py:32
+#: blog/urls.py:33
 msgid "^about-me/$"
 msgstr "^om-mig/$"
