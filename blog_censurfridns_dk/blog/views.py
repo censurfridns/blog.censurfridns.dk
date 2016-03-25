@@ -14,7 +14,7 @@ def setlang(request):
     if form.is_valid():
         user_language = form.cleaned_data['language']
         translation.activate(user_language)
-        request.session['LANGUAGE_SESSION_KEY'] = user_language
+        request.session[translation.LANGUAGE_SESSION_KEY] = user_language
         return HttpResponseRedirect(form.cleaned_data['next'])
 
 
