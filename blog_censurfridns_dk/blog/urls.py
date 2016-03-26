@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^i18n/setlang/', blog.views.setlang, name='set_language'),
 
     ### search
-    url(_(r'^search/'), include('haystack.urls')),
+    #url(_(r'^search/'), include('haystack.urls')),
 
     ### blog
     url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),
