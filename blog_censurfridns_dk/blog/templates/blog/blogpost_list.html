@@ -20,12 +20,10 @@
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
                     <hr>
-                    {% if blogpost.body|markdown|length > 250 %}
-                        {{ blogpost.body|markdown|truncatechars:250 }}
-                        <p><a class="btn btn-primary" href="{% url 'blogpost_detail' slug=blogpost.slug %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></p>
-                    {% else %}
-                        {{ blogpost.body|markdown|safe }}
-                    {% endif %}
+                    <p><b>{% trans 'Tags:' %}</b>
+                    {% for tag in blogpost.tags.all %}
+                        <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
+                    {% endfor %}
                     <hr>
                 {% endfor %}
 
