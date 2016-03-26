@@ -24,7 +24,8 @@ def get_i18n_url(url, lang):
     ### resolve url to ResolverMatch object
     match = resolve(url)
 
-    if match.func.func_name == 'blogpost_detail':
+    ### handle blogpost_detail view differently
+    if match.view_name == 'blogpost_detail':
         ### create a filter to find the blogpost from the current url
         filter = {
             'slug_%s' % from_lang: match.kwargs['slug'],
