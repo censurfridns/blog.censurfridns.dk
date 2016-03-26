@@ -20,8 +20,8 @@
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
                     <hr>
-                    {% if blogpost.body|markdown|safe|length > 250 %}
-                        {{ blogpost.body|markdown|safe|truncatechars:250 }}
+                    {% if blogpost.body|markdown|length > 250 %}
+                        {{ blogpost.body|markdown|truncatechars:250 }}
                         <p><a class="btn btn-primary" href="{% url 'blogpost_detail' slug=blogpost.slug %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></p>
                     {% else %}
                         {{ blogpost.body|markdown|safe }}
