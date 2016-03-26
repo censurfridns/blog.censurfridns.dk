@@ -19,8 +19,7 @@
                         by <a href="{% url 'about_me' %}">Tykling</a>
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
-                    <hr>
-                    <p><b>{% trans 'Tags:' %}</b>
+                    <p>{% trans 'Tags:' %}
                     {% for tag in blogpost.tags.all %}
                         <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
                     {% endfor %}
