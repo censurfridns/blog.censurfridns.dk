@@ -16,6 +16,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'taggit',
     'taggit_templatetags2',
+    'haystack',
     'blog',
 )
 
