@@ -11,6 +11,6 @@ class BlogPostTranslationOptions(TranslationOptions):
 
 @register(Tag)
 class TaggitTranslations(TranslationOptions):
-    fields = ('name',)
+    fields = ('name','slug')
     required_languages = ('en', 'da')
 
