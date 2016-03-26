@@ -120,7 +120,7 @@ TAGGIT_FORCE_LOWERCASE = True
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': os.path.join(os.path.dirname(__file__), '../whoosh_index'),
+        'PATH': os.path.join(os.path.dirname(__file__), '../../whoosh_index'),
     },
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
