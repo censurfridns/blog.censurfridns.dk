@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row">
-            <h3>Latest blogposts</h3>
+            <h3>{% trans 'Latest blogposts' %}</h3>
             {% for blogpost in blogposts %}
                 <h4>
                     <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
