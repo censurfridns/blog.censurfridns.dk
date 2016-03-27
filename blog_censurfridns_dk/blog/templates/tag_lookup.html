@@ -2,18 +2,19 @@
 {% load blog_filters i18n %}
 {% block head_title %}{% if tag %}{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}{% else %}{% trans 'Tag not found' %}{% endif %}{% endblock head_title %}
 {% block content %}
-                <div class="row">
-                    <div class="col-lg-12">
-                        {% if blogposts %}
-                            <h3>{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h3>
-                            <ul>
-                                {% for post in blogposts %}
-                                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> {% trans 'written on' %} {{ post.created_date }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <p>{% trans 'Tag not found' %}</p>
-                        {% endif %}
-                    </div>
-                </div> <!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        {% if blogposts %}
+            <h3>{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h3>
+            <ul>
+                {% for post in blogposts %}
+                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> {% trans 'written on' %} {{ post.created_date }}</li>
+                {% endfor %}
+            </ul>
+            <h4><i class="icon-rss"></i> <a href="{{ url 'tagrssfeed' with slug=slug }}">RSS</a> <a href="{{ url 'tagatomfeed' with slug=slug }}">Atom</a></h4>
+        {% else %}
+            <p>{% trans 'Tag not found' %}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

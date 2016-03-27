@@ -35,6 +35,7 @@ def tag_lookup(request, slug):
     return render(request, 'tag_lookup.html', {
         'blogposts': blogposts,
         'tag': tag,
+        'slug': slug,
     })
 
 
