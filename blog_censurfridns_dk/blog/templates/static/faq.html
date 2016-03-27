@@ -23,7 +23,7 @@
 
                           <dt>{% trans "Who is behind this service?" %}</dt>
                           {% url 'contact' as contacturl %}
-                          <dd>{% blocktrans with contacturl=contacturl %}My name is Thomas Steen Rasmussen. Read more about me <a href="{{ contacturl }}">here</a>. I operate this DNS service as an individual with my own money. Questions and comments to admin@censurfridns.dk please.{% endblocktrans %}</dd>
+                          <dd>{% blocktrans with contacturl=contacturl %}My name is Thomas Steen Rasmussen. Read more about me <a href='{{ contacturl }}'>here</a>. I operate this DNS service as an individual with my own money. Questions and comments to admin@censurfridns.dk please.{% endblocktrans %}</dd>
 
                           <dt>{% trans "Have you ever been contacted by authorities or law enforcement about this service?" %}</dt>
                           <dd>{% trans "No, I have never been contacted by authorities or law enforcement regarding this service. This message will be updated if it happens." %}</dd>
