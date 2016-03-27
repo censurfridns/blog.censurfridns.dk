@@ -32,6 +32,7 @@ urlpatterns = [
     ### static pages
     url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="static/dns-servers.html"), name='dns_servers'),
     url(_(r'^contact/$'), TemplateView.as_view(template_name="static/contact.html"), name='contact'),
+    url(_(r'^faq/$'), TemplateView.as_view(template_name="static/faq.html"), name='faq'),
     url(_(r'^about/$'), TemplateView.as_view(template_name="static/about.html"), name='about'),
     url(_(r'^about-me/$'), TemplateView.as_view(template_name="static/about_me.html"), name='about_me'),
 ]

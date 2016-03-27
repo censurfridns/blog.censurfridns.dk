@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans 'Contact' %}{% endblock head_title %}
+{% block content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{% trans "Contact" %}</h2>
+                        {% blocktrans %}
+                        <p>You have a few options for getting in touch with me:</p>
+                        <ul>
+                            <li>IRC: <a href="ircs://chat.freenode.net:6697/#censurfridns">#censurfridns on Freenode</a></li>
+                            <li>Twitter: <a href="https://twitter.com/censurfridns">@censurfridns</a></li>
+                            <li>E-mail: <a href="mailto:admin@censurfridns.dk">admin@censurfridns.dk</a></li>
+                            <li>Jabber (with OTR): <a href="xmpp:tykling@cloak.dk">tykling@cloak.dk</a></li>
+                        </ul>
+                        {% endblocktrans %}
+                    </div>
+                </div>
+{% endblock content %}

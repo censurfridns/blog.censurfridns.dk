@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans 'Frequently Asked Questions' %}{% endblock head_title %}
+{% block content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{% trans "Frequently Asked Questions" %}</h2>
+                        <dl>
+                          <dt>{% trans "Why have you started UncensoredDNS? Why run uncensored DNS servers?" %}</dt>
+                          <dd>{% trans "I am strongly against using DNS as a tool to filter content on the internet. Many people do not have the technical know-how to setup their own DNS server, so I created UncensoredDNS in 2009 as an uncensored alternative to the internet providers filtered DNS servers." %}</dd>
+
+                          <dt>{% trans "Why not just use OpenDNS or Google DNS?" %}</dt>
+                          <dd>{% trans "I dislike any form of abuse of the DNS system, and OpenDNS' entire business model is to manipulate DNS. They used to do NXDOMAIN redirection, an advertising trick where misspelled domains get redirected to a search page. Now they make a living blocking malware and other things in DNS. Google runs a decent DNS service but I don't think it is a good idea to give dem all DNS lookups in addition to all the other data they have on everyone." %}</dd>
+
+                          <dt>{% trans "Do the UncensoredDNS DNS servers log any personal information?" %}</dt>
+                          <dd>{% trans "Absolutely nothing is being logged, neither about the users nor the usage of this service. I do keep graphs of the total number of queries, but no personally identifiable information is saved. The data that is saved will never be sold or used for anything except capacity planning of the service." %}</dd>
+
+                          <dt>{% trans "Where are the servers located?" %}</dt>
+                          <dd>{% trans "The servers are physically located in Denmark. They are placed on fast uplinks in professional data centers. I am actively looking for places to host anycast nodes, especially outside of Denmark or even outside of Europe. Please contact me if you can help." %}</dd>
+
+                          <dt>{% trans "Are the IP addresses likely to change?" %}</dt>
+                          <dd>{% trans "The DNS server IP addresses will never change if I can prevent it. The anycast server in particular is unlikely to ever change since the v4 and v6 IPs are from UncensoredDNS' own provider independent IP ranges. ns1 will get a new ipv6 address at some point though, as the current one is provided by 6to4 which is not really being used anymore." %}</dd>
+
+                          <dt>{% trans "Who is behind this service?" %}</dt>
+                          {% url 'contact' as contacturl %}
+                          <dd>{% blocktrans with contacturl=contacturl %}My name is Thomas Steen Rasmussen. Read more about me <a href="{{ contacturl }}">here</a>. I operate this DNS service as an individual with my own money. Questions and comments to admin@censurfridns.dk please.{% endblocktrans %}</dd>
+
+                          <dt>{% trans "Have you ever been contacted by authorities or law enforcement about this service?" %}</dt>
+                          <dd>{% trans "No, I have never been contacted by authorities or law enforcement regarding this service. This message will be updated if it happens." %}</dd>
+                        </dl>
+                    </div>
+                </div> <!-- /.row -->
+{% endblock content %}
