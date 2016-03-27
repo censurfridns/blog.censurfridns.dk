@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^blog/(?P<slug>[\w-]+)/$', blog.views.blogpost_detail, name='blogpost_detail'),
 
     ### tags
-    url(r'^tags/(?P<slug>[\w-]+)/$', blog.views.tag_lookup, name='tag_lookup'),
+    url(_(r'^tags/(?P<slug>[\w-]+)/$'), blog.views.tag_lookup, name='tag_lookup'),
 
     ### syndication
     url(_(r'^feeds/rss/$'), BlogPostRssFeed(), name='rssfeed'),
