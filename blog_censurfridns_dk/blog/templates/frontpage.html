@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load blog_filters i18n %}
+{% block head_title %}{% trans 'UncensoredDNS' %}{% endblock head_title %}
+{% block content %}
+            <div class="row">
+                <!-- Blog Post Content Column -->
+                <div class="col-lg-8">
+                    {% for blogpost in blogposts %}
+                        <h4>
+                            <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
+                        </h4>
+                        <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
+                        <p>{% trans 'Tags:' %}
+                        {% for tag in blogpost.tags.all %}
+                            {% if not tag.slug == "" %}
+                                <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
+                            {% endif %}
+                        {% endfor %}
+                        <hr>
+                    {% endfor %}
+                </div>
+
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-4">
+                    <!-- Server IPs Well -->
+                    <div class="well">
+                        <h4>{% trans 'DNS servers' %}</h4>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p><b>anycast.censurfridns.dk</b>: 91.239.100.100 / 2001:67c:28a4::</p>
+                                <p><b>ns1.censurfridns.dk</b>: 89.233.43.71 / 2002:d596:2a92:1:71:53::</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Twitter Well -->
+                    <div class="well">
+                        <h4>{% trans 'Twitter' %}</h4>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p><i class="fa fa-twitter"></i> {% blocktrans %}Follow <a href='https://twitter.com/censurfridns'>@censurfridns</a> on twitter for updates and information on the project.{% endblocktrans %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /.row -->
+{% endblock content %}

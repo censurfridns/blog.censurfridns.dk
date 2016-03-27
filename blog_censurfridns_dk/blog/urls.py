@@ -18,8 +18,11 @@ urlpatterns = [
     ### search
     #url(_(r'^search/'), include('haystack.urls')),
 
+    ### frontpage
+    url(r'^$', blog.views.frontpage, name='frontpage'),
+
     ### blog
-    url(r'^$', blog.views.BlogPostList.as_view(), name='blog'),
+    url(r'^blog/$', blog.views.BlogPostList.as_view(), name='blog'),
     url(r'^blog/(?P<slug>[\w-]+)/$', blog.views.blogpost_detail, name='blogpost_detail'),
 
     ### tags

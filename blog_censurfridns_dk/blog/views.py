@@ -8,6 +8,13 @@ from .forms import SetLanguageForm
 from taggit.models import Tag
 
 
+def frontpage(request):
+    latest_blogposts = BlogPost.objects.all()[:10]
+    return render(request, 'frontpage.html', {
+        'blogposts': latest_blogposts,
+    })
+
+
 @require_POST
 def setlang(request):
     form = SetLanguageForm(request.POST or None)
