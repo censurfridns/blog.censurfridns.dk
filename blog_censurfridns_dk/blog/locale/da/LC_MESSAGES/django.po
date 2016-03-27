@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 15:27+0000\n"
+"POT-Creation-Date: 2016-03-27 15:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr "Kontakt"
 msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
 msgstr ""
 
-#: blog/templates/blog/blogpost_detail.html:36
+#: blog/templates/blog/blogpost_detail.html:34
 msgid "Tags for this blogpost"
 msgstr "Kategorier for dette blogindlæg"
 
@@ -88,29 +88,29 @@ msgstr "Kategorier for dette blogindlæg"
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
-#: blog/templates/blog/blogpost_list.html:22 blog/templates/frontpage.html:22
+#: blog/templates/blog/blogpost_list.html:20 blog/templates/frontpage.html:22
 msgid "Tags:"
 msgstr "Kategorier:"
 
-#: blog/templates/blog/blogpost_list.html:36
+#: blog/templates/blog/blogpost_list.html:34
 msgid "previous"
 msgstr "forrige"
 
-#: blog/templates/blog/blogpost_list.html:39
+#: blog/templates/blog/blogpost_list.html:37
 #, python-format
 msgid "Page %(number)s of %(total)s"
 msgstr "Side %(number)s af %(total)s"
 
-#: blog/templates/blog/blogpost_list.html:42
+#: blog/templates/blog/blogpost_list.html:40
 msgid "next"
 msgstr "næste"
 
-#: blog/templates/blog/blogpost_list.html:47
+#: blog/templates/blog/blogpost_list.html:45
 #, python-format
 msgid "Showing %(count)s of %(count)s blogposts"
 msgstr "Viser %(count)s af %(count)s blogindlæg"
 
-#: blog/templates/blog/blogpost_list.html:62
+#: blog/templates/blog/blogpost_list.html:60
 msgid "Tags used on this blog"
 msgstr "Kategorier brugt på denne blog"
 
@@ -238,32 +238,6 @@ msgstr ""
 "naturligt har lettere ved at stole på en tjeneste hvis de ved hvem der står "
 "bag. Du kan se nogen af mine gamle foredrag online, for eksempel fra"
 
-#: blog/templates/static/about_me.html:3
-msgid "About me"
-msgstr "Om mig"
-
-#: blog/templates/static/about_me.html:7 blog/templates/static/faq.html:24
-msgid "Who is behind this service?"
-msgstr "Hvem er bag denne tjeneste?"
-
-#: blog/templates/static/about_me.html:8
-msgid "Thomas Steen Rasmussen aka Tykling"
-msgstr "Thomas Steen Rasmussen / Tykling"
-
-#: blog/templates/static/about_me.html:9
-msgid "I live in Copenhagen, Denmark. Born 1979."
-msgstr "Jeg bor i København, Danmark. Født 1979."
-
-#: blog/templates/static/about_me.html:10
-msgid ""
-"I am a sysadmin and developer with a healthy interest in network and "
-"security. I also care a great deal about online freedom and censorship which "
-"is the reason why I run this service."
-msgstr ""
-"Jeg er sysadmin og udvikler med en sund interesse i netværk og sikkerhed. "
-"Jeg går også meget op i online frihed og censur, hvilket er grunden til at "
-"jeg har startet denne tjeneste."
-
 #: blog/templates/static/contact.html:8
 msgid "You have a few options for getting in touch with me:"
 msgstr "Der er forskellige muligheder for at komme i kontakt med mig:"
@@ -388,17 +362,20 @@ msgstr ""
 "dog en ny ipv6 adresse på et tidspunkt, da den nuværende er en 6to4 IP, og "
 "6to4 anvendes ikke ret meget mere."
 
+#: blog/templates/static/faq.html:24
+msgid "Who is behind this service?"
+msgstr "Hvem er bag denne tjeneste?"
+
 #: blog/templates/static/faq.html:26
 #, python-format
 msgid ""
-"My name is Thomas Steen Rasmussen. Read more about me <a "
-"href='%(contacturl)s'>here</a>. I operate this DNS service as an individual "
-"with my own money. Questions and comments to admin@censurfridns.dk please."
+"My name is Thomas Steen Rasmussen. I operate this DNS service as an "
+"individual with my own money. If you have questions or comments please see "
+"the <a href=\"%(contacturl)s\">contact page</a>."
 msgstr ""
-"Mit navn er Thomas Steen Rasmussen. Læs mere om mig <a "
-"href='%(contacturl)s'>her</a>. Jeg opererer denne DNS tjeneste som "
-"privatperson for mine egne penge. Spørgsmål og kommentarer til "
-"admin@censurfridns.dk tak."
+"Mit navn er Thomas Steen Rasmussen. Jeg opererer denne DNS tjeneste som "
+"privatperson for mine egne penge. Hvis du har spørgsmål eller kommentarer "
+"kan du kigge på <a href=\"%(contacturl)s\">kontakt</a> siden."
 
 #: blog/templates/static/faq.html:28
 msgid ""
@@ -455,7 +432,3 @@ msgstr "^oss/$"
 #: blog/urls.py:39
 msgid "^about/$"
 msgstr "^om/$"
-
-#: blog/urls.py:40
-msgid "^about-me/$"
-msgstr "^om-mig/$"
