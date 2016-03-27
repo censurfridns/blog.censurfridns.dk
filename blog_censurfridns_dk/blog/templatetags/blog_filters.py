@@ -43,11 +43,14 @@ def get_i18n_url(url, lang):
             slug = getattr(tag, 'slug_%s' % to_lang)
 
         ### get url for this object with the slug in the new language
-        path = reverse(match.func, kwargs={'slug': slug})
+        with translation.override(to_lang):
+            path = reverse(match.func, kwargs={'slug': slug})
     else:
         with translation.override(to_lang):
             path = reverse(match.func, args=match.args, kwargs=match.kwargs)
-    
+
+    ### return absolute url unless we are in DEBUG mode,
+    ### then only return relative url
     if settings.DEBUG:
         return path
     else:
