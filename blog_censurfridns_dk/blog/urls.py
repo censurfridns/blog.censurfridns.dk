@@ -37,10 +37,10 @@ urlpatterns = [
     url(_(r'^feeds/atom/tag/(?P<slug>[\w-]+)/$'), TagBlogPostAtomFeed(), name='tagatomfeed'),
 
     ### old rss feed url redirects
-    url(r'^en/taxonomy/term/4/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'system-status'})),
-    url(r'^en/rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed')),
-    url(r'^taxonomy/term/2/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'driftinfo'})),
-    url(r'^rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed')),
+    url(r'^en/taxonomy/term/4/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'system-status'}))),
+    url(r'^en/rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed'))),
+    url(r'^taxonomy/term/2/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'driftinfo'}))),
+    url(r'^rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed'))),
 
     ### static pages
     url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="static/dns-servers.html"), name='dns_servers'),

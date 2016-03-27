@@ -32,9 +32,9 @@ class TagBlogPostRssFeed(Feed):
     link = reverse_lazy('blog')
     description = _("Blog posts from UncensoredDNS tagged with a specific tag")
 
-    def get_object(self, request, tag_slug):
+    def get_object(self, request, slug):
         filter = {
-            'slug_%s' % get_language(): tag_slug
+            'slug_%s' % get_language(): slug
         }
         return Tag.objects.get(**filter)
 
