@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 12:50+0000\n"
+"POT-Creation-Date: 2016-03-27 13:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Vis/skjul navigation"
 
 #: blog/templates/base.html:39
 msgid "Blog"
-msgstr "Blog"
+msgstr ""
 
 #: blog/templates/base.html:42 blog/templates/static/dns-servers.html.py:3
 #: blog/templates/static/dns-servers.html:7
@@ -66,14 +66,12 @@ msgstr "Om"
 
 #: blog/templates/base.html:48
 msgid "FAQ"
-msgstr ""
+msgstr "OSS"
 
 #: blog/templates/base.html:51 blog/templates/static/contact.html.py:3
 #: blog/templates/static/contact.html:7
-#, fuzzy
-#| msgid "^contact/$"
 msgid "Contact"
-msgstr "^kontakt/$"
+msgstr "Kontakt"
 
 #: blog/templates/base.html:92
 msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
@@ -214,19 +212,8 @@ msgstr ""
 "jeg har startet denne tjeneste."
 
 #: blog/templates/static/contact.html:8
-msgid ""
-"\n"
-"                        <p>You have a few options for getting in touch with "
-"me:</p>\n"
-"                        <ul>\n"
-"                        </ul>\n"
-"                        "
-msgstr ""
-"\n"
-"                        <p>Der er forskellige måder at komme i kontakt med mig på:</p>\n"
-"                        <ul>\n"
-"                        </ul>\n"
-"                        "
+msgid "You have a few options for getting in touch with me:"
+msgstr "Der er forskellige muligheder for at komme i kontakt med mig:"
 
 #: blog/templates/static/dns-servers.html:11
 msgid "Server Name"
@@ -261,7 +248,8 @@ msgstr "Ofte stillede spørgsmål"
 
 #: blog/templates/static/faq.html:9
 msgid "Why have you started UncensoredDNS? Why run uncensored DNS servers?"
-msgstr "Hvorfor har du lavet CensurfriDNS? Hvorfor drive censur fri DNS servere?"
+msgstr ""
+"Hvorfor har du lavet CensurfriDNS? Hvorfor drive censur fri DNS servere?"
 
 #: blog/templates/static/faq.html:10
 msgid ""
@@ -270,10 +258,10 @@ msgid ""
 "server, so I created UncensoredDNS in 2009 as an uncensored alternative to "
 "the internet providers filtered DNS servers."
 msgstr ""
-"Jeg er kraftigt imod anvendelsen af DNS som et værktøj til at filtrere indhold "
-"på internettet. Mange har ikke den tekniske formåen til at sætte deres egen "
-"DNS server op, så jeg har lavet CensurfriDNS så der er et dansk censurfrit "
-"alternativ til internetudbydernes DNS servere."
+"Jeg er kraftigt imod anvendelsen af DNS som et værktøj til at filtrere "
+"indhold på internettet. Mange har ikke den tekniske formåen til at sætte "
+"deres egen DNS server op, så jeg har lavet CensurfriDNS så der er et dansk "
+"censurfrit alternativ til internetudbydernes DNS servere."
 
 #: blog/templates/static/faq.html:12
 msgid "Why not just use OpenDNS or Google DNS?"
@@ -292,10 +280,10 @@ msgstr ""
 "har en forretningsmodel der drejer sig om manipulering af DNS. De har førhen "
 "lavet NXDOMAIN redirection, som er et reklame trick hvor ikke eksisterende "
 "domæner (f.eks. ved stavefejl) bliver viderestillet til en søgeside med "
-"reklamer på. Nu om dage tjener de penge på at blokere malware og andet i DNS. "
-"Google driver en udemærket DNS tjeneste men jeg tror ikke det er en god ide at "
-"aflevere alle ens DNS opslag hos dem, oveni alt det andet data de har om alle "
-"folk i forvejen."
+"reklamer på. Nu om dage tjener de penge på at blokere malware og andet i "
+"DNS. Google driver en udemærket DNS tjeneste men jeg tror ikke det er en god "
+"ide at aflevere alle ens DNS opslag hos dem, oveni alt det andet data de har "
+"om alle folk i forvejen."
 
 #: blog/templates/static/faq.html:15
 msgid "Do the UncensoredDNS DNS servers log any personal information?"
@@ -326,8 +314,8 @@ msgid ""
 msgstr ""
 "Serverne står fysisk i Danmark. De står på hurtige linier i professionelle "
 "datacentre. Jeg leder aktivt efter flere steder som kan hoste en anycast "
-"node. Særligt steder udenfor Danmark eller Europa har interesse. Kontakt "
-"mig endelig hvis du kan hjælpe."
+"node. Særligt steder udenfor Danmark eller Europa har interesse. Kontakt mig "
+"endelig hvis du kan hjælpe."
 
 #: blog/templates/static/faq.html:21
 msgid "Are the IP addresses likely to change?"
@@ -344,19 +332,20 @@ msgstr ""
 "IP adresserne kommer ikke til at skifte hvis jeg på nogen måde kan forhindre "
 "det. Især anycast serveren kommer sandsynligvis aldrig til at ændre IP da "
 "dens IPer er fra CensurfriDNS' egne provider independent IP ranges. ns1 får "
-"dog en ny ipv6 adresse på et tidspunkt, da den nuværende er en 6to4 IP, og 6to4 "
-"anvendes ikke ret meget mere."
+"dog en ny ipv6 adresse på et tidspunkt, da den nuværende er en 6to4 IP, og "
+"6to4 anvendes ikke ret meget mere."
 
 #: blog/templates/static/faq.html:26
 #, python-format
 msgid ""
-"My name is Thomas Steen Rasmussen. Read more about me <a href="
-"'%(contacturl)s'>here</a>. I operate this DNS service as an individual "
+"My name is Thomas Steen Rasmussen. Read more about me <a "
+"href='%(contacturl)s'>here</a>. I operate this DNS service as an individual "
 "with my own money. Questions and comments to admin@censurfridns.dk please."
 msgstr ""
-"Mit navn er Thomas Steen Rasmussen. Læs mere om mig <a href="
-"'%(contacturl)s'>her</a>. Jeg opererer denne DNS tjeneste som privatperson "
-"for mine egne penge. Spørgsmål og kommentarer til admin@censurfridns.dk tak."
+"Mit navn er Thomas Steen Rasmussen. Læs mere om mig <a "
+"href='%(contacturl)s'>her</a>. Jeg opererer denne DNS tjeneste som "
+"privatperson for mine egne penge. Spørgsmål og kommentarer til "
+"admin@censurfridns.dk tak."
 
 #: blog/templates/static/faq.html:28
 msgid ""
