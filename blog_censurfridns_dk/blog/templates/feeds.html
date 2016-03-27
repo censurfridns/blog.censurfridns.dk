@@ -7,15 +7,14 @@
         <h3>RSS/Atom</h3>
         <p>{% trans 'The following two RSS/Atom feeds contain all blogposts:' %}</p>
         <ul>
-            <li>RSS: <a href="{% url 'allrssfeed' %}">{% url 'allrssfeed' %}</a></li>
-            <li>Atom: <a href="{% url 'allatomfeed' %}">{% url 'allatomfeed' %}</a></li>
+            <li><a href="{% url 'allrssfeed' %}">RSS</a></li>
+            <li><a href="{% url 'allatomfeed' %}">Atom</a></li>
         </ul>
         <p>{% trans 'This list contains RSS/Atom feeds for each of the tags used on this blog:' %}</p>
         <ul>
-            {% foreach tag in tags %}
+            {% for tag in tags %}
                 <li>
-                    <font size={{tag.num_times|floatformat:0|add:"2"}}>
-                    <span class="label label-primary">{{tag}}</span></font>: 
+                    <b>{{tag}}</b>:
                     <a href="{% url 'tagrssfeed' slug=tag.slug %}">RSS</a> 
                     <a href="{% url 'tagatomfeed' slug=tag.slug %}">Atom</a>
                 </li>
