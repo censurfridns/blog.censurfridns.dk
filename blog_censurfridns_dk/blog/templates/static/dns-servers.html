@@ -5,12 +5,30 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <p><b>{% trans 'DNS Servers' %}</b></p>
-                        <ul>
-                            <li>91.239.100.100 (anycast.censurfridns.dk)</li>
-                            <li>89.233.43.71 (ns1.censurfridns.dk)</li>
-                            <li>2001:67c:28a4:: (anycast.censurfridns.dk)</li>
-                            <li>2002:d596:2a92:1:71:53:: (ns1.censurfridns.dk)</li>
-                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>{% trans 'Server Name' %}</th>
+                                <th>{% trans 'IPv4' %}</th>
+                                <th>{% trans 'IPv6' %}</th>
+                                <th>{% trans 'Notes' %}</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="success">
+                                <td>anycast.censurfridns.dk</td>
+                                <td>91.239.100.100</td>
+                                <td>2001:67c:28a4::</td>
+                                <td>{% trans 'This server is anycast from multiple locations. Faster and more stable.' %}</td>
+                              </tr>
+                              <tr class="success">
+                                <td>ns1.censurfridns.dk</td>
+                                <td>89.233.43.71</td>
+                                <td>2002:d596:2a92:1:71:53::</td>
+                                <td>{% trans 'IPv6 for ns1 is provided by 6to4 and will be replaced with native IPv6 soon.' %}</td>
+                              </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div> <!-- /.row -->
+                </div>
 {% endblock content %}
