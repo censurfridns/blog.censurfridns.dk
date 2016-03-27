@@ -35,6 +35,7 @@ urlpatterns = [
     url(_(r'^feeds/atom/all/$'), AllBlogPostAtomFeed(), name='allatomfeed'),
     url(_(r'^feeds/rss/tag/(?P<slug>[\w-]+)/$'), TagBlogPostRssFeed(), name='tagrssfeed'),
     url(_(r'^feeds/atom/tag/(?P<slug>[\w-]+)/$'), TagBlogPostAtomFeed(), name='tagatomfeed'),
+    url(_(r'^feeds/$'), blog.views.feeds, name='feeds'),
 
     ### old rss feed url redirects
     url(r'^en/taxonomy/term/4/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'system-status'}))),
