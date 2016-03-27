@@ -8,7 +8,7 @@
                             <h3>{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h3>
                             <ul>
                                 {% for post in blogposts %}
-                                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> written on {{ post.created_date }}</li>
+                                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> {% trans 'written on' %} {{ post.created_date }}</li>
                                 {% endfor %}
                             </ul>
                         {% else %}
