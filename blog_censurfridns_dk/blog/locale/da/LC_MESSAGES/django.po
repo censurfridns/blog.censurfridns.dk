@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 15:58+0000\n"
+"POT-Creation-Date: 2016-03-27 18:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/feeds.py:8
+#: blog/feeds.py:11
 msgid "UncensoredDNS Blog Posts"
 msgstr "CensurfriDNS blogindlæg"
 
-#: blog/feeds.py:10
+#: blog/feeds.py:13
 msgid "Blog posts and system information from UncensoredDNS"
 msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
+
+#: blog/feeds.py:31
+msgid "UncensoredDNS Blog Posts by tag"
+msgstr "CensurfriDNS blogindlæg efter kategori"
+
+#: blog/feeds.py:33
+msgid "Blog posts from UncensoredDNS tagged with a specific tag"
+msgstr "Blogindlæg fra CensurfriDNS med en bestemt kategori"
 
 #: blog/forms.py:15
 msgid "Invalid language"
@@ -113,6 +121,20 @@ msgstr "Viser %(count)s af %(count)s blogindlæg"
 #: blog/templates/blog/blogpost_list.html:60
 msgid "Tags used on this blog"
 msgstr "Kategorier brugt på denne blog"
+
+#: blog/templates/feeds.html:3
+msgid "RSS/Atom"
+msgstr ""
+
+#: blog/templates/feeds.html:8
+msgid "The following two RSS/Atom feeds contain all blogposts:"
+msgstr "De følgende to RSS/Atom feeds indeholder alle blogindlæg:"
+
+#: blog/templates/feeds.html:13
+msgid ""
+"This list contains RSS/Atom feeds for each of the tags used on this blog:"
+msgstr ""
+"Denne liste indeholder RSS/Atom feeds for hver af kategorierne brugt på denne blog:"
 
 #: blog/templates/frontpage.html:9
 msgid "Welcome to UncensoredDNS"
@@ -397,7 +419,7 @@ msgstr ""
 msgid "Blogposts tagged %(name)s"
 msgstr "Blogindlæg i kategorien %(name)s"
 
-#: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:15
+#: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:20
 msgid "Tag not found"
 msgstr "Kategori ikke fundet"
 
@@ -405,30 +427,42 @@ msgstr "Kategori ikke fundet"
 msgid "written on"
 msgstr "skrevet den"
 
-#: blog/urls.py:29
+#: blog/urls.py:31
 msgid "^tags/(?P<slug>[\\w-]+)/$"
 msgstr "^kategorier/(?P<slug>[\\w-]+)/$"
 
-#: blog/urls.py:32
-msgid "^feeds/rss/$"
+#: blog/urls.py:34
+msgid "^feeds/rss/all/$"
 msgstr ""
 
-#: blog/urls.py:33
-msgid "^feeds/atom/$"
+#: blog/urls.py:35
+msgid "^feeds/atom/all/$"
 msgstr ""
 
 #: blog/urls.py:36
+msgid "^feeds/rss/tag/(?P<slug>[\\w-]+)/$"
+msgstr "^feeds/rss/kategorier/(?P<slug>[\\w-]+)/$"
+
+#: blog/urls.py:37
+msgid "^feeds/atom/tag/(?P<slug>[\\w-]+)/$"
+msgstr "^feeds/atom/kategorier/(?P<slug>[\\w-]+)/$"
+
+#: blog/urls.py:38
+msgid "^feeds/$"
+msgstr ""
+
+#: blog/urls.py:47
 msgid "^dns-servers/$"
 msgstr "^dns-servere/$"
 
-#: blog/urls.py:37
+#: blog/urls.py:48
 msgid "^contact/$"
 msgstr "^kontakt/$"
 
-#: blog/urls.py:38
+#: blog/urls.py:49
 msgid "^faq/$"
 msgstr "^oss/$"
 
-#: blog/urls.py:39
+#: blog/urls.py:50
 msgid "^about/$"
 msgstr "^om/$"
