@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 13:19+0000\n"
+"POT-Creation-Date: 2016-03-27 14:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,8 +37,7 @@ msgstr "Engelsk"
 msgid "Danish"
 msgstr "Dansk"
 
-#: blog/templates/base.html:9 blog/templates/base.html.py:32
-#: blog/templates/blog/blogpost_list.html:3
+#: blog/templates/base.html:9 blog/templates/blog/blogpost_list.html.py:3
 #: blog/templates/blog/blogpost_list.html:10
 msgid "UncensoredDNS Blog"
 msgstr "CensurfriDNS Blog"
@@ -50,6 +49,10 @@ msgstr "censurfridns blog"
 #: blog/templates/base.html:27
 msgid "Toggle navigation"
 msgstr "Vis/skjul navigation"
+
+#: blog/templates/base.html:32 blog/templates/frontpage.html.py:3
+msgid "UncensoredDNS"
+msgstr "CensurfriDNS"
 
 #: blog/templates/base.html:39
 msgid "Blog"
@@ -85,31 +88,77 @@ msgstr "Kategorier for dette blogindlæg"
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
-#: blog/templates/blog/blogpost_list.html:22
+#: blog/templates/blog/blogpost_list.html:22 blog/templates/frontpage.html:22
 msgid "Tags:"
 msgstr "Kategorier:"
 
-#: blog/templates/blog/blogpost_list.html:34
+#: blog/templates/blog/blogpost_list.html:36
 msgid "previous"
 msgstr "forrige"
 
-#: blog/templates/blog/blogpost_list.html:37
+#: blog/templates/blog/blogpost_list.html:39
 #, python-format
 msgid "Page %(number)s of %(total)s"
 msgstr "Side %(number)s af %(total)s"
 
-#: blog/templates/blog/blogpost_list.html:40
+#: blog/templates/blog/blogpost_list.html:42
 msgid "next"
 msgstr "næste"
 
-#: blog/templates/blog/blogpost_list.html:45
+#: blog/templates/blog/blogpost_list.html:47
 #, python-format
 msgid "Showing %(count)s of %(count)s blogposts"
 msgstr "Viser %(count)s af %(count)s blogindlæg"
 
-#: blog/templates/blog/blogpost_list.html:60
+#: blog/templates/blog/blogpost_list.html:62
 msgid "Tags used on this blog"
 msgstr "Kategorier brugt på denne blog"
+
+#: blog/templates/frontpage.html:9
+msgid "Welcome to UncensoredDNS"
+msgstr "Velkommen til CensurfriDNS"
+
+#: blog/templates/frontpage.html:10
+msgid ""
+"UncensoredDNS is the name of a DNS service which consists of two uncensored "
+"DNS servers. The servers are available for use by anyone, free of charge."
+msgstr ""
+"CensurfriDNS er navnet på en DNS tjeneste som består af to ucensurerede DNS "
+"servere. Serverne er frit tilgængelige og kan benyttes gratis af alle."
+
+#: blog/templates/frontpage.html:11
+msgid ""
+"This service is run by Thomas Steen Rasmussen. I am a system administrator "
+"with a Danish internet provider, I was born in 1979. I run this service as a "
+"private individual, with my own money."
+msgstr ""
+"Tjenesten drives af Thomas Steen Rasmussen. Jeg er system administrator "
+"hos en dansk internet udbyder. Jeg er født i 1979. Jeg driver denne "
+"tjeneste som privatperson for mine egne penge."
+
+#: blog/templates/frontpage.html:12
+msgid ""
+"You can read more using the menu above, or if you just want the server IP "
+"addresses you can see them on the right."
+msgstr ""
+"Du kan læse mere ved hjælp af menuen i toppen, eller hvis du bare vil have "
+"server IPerne kan du se dem til højre."
+
+#: blog/templates/frontpage.html:36
+msgid "DNS servers"
+msgstr "DNS servere"
+
+#: blog/templates/frontpage.html:47
+msgid "Twitter"
+msgstr ""
+
+#: blog/templates/frontpage.html:50
+msgid ""
+"Follow <a href='https://twitter.com/censurfridns'>@censurfridns</a> on "
+"twitter for updates and information on the project."
+msgstr ""
+"Følg <a href='https://twitter.com/censurfridns'>@censurfridns</a> på "
+"twitter for nyheder og information om projektet."
 
 #: blog/templates/searchpanel.html:3
 msgid "Search this blog"
@@ -375,34 +424,34 @@ msgstr "Kategori ikke fundet"
 msgid "written on"
 msgstr "skrevet den"
 
-#: blog/urls.py:26
+#: blog/urls.py:29
 msgid "^tags/(?P<slug>[\\w-]+)/$"
 msgstr "^kategorier/(?P<slug>[\\w-]+)/$"
 
-#: blog/urls.py:29
+#: blog/urls.py:32
 msgid "^feeds/rss/$"
 msgstr ""
 
-#: blog/urls.py:30
+#: blog/urls.py:33
 msgid "^feeds/atom/$"
 msgstr ""
 
-#: blog/urls.py:33
+#: blog/urls.py:36
 msgid "^dns-servers/$"
 msgstr "^dns-servere/$"
 
-#: blog/urls.py:34
+#: blog/urls.py:37
 msgid "^contact/$"
 msgstr "^kontakt/$"
 
-#: blog/urls.py:35
+#: blog/urls.py:38
 msgid "^faq/$"
 msgstr "^oss/$"
 
-#: blog/urls.py:36
+#: blog/urls.py:39
 msgid "^about/$"
 msgstr "^om/$"
 
-#: blog/urls.py:37
+#: blog/urls.py:40
 msgid "^about-me/$"
 msgstr "^om-mig/$"
