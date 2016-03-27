@@ -16,7 +16,7 @@ class BlogPostRssFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.description
+        return item.body[250]
 
 
 class BlogPostAtomFeed(BlogPostRssFeed):
