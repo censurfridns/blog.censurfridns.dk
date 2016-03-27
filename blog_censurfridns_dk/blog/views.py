@@ -15,6 +15,13 @@ def frontpage(request):
     })
 
 
+def feeds(request):
+    tags = Tag.objects.all()
+    return render(request, 'rss.html', {
+        'tags': tags,
+    })
+
+
 @require_POST
 def setlang(request):
     form = SetLanguageForm(request.POST or None)
