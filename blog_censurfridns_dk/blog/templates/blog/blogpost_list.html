@@ -12,16 +12,18 @@
                 </h1>
 
                 {% for blogpost in blogpost_list %}
-                    <h2>
+                    <h3>
                         <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
-                    </h2>
+                    </h3>
                     <p class="lead">
                         by <a href="{% url 'about_me' %}">Tykling</a>
                     </p>
                     <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
                     <p>{% trans 'Tags:' %}
                     {% for tag in blogpost.tags.all %}
-                        <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
+                        {% if not tag.slug == "" %}
+                            <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
+                        {% endif %}
                     {% endfor %}
                     <hr>
                 {% endfor %}
@@ -62,7 +64,9 @@
                     {% get_taglist as tags %}
                     <div class="text-center">
                     {% for tag in tags %}
-                    <a href="{% url 'tag_lookup' slug=tag.slug %}"><font size={{tag.num_times|floatformat:0|add:"2"}}><span class="label label-primary">{{tag}}</span></font></a>
+                        {% if not tag.slug == "" %}
+                            <a href="{% url 'tag_lookup' slug=tag.slug %}"><font size={{tag.num_times|floatformat:0|add:"2"}}><span class="label label-primary">{{tag}}</span></font></a>
+                        {% endif %}
                     {% endfor %}
                     </div>
                     </p>
