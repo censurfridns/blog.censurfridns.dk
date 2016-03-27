@@ -1,5 +1,4 @@
 # Translation for UncensoredDNS blog
-# Copyright (C) 2016 Thomas Steen Rasmussen
 # This file is distributed under the same license as the rest of the blog.
 # Thomas Steen Rasmussen <thomas@gibfest.dk>, 2016.
 #
@@ -8,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-25 22:30+0000\n"
+"POT-Creation-Date: 2016-03-27 00:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +29,11 @@ msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
 msgid "Invalid language"
 msgstr "Ugyldigt sprog"
 
-#: blog/settings.py:66
+#: blog/settings.py:67
 msgid "English"
 msgstr "Engelsk"
 
-#: blog/settings.py:67
+#: blog/settings.py:68
 msgid "Danish"
 msgstr "Dansk"
 
@@ -73,20 +72,24 @@ msgstr ""
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
-#: blog/templates/blog/blogpost_list.html:37
+#: blog/templates/blog/blogpost_list.html:22
+msgid "Tags:"
+msgstr ""
+
+#: blog/templates/blog/blogpost_list.html:34
 msgid "previous"
 msgstr "forrige"
 
-#: blog/templates/blog/blogpost_list.html:40
+#: blog/templates/blog/blogpost_list.html:37
 #, python-format
 msgid "Page %(number)s of %(total)s"
 msgstr "Side %(number)s af %(total)s"
 
-#: blog/templates/blog/blogpost_list.html:43
+#: blog/templates/blog/blogpost_list.html:40
 msgid "next"
 msgstr "næste"
 
-#: blog/templates/blog/blogpost_list.html:48
+#: blog/templates/blog/blogpost_list.html:45
 #, python-format
 msgid "Showing %(count)s of %(count)s blogposts"
 msgstr "Viser %(count)s af %(count)s blogindlæg"
@@ -135,12 +138,12 @@ msgid ""
 "or DNSSEC, both of which were mandatory on a modern DNS server, even back in "
 "2009."
 msgstr ""
-"Dengang lavede OpenDNS NXDOMAIN redirection, en reklameteknik hvor domæner der "
-"ikke findes (f.eks. grundet en stavefejl) bliver viderestillet til en søgeside "
-"med reklamer istedet for at give en NXDOMAIN fejl. For en DNS puritaner som mig "
-"gjorde det OpenDNS omtrent så tiltalende som en lort på en pind. De havde "
-"desuden hverken ipv6 eller DNSSEC, begge dele var selv i 2009 nødvendige dele "
-"af en moderne DNS server."
+"Dengang lavede OpenDNS NXDOMAIN redirection, en reklameteknik hvor domæner "
+"der ikke findes (f.eks. grundet en stavefejl) bliver viderestillet til en "
+"søgeside med reklamer istedet for at give en NXDOMAIN fejl. For en DNS "
+"puritaner som mig gjorde det OpenDNS omtrent så tiltalende som en lort på en "
+"pind. De havde desuden hverken ipv6 eller DNSSEC, begge dele var selv i 2009 "
+"nødvendige dele af en moderne DNS server."
 
 #: blog/templates/static/about.html:15
 msgid ""
@@ -150,11 +153,11 @@ msgid ""
 "lookups to Google. They already have all your searches, you might have one "
 "of their phones in your pocket, and so on."
 msgstr ""
-"Selv hvis Google DNS havde eksisteret dengang ville jeg ikke have det godt med "
-"at anbefale dem heller. De kører en stabil, hurtig og ucensureret DNS tjeneste, "
-"men jeg er ikke overbevist om at det er en god ide at aflevere alle ens DNS opslag "
-"til dem. De har allerede alle ens søgninger, og mange har en af deres telefoner "
-"i lommen, og så videre."
+"Selv hvis Google DNS havde eksisteret dengang ville jeg ikke have det godt "
+"med at anbefale dem heller. De kører en stabil, hurtig og ucensureret DNS "
+"tjeneste, men jeg er ikke overbevist om at det er en god ide at aflevere "
+"alle ens DNS opslag til dem. De har allerede alle ens søgninger, og mange "
+"har en af deres telefoner i lommen, og så videre."
 
 #: blog/templates/static/about.html:17
 msgid ""
@@ -164,66 +167,96 @@ msgid ""
 "an easier time trusting a service if they know who is behind it. You can see "
 "some of my old talks online, for example from"
 msgstr ""
-"Alt dette gjorde at jeg startede CensurfriDNS med hjælp fra venner. Efter lidt tid "
-"begyndte jeg også at holde foredrag på diverse konferencer, da folk naturligt har "
-"lettere ved at stole på en tjeneste hvis de ved hvem der står bag. Du kan se nogen "
-"af mine gamle foredrag online, for eksempel fra"
+"Alt dette gjorde at jeg startede CensurfriDNS med hjælp fra venner. Efter "
+"lidt tid begyndte jeg også at holde foredrag på diverse konferencer, da folk "
+"naturligt har lettere ved at stole på en tjeneste hvis de ved hvem der står "
+"bag. Du kan se nogen af mine gamle foredrag online, for eksempel fra"
 
-#: blog/templates/static/about_me.html:2
+#: blog/templates/static/about_me.html:3
 msgid "About me"
 msgstr "Om mig"
 
-#: blog/templates/static/about_me.html:6
+#: blog/templates/static/about_me.html:7
 msgid "Who is behind this service?"
 msgstr "Hvem er bag denne tjeneste?"
 
-#: blog/templates/static/about_me.html:7
+#: blog/templates/static/about_me.html:8
 msgid "Thomas Steen Rasmussen aka Tykling"
 msgstr "Thomas Steen Rasmussen / Tykling"
 
-#: blog/templates/static/about_me.html:8
+#: blog/templates/static/about_me.html:9
 msgid "I live in Copenhagen, Denmark. Born 1979."
 msgstr "Jeg bor i København, Danmark. Født 1979."
 
-#: blog/templates/static/about_me.html:9
+#: blog/templates/static/about_me.html:10
 msgid ""
 "I am a sysadmin and developer with a healthy interest in network and "
 "security. I also care a great deal about online freedom and censorship which "
 "is the reason why I run this service."
 msgstr ""
 "Jeg er sysadmin og udvikler med en sund interesse i netværk og sikkerhed. "
-"Jeg går også meget op i online frihed og censur, hvilket er grunden til "
-"at jeg har startet denne tjeneste."
+"Jeg går også meget op i online frihed og censur, hvilket er grunden til at "
+"jeg har startet denne tjeneste."
 
-#: blog/templates/tag_lookup.html:2 blog/templates/tag_lookup.html.py:7
+#: blog/templates/static/dns-servers.html:11
+msgid "Server Name"
+msgstr "Server navn"
+
+#: blog/templates/static/dns-servers.html:12
+msgid "IPv4"
+msgstr ""
+
+#: blog/templates/static/dns-servers.html:13
+msgid "IPv6"
+msgstr ""
+
+#: blog/templates/static/dns-servers.html:14
+msgid "Notes"
+msgstr "Noter"
+
+#: blog/templates/static/dns-servers.html:22
+msgid "This server is anycast from multiple locations. Faster and more stable."
+msgstr "Denne server er anycastet fra flere lokationer. Hurtigere og mere stabil."
+
+#: blog/templates/static/dns-servers.html:28
+msgid ""
+"IPv6 for ns1 is provided by 6to4 and will be replaced with native IPv6 soon."
+msgstr ""
+"IPv6 for ns1 er lavet med 6to4 og bliver erstattet med rigtig IPv6 snart."
+
+#: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:8
 #, python-format
 msgid "Blogposts tagged %(name)s"
 msgstr "Blogindlæg tagget %(name)s"
 
-#: blog/templates/tag_lookup.html:2 blog/templates/tag_lookup.html.py:14
+#: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:15
 msgid "Tag not found"
 msgstr "Tag ikke fundet"
 
-#: blog/urls.py:26
+#: blog/templates/tag_lookup.html:11
+msgid "written on"
+msgstr "skrevet den"
+
+#: blog/urls.py:29
 msgid "^feeds/rss/$"
 msgstr ""
 
-#: blog/urls.py:27
+#: blog/urls.py:30
 msgid "^feeds/atom/$"
 msgstr ""
 
-#: blog/urls.py:30
+#: blog/urls.py:33
 msgid "^dns-servers/$"
 msgstr "^dns-servere/$"
 
-#: blog/urls.py:31
+#: blog/urls.py:34
 msgid "^contact/$"
 msgstr "^kontakt/$"
 
-#: blog/urls.py:32
+#: blog/urls.py:35
 msgid "^about/$"
 msgstr "^om/$"
 
-#: blog/urls.py:33
+#: blog/urls.py:36
 msgid "^about-me/$"
 msgstr "^om-mig/$"
