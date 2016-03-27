@@ -39,7 +39,7 @@ class TagBlogPostRssFeed(Feed):
         return Tag.objects.get(**filter)
 
     def items(self, obj):
-        return BlogPost.objects.filter(tags=obj)('-created_date')[:20]
+        return BlogPost.objects.filter(tags=obj).order_by('-created_date')[:20]
 
     def item_title(self, item):
         return item.title
