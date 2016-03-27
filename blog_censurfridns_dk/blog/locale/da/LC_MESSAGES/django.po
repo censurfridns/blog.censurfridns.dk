@@ -373,7 +373,7 @@ msgid ""
 "individual with my own money. If you have questions or comments please see "
 "the <a href=\"%(contacturl)s\">contact page</a>."
 msgstr ""
-"Mit navn er Thomas Steen Rasmussen. Jeg opererer denne DNS tjeneste som "
+"Mit navn er Thomas Steen Rasmussen. Jeg driver denne DNS tjeneste som "
 "privatperson for mine egne penge. Hvis du har spørgsmål eller kommentarer "
 "kan du kigge på <a href=\"%(contacturl)s\">kontakt</a> siden."
 
