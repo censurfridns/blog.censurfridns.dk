@@ -11,7 +11,11 @@
                     <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> {% trans 'written on' %} {{ post.created_date }}</li>
                 {% endfor %}
             </ul>
-            <h4><i class="icon-rss"></i> <a href="{% url 'tagrssfeed' slug=slug %}">RSS</a> <a href="{% url 'tagatomfeed' slug=slug %}">Atom</a></h4>
+            <p>
+                <b>
+                    <span class="glyphicon glyphicon-rss"></span> <a href="{% url 'tagrssfeed' slug=slug %}">RSS</a> <a href="{% url 'tagatomfeed' slug=slug %}">Atom</a>
+                </b>
+            </p>
         {% else %}
             <p>{% trans 'Tag not found' %}</p>
         {% endif %}
