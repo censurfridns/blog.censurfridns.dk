@@ -15,9 +15,7 @@
                     <h3>
                         <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
                     </h3>
-                    <p class="lead">
-                        by <a href="{% url 'about_me' %}">Tykling</a>
-                    </p>
+                    <p class="lead">by Tykling</p>
                     <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
                     <p>{% trans 'Tags:' %}
                     {% for tag in blogpost.tags.all %}
