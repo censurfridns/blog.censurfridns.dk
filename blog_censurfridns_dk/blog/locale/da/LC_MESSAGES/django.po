@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 00:39+0000\n"
+"POT-Creation-Date: 2016-03-27 10:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "Brok og driftsinformation"
 
 #: blog/templates/blog/blogpost_list.html:22
 msgid "Tags:"
-msgstr ""
+msgstr "Kategorier:"
 
 #: blog/templates/blog/blogpost_list.html:34
 msgid "previous"
@@ -96,7 +96,7 @@ msgstr "Viser %(count)s af %(count)s blogindlæg"
 
 #: blog/templates/blog/blogpost_list.html:60
 msgid "Tags used on this blog"
-msgstr "Tags brugt på denne blog"
+msgstr "Kategorier brugt på denne blog"
 
 #: blog/templates/searchpanel.html:3
 msgid "Search this blog"
@@ -216,7 +216,8 @@ msgstr "Noter"
 
 #: blog/templates/static/dns-servers.html:22
 msgid "This server is anycast from multiple locations. Faster and more stable."
-msgstr "Denne server er anycastet fra flere lokationer. Hurtigere og mere stabil."
+msgstr ""
+"Denne server er anycastet fra flere lokationer. Hurtigere og mere stabil."
 
 #: blog/templates/static/dns-servers.html:28
 msgid ""
@@ -227,15 +228,19 @@ msgstr ""
 #: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:8
 #, python-format
 msgid "Blogposts tagged %(name)s"
-msgstr "Blogindlæg tagget %(name)s"
+msgstr "Blogindlæg i kategorien %(name)s"
 
 #: blog/templates/tag_lookup.html:3 blog/templates/tag_lookup.html.py:15
 msgid "Tag not found"
-msgstr "Tag ikke fundet"
+msgstr "Kategori ikke fundet"
 
 #: blog/templates/tag_lookup.html:11
 msgid "written on"
 msgstr "skrevet den"
+
+#: blog/urls.py:26
+msgid "^tags/(?P<slug>[\\w-]+)/$"
+msgstr "^kategorier/(?P<slug>[\\w-]+)/$"
 
 #: blog/urls.py:29
 msgid "^feeds/rss/$"
