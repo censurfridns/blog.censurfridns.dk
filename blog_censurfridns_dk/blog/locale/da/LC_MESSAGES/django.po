@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 14:50+0000\n"
+"POT-Creation-Date: 2016-03-27 15:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,9 +132,9 @@ msgid ""
 "with a Danish internet provider, I was born in 1979. I run this service as a "
 "private individual, with my own money."
 msgstr ""
-"Tjenesten drives af Thomas Steen Rasmussen. Jeg er system administrator "
-"hos en dansk internet udbyder. Jeg er født i 1979. Jeg driver denne "
-"tjeneste som privatperson for mine egne penge."
+"Tjenesten drives af Thomas Steen Rasmussen. Jeg er system administrator hos "
+"en dansk internet udbyder. Jeg er født i 1979. Jeg driver denne tjeneste som "
+"privatperson for mine egne penge."
 
 #: blog/templates/frontpage.html:12
 msgid ""
@@ -143,6 +143,10 @@ msgid ""
 msgstr ""
 "Du kan læse mere ved hjælp af menuen i toppen, eller hvis du bare vil have "
 "server IPerne kan du se dem til højre."
+
+#: blog/templates/frontpage.html:16
+msgid "Latest blogposts"
+msgstr "Seneste blogindlæg"
 
 #: blog/templates/frontpage.html:36
 msgid "DNS servers"
@@ -157,8 +161,8 @@ msgid ""
 "Follow <a href='https://twitter.com/censurfridns'>@censurfridns</a> on "
 "twitter for updates and information on the project."
 msgstr ""
-"Følg <a href='https://twitter.com/censurfridns'>@censurfridns</a> på "
-"twitter for nyheder og information om projektet."
+"Følg <a href='https://twitter.com/censurfridns'>@censurfridns</a> på twitter "
+"for nyheder og information om projektet."
 
 #: blog/templates/searchpanel.html:3
 msgid "Search this blog"
