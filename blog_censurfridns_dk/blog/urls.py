@@ -1,9 +1,11 @@
+from django.core.urlresolvers import reverse_lazy
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from .feeds import BlogPostRssFeed, BlogPostAtomFeed
+from .feeds import AllBlogPostRssFeed, AllBlogPostAtomFeed, TagBlogPostRssFeed, TagBlogPostAtomFeed
 import blog.views
 
 
@@ -29,8 +31,16 @@ urlpatterns = [
     url(_(r'^tags/(?P<slug>[\w-]+)/$'), blog.views.tag_lookup, name='tag_lookup'),
 
     ### syndication
-    url(_(r'^feeds/rss/$'), BlogPostRssFeed(), name='rssfeed'),
-    url(_(r'^feeds/atom/$'), BlogPostAtomFeed(), name='atomfeed'),
+    url(_(r'^feeds/rss/all/$'), AllBlogPostRssFeed(), name='allrssfeed'),
+    url(_(r'^feeds/atom/all/$'), AllBlogPostAtomFeed(), name='allatomfeed'),
+    url(_(r'^feeds/rss/tag/(?P<slug>[\w-]+)/$'), TagBlogPostRssFeed(), name='tagrssfeed'),
+    url(_(r'^feeds/atom/tag/(?P<slug>[\w-]+)/$'), TagBlogPostAtomFeed(), name='tagatomfeed'),
+
+    ### old rss feed url redirects
+    url(r'^en/taxonomy/term/4/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'system-status'})),
+    url(r'^en/rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed')),
+    url(r'^taxonomy/term/2/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'driftinfo'})),
+    url(r'^rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed')),
 
     ### static pages
     url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="static/dns-servers.html"), name='dns_servers'),
