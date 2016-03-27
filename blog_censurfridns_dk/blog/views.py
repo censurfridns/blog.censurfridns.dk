@@ -17,7 +17,7 @@ def frontpage(request):
 
 def feeds(request):
     tags = Tag.objects.all()
-    return render(request, 'rss.html', {
+    return render(request, 'feeds.html', {
         'tags': tags,
     })
 
