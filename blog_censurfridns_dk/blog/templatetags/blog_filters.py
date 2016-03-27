@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import translation
 from blog.models import BlogPost
 import CommonMark
+from taggit.models import Tag
 
 register = template.Library()
 
@@ -24,18 +25,24 @@ def get_i18n_url(url, lang):
     ### resolve url to ResolverMatch object
     match = resolve(url)
 
-    ### handle blogpost_detail view differently
-    if match.view_name == 'blogpost_detail':
+    ### handle blogpost_detail and tag_lookup views differently
+    if match.view_name == 'blogpost_detail' or match.view_name == 'tag_lookup':
         ### create a filter to find the blogpost from the current url
         filter = {
             'slug_%s' % from_lang: match.kwargs['slug'],
         }
-        blogpost = BlogPost.objects.get(**filter)
+        if match.view_name == 'blogpost_detail':
+            blogpost = BlogPost.objects.get(**filter)
 
-        ### get slug for this blogpost in the new language
-        slug = getattr(blogpost, 'slug_%s' % to_lang)
+            ### get slug for this blogpost in the new language
+            slug = getattr(blogpost, 'slug_%s' % to_lang)
+        elif match.view_name == 'tag_lookup':
+            tag = Tag.objects.get(**filter)
+            
+            ### get slug for this tag in the new language
+            slug = getattr(tag, 'slug_%s' % to_lang)
 
-        ### get url for this blogpost with the slug in the new language
+        ### get url for this object with the slug in the new language
         path = reverse(match.func, kwargs={'slug': slug})
     else:
         with translation.override(to_lang):
