@@ -14,3 +14,6 @@ MAIN_WRITELOCK
 *.pst
 *.trm
 *.ctmp
+
+#virtualenv
+venv/

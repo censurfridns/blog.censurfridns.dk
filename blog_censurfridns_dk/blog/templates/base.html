@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{% trans 'UncensoredDNS Blog' %}">
         <meta name="author" content="Thomas Steen Rasmussen - Tykling">
         <title>{% block head_title %}{% endblock head_title %} - {% trans 'uncensoreddns blog' %}</title>
@@ -14,6 +14,14 @@
         <link rel="stylesheet" href="/static/css/font-awesome.min.css">
         <script type="text/javascript" src="/static/js/jquery.min.js"></script>
         <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        
+        <!-- material design -->
+        <link rel="stylesheet" href="/static/css/material-design.min.css">
+        <link rel="stylesheet" href="/static/css/material-icons.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- local? -->
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <!-- end material design -->
+
         {% block extra_head %}
         {% endblock extra_head %}
     </head>
