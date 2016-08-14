@@ -1,46 +1,12 @@
-{% extends "base.html" %}
-{% load blog_filters i18n %}
-{% block head_title %}{{ blogpost.title }}{% endblock head_title %}
-{% block content %}
-            <div class="row">
-                <!-- Blog Post Content Column -->
-                <div class="col-lg-8">
-                    <h1>{{ blogpost.title }}</h1>
-
-                    <!-- Author -->
-                    <p class="lead">by Tykling</p>
-                    <hr>
-                    
-                    <!-- Date/Time -->
-                    <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
-
-                    <hr>
-
-                    <!-- Post Content -->
-                    {{ blogpost.body|markdown|safe }}
-                </div>
-
-                <!-- Blog Sidebar Widgets Column -->
-                <div class="col-md-4">
-
-                {% comment %}
-                    <!-- Blog Search Well -->
-                    {% include 'searchpanel.html' %}
-                {% endcomment %}
-
-                    <!-- Blog Tags Well -->
-                    <div class="well">
-                        <h4>{% trans 'Tags for this blogpost' %}</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="text-center">
-                                    {% for tag in blogpost.tags.all %}
-                                        <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div> <!-- /.row -->
-                    </div>
-                </div>
-            </div> <!-- /.row -->
+{% extends "base.html" %} {% load blog_filters i18n %} {% block head_title %}{{ blogpost.title }}{% endblock head_title %} {% block content %}
+<section class="blogposts mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+        <h1 class="mdl-typography--display-2 roboto-light">{{ blogpost.title }}</h1>
+        <p class="mdl-typography--caption-color-contrast">by Tykling @ {{ blogpost.created_date |date:"F d, Y H:i" }}</p>
+        {{ blogpost.body|markdown|safe }} {% trans 'Tags:' %} {% for tag in blogpost.tags.all %} {% if not tag.slug == "" %}
+        <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="md-chip">{{ tag }}</span></a> {% endif %} {% endfor %}
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}

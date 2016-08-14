@@ -1,20 +1,14 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block head_title %}{% trans 'About this service' %}{% endblock head_title %}
-{% block content %}
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>{% trans "About this service" %}</h2>
-
-                        <p>{% trans "UncensoredDNS was started in November 2009 shortly after I began working at an ISP where one of my responsibilities was to administer the censored DNS servers that all Danish ISPs run for their customers." %}</p>
-
-                        <p>{% trans "I had never been a fan of the Danish DNS censorship system, and working with it first hand didn't exactly help. At the time OpenDNS was kind of new and Google DNS didn't exist yet. Friends and family were coming to me asking for a recommendation for an alternative to the censored ISP DNS servers." %}</p>
-
-                        <p>{% trans "Back then OpenDNS did NXDOMAIN redirection, an advertising trick where misspelled nonexistant domains are redirected to a search page with ads instead of returning an NXDOMAIN error. To a DNS purist like myself this made OpenDNS as appealing as a turd on a stick. They also didn't have ipv6 or DNSSEC, both of which were mandatory on a modern DNS server, even back in 2009." %}</p>
-
-                        <p>{% trans "Even if Google DNS had existed back then I wouldn't have felt comfortable recommending them either. While they do run a stable, fast and uncensored service, I am not convinced that it is a good idea to hand over all your DNS lookups to Google. They already have all your searches, you might have one of their phones in your pocket, and so on." %}</p>
-
-                        <p>{% trans "All this prompted me to do something about the situation so I started UncensoredDNS with help from friends. After a while I also started giving talks about the service at various conferences, since people naturally have an easier time trusting a service if they know who is behind it. You can see some of my old talks online, for example from" %} <a href="https://ripe65.ripe.net/archives/video/4/">RIPE65</a>.</p>
-                    </div>
-                </div> <!-- /.row -->
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans 'About this service' %}{% endblock head_title %} {% block content %}
+<section class="tagcloud mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--6-col mdl-grid">
+        <h1 class="mdl-typography--display-2 roboto-light">{% trans "About this service" %}</h1>
+        <p>{% trans "UncensoredDNS was started in November 2009 shortly after I began working at an ISP where one of my responsibilities was to administer the censored DNS servers that all Danish ISPs run for their customers." %}</p>
+        <p>{% trans "I had never been a fan of the Danish DNS censorship system, and working with it first hand didn't exactly help. At the time OpenDNS was kind of new and Google DNS didn't exist yet. Friends and family were coming to me asking for a recommendation for an alternative to the censored ISP DNS servers." %}</p>
+        <p>{% trans "Back then OpenDNS did NXDOMAIN redirection, an advertising trick where misspelled nonexistant domains are redirected to a search page with ads instead of returning an NXDOMAIN error. To a DNS purist like myself this made OpenDNS as appealing as a turd on a stick. They also didn't have ipv6 or DNSSEC, both of which were mandatory on a modern DNS server, even back in 2009." %}</p>
+        <p>{% trans "Even if Google DNS had existed back then I wouldn't have felt comfortable recommending them either. While they do run a stable, fast and uncensored service, I am not convinced that it is a good idea to hand over all your DNS lookups to Google. They already have all your searches, you might have one of their phones in your pocket, and so on." %}</p>
+        <p>{% trans "All this prompted me to do something about the situation so I started UncensoredDNS with help from friends. After a while I also started giving talks about the service at various conferences, since people naturally have an easier time trusting a service if they know who is behind it. You can see some of my old talks online, for example from" %} <a href="https://ripe65.ripe.net/archives/video/4/">RIPE65</a>.</p>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}

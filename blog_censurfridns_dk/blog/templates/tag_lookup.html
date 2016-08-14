@@ -1,24 +1,24 @@
-{% extends "base.html" %}
-{% load blog_filters i18n %}
-{% block head_title %}{% if tag %}{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}{% else %}{% trans 'Tag not found' %}{% endif %}{% endblock head_title %}
-{% block content %}
-<div class="row">
-    <div class="col-lg-12">
+{% extends "base.html" %} {% load blog_filters i18n %} {% block head_title %}{% if tag %}{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}{% else %}{% trans 'Tag not found' %}{% endif %}{% endblock head_title %} {% block content %}
+<section class="tagcloud mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--6-col">
         {% if blogposts %}
-            <h3>{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h3>
-            <ul>
-                {% for post in blogposts %}
-                    <li><a href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a> {% trans 'written on' %} {{ post.created_date }}</li>
-                {% endfor %}
-            </ul>
-            <p>
-                <b>
-                    <span class="glyphicon glyphicon-rss"></span> <a href="{% url 'tagrssfeed' slug=slug %}">RSS</a> <a href="{% url 'tagatomfeed' slug=slug %}">Atom</a>
-                </b>
-            </p>
+        <h1 class="mdl-typography--display-2 roboto-light">{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h1>
+        <ul class="blog-list">
+            {% for post in blogposts %}
+            <li class="blog-post">
+                <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=post.slug %}">{{ post.title }}</a></h4>
+                <small>by Tykling @ {{ post.created_date |date:"F d, Y" }}</small>
+                <p>{{ post.body|safe|truncatechars:350 }}</p>
+                <hr />
+            </li>
+            {% endfor %}
+        </ul>
+                    <p class="rss-icon-text-container"><i class="material-icons">rss_feed</i> <a href="{% url 'tagrssfeed' slug=slug %}">RSS</a> <a href="{% url 'tagatomfeed' slug=slug %}">Atom</a></p>
         {% else %}
-            <p>{% trans 'Tag not found' %}</p>
+        <p>{% trans 'Tag not found' %}</p>
         {% endif %}
     </div>
-</div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}
