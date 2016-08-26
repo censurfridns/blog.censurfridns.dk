@@ -21,11 +21,12 @@
     <!-- end material design -->
     {% block extra_head %} {% endblock extra_head %}
 </head>
+
 <body class="mdl-color--blue-grey-50">
     <!-- The header is always shown, even in small screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
         <header class="mdl-layout__header mdl-color--primary-contrast">
-            <div class="mdl-layout__header-row max-width">
+            <div class="mdl-layout__header-row">
                 <a class="mdl-layout-title mdl-color-text--primary" href="{% url 'frontpage' %}">{% trans 'UncensoredDNS' %}</a>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/blog/" in request.path %} menu-active{% endif %}" href="{% url 'blog' %}">{% trans 'Blog' %}</a>
@@ -57,15 +58,27 @@
                 {% endif %}
             </div>
         </header>
+        <div class="mdl-layout__drawer">
+            <a class="mdl-layout-title mdl-color-text--primary" href="{% url 'frontpage' %}">{% trans 'UncensoredDNS' %}</a>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link {% if "/blog/" in request.path %} menu-active{% endif %}" href="{% url 'blog' %}">{% trans 'Blog' %}</a>
+                <a class="mdl-navigation__link {% if "/dns-servers/" in request.path %} menu-active{% endif %}" href="{% url 'dns_servers' %}">{% trans 'DNS Servers' %}</a>
+                <a class="mdl-navigation__link {% if "/about/" in request.path %} menu-active{% endif %}" href="{% url 'about' %}">{% trans 'About' %}</a>
+                <a class="mdl-navigation__link {% if "/faq/" in request.path %} menu-active{% endif %}" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+                <a class="mdl-navigation__link {% if "/feeds/" in request.path %} menu-active{% endif %}" href="{% url 'feeds' %}">{% trans 'RSS+Atom' %}</a>
+                <a class="mdl-navigation__link {% if "/contact/" in request.path %} menu-active{% endif %}" href="{% url 'contact' %}">{% trans 'Contact' %}</a>
+            </nav>
+        </div>
         <main class="mdl-layout__content">
             <div class="page-content">
                 {% block content %} {% endblock content %}
             </div>
             <footer class="mdl-mega-footer">
-                <div class="max-width">
-                    <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-mega-footer__middle-section">
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                         <h1 class="mdl-mega-footer__heading">DNS Servers</h1>
-                        <ul class="footer-item">
+                        <ul class="mdl-mega-footer__link-list">
                             <li><strong>anycast.censurfridns.dk</strong></li>
                             <li>91.239.100.100</li>
                             <li>2001:67c:28a4::</li>
@@ -75,7 +88,8 @@
                             <li>2002:d596:2a92:1:71:53::</li>
                         </ul>
                     </div>
-                    <div class="mdl-cell mdl-cell--4-col mdl-mega-footer__drop-down-section">
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                         <h1 class="mdl-mega-footer__heading">Sitemap</h1>
                         <ul class="mdl-mega-footer__link-list">
                             <li><a href="{% url 'blog' %}">{% trans 'Blog' %}</a></li>
@@ -86,7 +100,18 @@
                             <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
                         </ul>
                     </div>
-                    <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-mega-footer__drop-down-section mdl-layout--large-screen-only">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Feeds</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'allrssfeed' %}">All RSS</a></li>
+                            <li><a href="{% url 'allatomfeed' %}">All Atom</a></li>
+                            <br />
+                            <li><a href="{% url 'feeds' %}">Feeds by tags</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
                         <h1 class="mdl-mega-footer__heading">Contact</h1>
                         <ul class="mdl-mega-footer__link-list">
                             <li>Twitter: <a class="" href="https://twitter.com/censurfridns">@censurfridns</a></li>

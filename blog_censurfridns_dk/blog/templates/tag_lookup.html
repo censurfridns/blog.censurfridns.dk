@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% load blog_filters i18n %} {% block head_title %}{% if tag %}{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}{% else %}{% trans 'Tag not found' %}{% endif %}{% endblock head_title %} {% block content %}
 <section class="tagcloud mdl-color--blue-grey-50">
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--6-col">
+    <div class="mdl-cell mdl-cell--10-col">
         {% if blogposts %}
-        <h1 class="mdl-typography--display-2 roboto-light">{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h1>
+        <h1 class="mdl-typography--display-1 roboto-light">{% blocktrans with name=tag.name %}Blogposts tagged {{ name }}{% endblocktrans %}</h1>
         <ul class="blog-list">
             {% for post in blogposts %}
             <li class="blog-post">

@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% load blog_filters i18n taggit_templatetags2_tags %} {% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %} {% block content %}
 <section class="tagcloud mdl-color--blue-grey-100">
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--6-col mdl-grid mdl-typography--text-center cloud-container">
-     <h1 class="mdl-typography--display-2 roboto-light">{% trans 'Tags used on this blog' %}</h1> {% get_taglist as tags %}
+    <div class="mdl-cell mdl-cell--10-col mdl-grid mdl-typography--text-center cloud-container">
+     <h1 class="mdl-typography--display-1 roboto-light">{% trans 'Tags used on this blog' %}</h1> {% get_taglist as tags %}
         <div>
             {% for tag in tags %} {% if not tag.slug == "" %}
             <a href="{% url 'tag_lookup' slug=tag.slug %}" class="blog-tag blog-tag-count-{{tag.num_times}}">
@@ -15,9 +15,9 @@
 </section>
 <section class="blogposts mdl-color--blue-grey-50">
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--6-col mdl-grid">
-        <h1 class="mdl-typography--display-2 section-header with-subheader roboto-light">{% trans 'UncensoredDNS Blog' %}</h1>
-        <h1 class="section-header mdl-typography--display-2-color-contrast roboto-light oneline-subhead"> {% trans 'Rants and service information' %}</h2>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <h1 class="mdl-typography--display-1 section-header with-subheader roboto-light">{% trans 'UncensoredDNS Blog' %}</h1>
+        <h1 class="section-header mdl-typography--display-1-color-contrast roboto-light oneline-subhead"> {% trans 'Rants and service information' %}</h2>
         <ul class="blog-list">
             {% for blogpost in blogpost_list %}
             <li class="blog-post">
