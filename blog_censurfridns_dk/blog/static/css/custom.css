@@ -278,3 +278,7 @@ section.tagcloud .cloud-container {
 .flex-centered {
     justify-content: center;
 }
+
+.lang-flag {
+    vertical-align: sub;
+}

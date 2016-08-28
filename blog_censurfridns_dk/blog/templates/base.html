@@ -43,7 +43,7 @@
                     <div>
                         <input type="hidden" name="language" value="en">
                         <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'da,en' }}">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="enlanguage" type="submit"><img src="/static/images/en.png" alt="english"> English</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="enlanguage" type="submit"><img class="lang-flag" src="/static/images/en.png" alt="english"> English</button>
                     </div>
                 </form>
                 {% elif LANGUAGE_CODE == 'en' %}
@@ -52,7 +52,7 @@
                     <div>
                         <input type="hidden" name="language" value="da" />
                         <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'en,da' }}">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="dalanguage" type="submit"><img src="/static/images/da.png" alt="dansk"> Dansk</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="dalanguage" type="submit"><img class="lang-flag" src="/static/images/da.png" alt="dansk"> Dansk</button>
                     </div>
                 </form>
                 {% endif %}
