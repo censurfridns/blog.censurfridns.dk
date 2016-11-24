@@ -17,3 +17,7 @@ MAIN_WRITELOCK
 
 #virtualenv
 venv/
+
+# gettext
+*.mo
+
