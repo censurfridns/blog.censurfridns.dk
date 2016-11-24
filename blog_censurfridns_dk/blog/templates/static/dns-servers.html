@@ -1,34 +1,27 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block head_title %}{% trans 'DNS Servers' %}{% endblock head_title %}
-{% block content %}
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p><b>{% trans 'DNS Servers' %}</b></p>
-                        <table class="table table-bordered">
-                            <thead>
-                              <tr>
-                                <th>{% trans 'Server Name' %}</th>
-                                <th>{% trans 'IPv4' %}</th>
-                                <th>{% trans 'IPv6' %}</th>
-                                <th>{% trans 'Notes' %}</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr class="success">
-                                <td>anycast.censurfridns.dk</td>
-                                <td>91.239.100.100</td>
-                                <td>2001:67c:28a4::</td>
-                                <td>{% trans 'This server is anycast from multiple locations. Faster and more stable.' %}</td>
-                              </tr>
-                              <tr class="success">
-                                <td>ns1.censurfridns.dk</td>
-                                <td>89.233.43.71</td>
-                                <td>2002:d596:2a92:1:71:53::</td>
-                                <td>{% trans 'IPv6 for ns1 is provided by 6to4 and will be replaced with native IPv6 soon.' %}</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans 'DNS Servers' %}{% endblock head_title %} {% block content %}
+<section class="faq mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop dns-header-container mdl-typography--text-center flex-centered">
+            <h1 class="mdl-typography--display-1 roboto-light">{% trans 'DNS servers' %}</h1>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
+            <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
+            <p class="code">91.239.100.100
+                <br>2001:67c:28a4::</p>
+            <p>Anycast from multiple locations.
+                <br /> Faster and more stable</p>
+            <hr />
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
+            <p class="mdl-typography--headline code section-header roboto-light">ns1.censurfridns.dk</p>
+            <p class="code">89.233.43.71
+                <br>2002:d596:2a92:1:71:53::</p>
+            <p>IPv6 for ns1 is provided by 6to4.
+                <br /> Will be replaced with native IPv6 soon</p>
+            <hr />
+        </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}

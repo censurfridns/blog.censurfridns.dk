@@ -1,10 +1,8 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block head_title %}{% trans 'RSS/Atom' %}{% endblock head_title %}
-{% block content %}
-<div class="row">
-    <div class="col-lg-12">
-        <h3>RSS/Atom</h3>
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans 'RSS/Atom' %}{% endblock head_title %} {% block content %}
+<section class="faq mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col">
+        <h1 class="mdl-typography--display-1 roboto-light">RSS/Atom</h1>
         <p>{% trans 'The following two RSS/Atom feeds contain all blogposts:' %}</p>
         <ul class="list-unstyled">
             <li><a href="{% url 'allrssfeed' %}">RSS</a></li>
@@ -13,13 +11,14 @@
         <p>{% trans 'This list contains RSS/Atom feeds for each of the tags used on this blog:' %}</p>
         <ul class="list-unstyled">
             {% for tag in tags %}
-                <li>
-                    <b>{{ tag }}</b>:
-                    <a href="{% url 'tagrssfeed' slug=tag.slug %}">RSS</a> 
-                    <a href="{% url 'tagatomfeed' slug=tag.slug %}">Atom</a>
-                </li>
+            <li>
+                <strong>{{ tag }}</strong>:
+                <a href="{% url 'tagrssfeed' slug=tag.slug %}">RSS</a>
+                <a href="{% url 'tagatomfeed' slug=tag.slug %}">Atom</a>
+            </li>
             {% endfor %}
         </ul>
     </div>
-</div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}

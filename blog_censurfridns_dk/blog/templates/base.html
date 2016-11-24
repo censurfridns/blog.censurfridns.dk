@@ -1,101 +1,134 @@
-{% load blog_filters i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% load blog_filters i18n %} {% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{% trans 'UncensoredDNS Blog' %}">
-        <meta name="author" content="Thomas Steen Rasmussen - Tykling">
-        <title>{% block head_title %}{% endblock head_title %} - {% trans 'uncensoreddns blog' %}</title>
-        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/static/css/navbar-fixed-top.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-        {% block extra_head %}
-        {% endblock extra_head %}
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">{% trans 'Toggle navigation' %}</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{% url 'frontpage' %}">{% trans 'UncensoredDNS' %}</a>
-                </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="{% url 'blog' %}">{% trans 'Blog' %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'dns_servers' %}">{% trans 'DNS Servers' %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'about' %}">{% trans 'About' %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'feeds' %}">{% trans 'RSS+Atom' %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'contact' %}">{% trans 'Contact' %}</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right navbar-form">
-                        {% if LANGUAGE_CODE == 'da' %}
-                        <li>
-                            <form action="{% url 'set_language' %}" method="post">
-                                {% csrf_token %}
-                                <div>
-                                    <input type="hidden" name="language" value="en">
-                                    <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'da,en' }}">
-                                    <button class="btn btn-default" id="enlanguage" type="submit"><img src="/static/images/en.png" alt="english"> English</button>
-                                </div>
-                            </form>
-                        </li>
-                        {% elif LANGUAGE_CODE == 'en' %}
-                        <li>
-                            <form action="{% url 'set_language' %}" method="post">
-                                {% csrf_token %}
-                                <div>
-                                    <input type="hidden" name="language" value="da"/>
-                                    <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'en,da' }}">
-                                    <button class="btn btn-default" id="dalanguage" type="submit"><img src="/static/images/da.png" alt="dansk"> Dansk</button>
-                                </div>
-                            </form>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div> <!-- /.navbar-collapse -->
-            </div> <!-- /.container -->
-        </nav>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% trans 'UncensoredDNS Blog' %}">
+    <meta name="author" content="Thomas Steen Rasmussen - Tykling">
+    <title>{% block head_title %}{% endblock head_title %} - {% trans 'uncensoreddns blog' %}</title>
+    <!-- material design -->
+    <!-- local? -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-blue.min.css" />
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/material-icons.css">
+    <!-- local? -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/static/js/material.min.js"></script>
+    <!-- end material design -->
+    {% block extra_head %} {% endblock extra_head %}
+</head>
 
-        <!-- Page Content -->
-        <div class="container">
-            {% block content %}
-            {% endblock content %}
-            <!-- Footer -->
-            <hr>
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p><i>{% trans 'Copyright &copy; Thomas Steen Rasmussen 2009-' %}{% now "Y" %}</i></p>
+<body class="mdl-color--blue-grey-50">
+    <!-- The header is always shown, even in small screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
+        <header class="mdl-layout__header mdl-color--primary-contrast">
+            <div class="mdl-layout__header-row">
+                <a class="mdl-layout-title mdl-color-text--primary" href="{% url 'frontpage' %}">{% trans 'UncensoredDNS' %}</a>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/blog/" in request.path %} menu-active{% endif %}" href="{% url 'blog' %}">{% trans 'Blog' %}</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/dns-servers/" in request.path %} menu-active{% endif %}" href="{% url 'dns_servers' %}">{% trans 'DNS Servers' %}</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/about/" in request.path %} menu-active{% endif %}" href="{% url 'about' %}">{% trans 'About' %}</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/faq/" in request.path %} menu-active{% endif %}" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/feeds/" in request.path %} menu-active{% endif %}" href="{% url 'feeds' %}">{% trans 'RSS+Atom' %}</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/contact/" in request.path %} menu-active{% endif %}" href="{% url 'contact' %}">{% trans 'Contact' %}</a>
+                </nav>
+                <div class="mdl-layout-spacer"></div>
+                {% if LANGUAGE_CODE == 'da' %}
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="hidden" name="language" value="en">
+                        <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'da,en' }}">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="enlanguage" type="submit"><img class="lang-flag" src="/static/images/en.png" alt="english"> English</button>
                     </div>
-                </div> <!-- /.row -->
+                </form>
+                {% elif LANGUAGE_CODE == 'en' %}
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="hidden" name="language" value="da" />
+                        <input type="hidden" name="next" value="{{ request.get_full_path|get_i18n_url:'en,da' }}">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="dalanguage" type="submit"><img class="lang-flag" src="/static/images/da.png" alt="dansk"> Dansk</button>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <a class="mdl-layout-title mdl-color-text--primary" href="{% url 'frontpage' %}">{% trans 'UncensoredDNS' %}</a>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link {% if "/blog/" in request.path %} menu-active{% endif %}" href="{% url 'blog' %}">{% trans 'Blog' %}</a>
+                <a class="mdl-navigation__link {% if "/dns-servers/" in request.path %} menu-active{% endif %}" href="{% url 'dns_servers' %}">{% trans 'DNS Servers' %}</a>
+                <a class="mdl-navigation__link {% if "/about/" in request.path %} menu-active{% endif %}" href="{% url 'about' %}">{% trans 'About' %}</a>
+                <a class="mdl-navigation__link {% if "/faq/" in request.path %} menu-active{% endif %}" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+                <a class="mdl-navigation__link {% if "/feeds/" in request.path %} menu-active{% endif %}" href="{% url 'feeds' %}">{% trans 'RSS+Atom' %}</a>
+                <a class="mdl-navigation__link {% if "/contact/" in request.path %} menu-active{% endif %}" href="{% url 'contact' %}">{% trans 'Contact' %}</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                {% block content %} {% endblock content %}
+            </div>
+            <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer__middle-section">
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">DNS Servers</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><strong>anycast.censurfridns.dk</strong></li>
+                            <li>91.239.100.100</li>
+                            <li>2001:67c:28a4::</li>
+                            <br />
+                            <li><strong>ns1.censurfridns.dk</strong></li>
+                            <li>89.233.43.71</li>
+                            <li>2002:d596:2a92:1:71:53::</li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Sitemap</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'blog' %}">{% trans 'Blog' %}</a></li>
+                            <li><a href="{% url 'dns_servers' %}">{% trans 'DNS Servers' %}</a></li>
+                            <li><a href="{% url 'about' %}">{% trans 'About' %}</a></li>
+                            <li><a href="{% url 'faq' %}">{% trans 'FAQ' %}</a></li>
+                            <li><a href="{% url 'feeds' %}">{% trans 'RSS+Atom' %}</a></li>
+                            <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer__drop-down-section mdl-layout--large-screen-only">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Feeds</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'allrssfeed' %}">All RSS</a></li>
+                            <li><a href="{% url 'allatomfeed' %}">All Atom</a></li>
+                            <br />
+                            <li><a href="{% url 'feeds' %}">Feeds by tags</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Contact</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li>Twitter: <a class="" href="https://twitter.com/censurfridns">@censurfridns</a></li>
+                            <li>IRC: <a class="" href="ircs://chat.freenode.net:6697/#censurfridns">#censurfridns (Freenode)</a></li>
+                            <li>Email: <a class="" href="mailto:admin@censurfridns.dk">admin@censurfridns.dk</a></li>
+                            <li>Jabber (OTR): <a class="" href="xmpp:tykling@cloak.dk">tykling@cloak.dk</a></li>
+                        </ul>
+                    </div>
+                </div>
             </footer>
-        </div> <!-- /.container -->
-    </body>
+            <footer class="mdl-mega-footer mdl-color--grey-900">
+                <div class="mdl-mega-footer__bottom-section mdl-typography--text-center">
+                    <i>{% trans 'Copyright &copy; Thomas Steen Rasmussen 2009-' %}{% now "Y" %}</i>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
 </html>

@@ -1,75 +1,36 @@
-{% extends "base.html" %}
-{% load blog_filters i18n taggit_templatetags2_tags %}
-{% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %}
-{% block content %}
-        <div class="row">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-
-                <h1 class="page-header">
-                    {% trans 'UncensoredDNS Blog' %}
-                    <small>{% trans 'Rants and service information' %}</small>
-                </h1>
-
-                {% for blogpost in blogpost_list %}
-                    <h3>
-                        <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
-                    </h3>
-                    <p class="lead">by Tykling</p>
-                    <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
-                    <p>{% trans 'Tags:' %}
-                    {% for tag in blogpost.tags.all %}
-                        {% if not tag.slug == "" %}
-                            <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
-                        {% endif %}
-                    {% endfor %}
-                    <hr>
-                {% endfor %}
-
-            {% if is_paginated %}
-                <!-- Pager -->
-                <div class="pagination">
-                    <span class="page-links">
-                        {% if page_obj.has_previous %}
-                            <a href="?page={{ page_obj.previous_page_number }}">&larr; {% trans 'previous' %}</a>
-                        {% endif %}
-                        <span class="page-current">
-                            {% blocktrans with number=page_obj.number total=page_obj.paginator.num_pages %}Page {{ number }} of {{ total }}{% endblocktrans %}
-                        </span>
-                        {% if page_obj.has_next %}
-                            <a href="?page={{ page_obj.next_page_number }}">{% trans 'next' %} &rarr;</a>
-                        {% endif %}
-                    </span>
-                </div>
-            {% else %}
-                <p><i>{% blocktrans with count=blogpost_list.count %}Showing {{ count }} of {{ count }} blogposts{% endblocktrans %}</i></p>
-            {% endif %}
-            </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-                {% comment %}
-                <!-- Blog Search Well -->
-                {% include 'searchpanel.html' %}
-                {% endcomment %}
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>{% trans 'Tags used on this blog' %}</h4>
-                    <div class="row">
-                    <p>
-                    {% get_taglist as tags %}
-                    <div class="text-center">
-                    {% for tag in tags %}
-                        {% if not tag.slug == "" %}
-                            <a href="{% url 'tag_lookup' slug=tag.slug %}"><font size={{tag.num_times|floatformat:0|add:"2"}}><span class="label label-primary">{{tag}}</span></font></a>
-                        {% endif %}
-                    {% endfor %}
-                    </div>
-                    </p>
-                    </div> <!-- /.row -->
-                </div>
-            </div>
+{% extends "base.html" %} {% load blog_filters i18n taggit_templatetags2_tags %} {% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %} {% block content %}
+<section class="tagcloud mdl-color--blue-grey-100">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid mdl-typography--text-center cloud-container">
+     <h1 class="mdl-typography--display-1 roboto-light">{% trans 'Tags used on this blog' %}</h1> {% get_taglist as tags %}
+        <div>
+            {% for tag in tags %} {% if not tag.slug == "" %}
+            <a href="{% url 'tag_lookup' slug=tag.slug %}" class="blog-tag blog-tag-count-{{tag.num_times}}">
+                {{tag}}
+            </a>
+            {% endif %} {% endfor %}
         </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
+<section class="blogposts mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <h1 class="mdl-typography--display-1 section-header with-subheader roboto-light">{% trans 'UncensoredDNS Blog' %}</h1>
+        <h1 class="section-header mdl-typography--display-1-color-contrast roboto-light oneline-subhead"> {% trans 'Rants and service information' %}</h2>
+        <ul class="blog-list">
+            {% for blogpost in blogpost_list %}
+            <li class="blog-post">
+                <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a></h4>
+                <small>by Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>
+                <p>{{ blogpost.body|safe|truncatechars:350 }}</p>
+                {% trans 'Tags:' %} {% for tag in blogpost.tags.all %} {% if not tag.slug == "" %}
+                <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="md-chip">{{ tag }}</span></a> {% endif %} {% endfor %}
+                <hr />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}

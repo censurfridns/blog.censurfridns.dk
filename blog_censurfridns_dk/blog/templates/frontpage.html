@@ -1,57 +1,74 @@
-{% extends "base.html" %}
-{% load blog_filters i18n %}
-{% block head_title %}{% trans 'UncensoredDNS' %}{% endblock head_title %}
-{% block content %}
-<div class="row">
-    <div class="col-lg-8">
-        <div class="row">
-            <div class="jumbotron">
-                <h2>{% trans "Welcome to UncensoredDNS" %}</h2>
-                <p>{% trans "UncensoredDNS is the name of a DNS service which consists of two uncensored DNS servers. The servers are available for use by anyone, free of charge." %}</p>
-                <p>{% trans "This service is run by Thomas Steen Rasmussen. I am a system administrator with a Danish internet provider, I was born in 1979. I run this service as a private individual, with my own money." %}</p>
-                <p>{% trans "You can read more using the menu above, or if you just want the server IP addresses you can see them on the right." %}</p>
-            </div>
+{% extends "base.html" %} {% load blog_filters i18n %} {% block head_title %}{% trans 'UncensoredDNS' %}{% endblock head_title %} {% block content %}
+<section class="hero mdl-color--blue-grey-500">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-color-text--primary-contrast mdl-grid">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <h1 class="mdl-typography--display-1 section-header roboto-light">{% trans "Welcome to UncensoredDNS" %}</h1>
+            <p>{% trans "UncensoredDNS is the name of a DNS service which consists of two uncensored DNS servers. The servers are available for use by anyone, free of charge." %}</p>
+            <p>{% trans "This service is run by Thomas Steen Rasmussen. I am a system administrator with a Danish internet provider, I was born in 1979. I run this service as a private individual, with my own money." %}</p>
+            <p>{% trans "You can read more using the menu above, or if you just want the server IP addresses you can see them below." %}</p>
         </div>
-        <div class="row">
-            <h3>{% trans 'Latest blogposts' %}</h3>
-            {% for blogpost in blogposts %}
-                <h4>
-                    <a href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a>
-                </h4>
-                <p><span class="glyphicon glyphicon-time"></span> {{ blogpost.created_date }}</p>
-                <p>{% trans 'Tags:' %}
-                {% for tag in blogpost.tags.all %}
-                    {% if not tag.slug == "" %}
-                        <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="label label-primary">{{ tag }}</span></a> 
-                    {% endif %}
+        <div class="mdl-cell mdl-cell--2-col mdl-layout--large-screen-only">
+            <i class="material-icons hero-icon">lock_open</i>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
+<section class="dns mdl-color--blue-grey-200">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop dns-header-container mdl-typography--text-center flex-centered">
+            <h1 class="mdl-typography--display-1 roboto-light">{% trans 'DNS servers' %}</h1>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
+            <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
+            <p class="code">91.239.100.100
+                <br>2001:67c:28a4::</p>
+            <p>Anycast from multiple locations.
+                <br /> Faster and more stable</p>
+            <hr />
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
+            <p class="mdl-typography--headline code section-header roboto-light">ns1.censurfridns.dk</p>
+            <p class="code">89.233.43.71
+                <br>2002:d596:2a92:1:71:53::</p>
+            <p>IPv6 for ns1 is provided by 6to4.
+                <br /> Will be replaced with native IPv6 soon</p>
+            <hr />
+        </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
+<section class="social mdl-color--blue-grey-100">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--8-col mdl-typography--headline mdl-typography--text-center roboto-light">
+        <img class="twitter-logo-section" src="/static/images/twitter_logo.png"> {% blocktrans %} Follow <a href="https://twitter.com/censurfridns" class="roboto-light">@censurfridns</a> on twitter for updates and information on the project. {% endblocktrans %}
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
+<section class="blogposts mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h1 class="mdl-typography--display-1 section-header roboto-light">{% trans 'Latest blogposts' %}</h1>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <ul class="blog-list">
+                {% for blogpost in blogposts %}
+                <li class="blog-post">
+                    <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a></h4>
+                    <small>by Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>
+                    <p>{{ blogpost.body|safe|truncatechars:350 }}</p>
+                    {% trans 'Tags:' %} {% for tag in blogpost.tags.all %} {% if not tag.slug == "" %}
+                    <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="md-chip">{{ tag }}</span></a> {% endif %} {% endfor %}
+                    <hr />
+                </li>
                 {% endfor %}
-                <hr>
-            {% endfor %}
+            </ul>
         </div>
     </div>
-    <!-- Sidebar Widgets Column -->
-    <div class="col-lg-4">
-        <!-- Server IPs Well -->
-        <div class="well">
-            <h4>{% trans 'DNS servers' %}</h4>
-            <div class="row">
-                <div class="col-lg-10">
-                    <p><b>anycast.censurfridns.dk</b><br>91.239.100.100<br>2001:67c:28a4::</p>
-                    <p><b>ns1.censurfridns.dk</b><br>89.233.43.71<br>2002:d596:2a92:1:71:53::</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Twitter Well -->
-        <div class="well">
-            <h4>{% trans 'Twitter' %}</h4>
-            <div class="row">
-                <div class="col-lg-10">
-                    <p><img src="/static/images/twitter_logo_blue.png"> {% blocktrans %}Follow <a href='https://twitter.com/censurfridns'>@censurfridns</a> on twitter for updates and information on the project.{% endblocktrans %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+    <div class="mdl-layout-spacer"></div>
+</section>
 {% endblock content %}
