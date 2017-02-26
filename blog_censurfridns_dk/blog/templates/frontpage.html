@@ -26,16 +26,14 @@
             <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
             <p class="code">91.239.100.100
                 <br>2001:67c:28a4::</p>
-            <p>Anycast from multiple locations.
-                <br /> Faster and more stable</p>
+            <p>{% trans "Anycast from multiple locations." %}</p>
             <hr />
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
-            <p class="mdl-typography--headline code section-header roboto-light">ns1.censurfridns.dk</p>
+            <p class="mdl-typography--headline code section-header roboto-light">unicast.censurfridns.dk</p>
             <p class="code">89.233.43.71
-                <br>2002:d596:2a92:1:71:53::</p>
-            <p>IPv6 for ns1 is provided by 6to4.
-                <br /> Will be replaced with native IPv6 soon</p>
+                <br>2a01:3a0:53:53::</p>
+            <p>{% trans "This node is hosted at AS9167 in Copenhagen, Denmark." %}</p>
             <hr />
         </div>
     </div>
@@ -59,7 +57,7 @@
                 {% for blogpost in blogposts %}
                 <li class="blog-post">
                     <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a></h4>
-                    <small>by Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>
+                    <small>{% trans "by" %} Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>
                     <p>{{ blogpost.body|safe|truncatechars:350 }}</p>
                     {% trans 'Tags:' %} {% for tag in blogpost.tags.all %} {% if not tag.slug == "" %}
                     <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="md-chip">{{ tag }}</span></a> {% endif %} {% endfor %}

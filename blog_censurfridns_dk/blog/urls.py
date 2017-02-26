@@ -44,8 +44,8 @@ urlpatterns = [
     url(r'^rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed'))),
 
     ### static pages
-    url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="static/dns-servers.html"), name='dns_servers'),
-    url(_(r'^contact/$'), TemplateView.as_view(template_name="static/contact.html"), name='contact'),
-    url(_(r'^faq/$'), TemplateView.as_view(template_name="static/faq.html"), name='faq'),
-    url(_(r'^about/$'), TemplateView.as_view(template_name="static/about.html"), name='about'),
+    url(_(r'^dns-servers/$'), TemplateView.as_view(template_name="dns-servers.html"), name='dns_servers'),
+    url(_(r'^contact/$'), TemplateView.as_view(template_name="contact.html"), name='contact'),
+    url(_(r'^faq/$'), TemplateView.as_view(template_name="faq.html"), name='faq'),
+    url(_(r'^about/$'), TemplateView.as_view(template_name="about.html"), name='about'),
 ]
