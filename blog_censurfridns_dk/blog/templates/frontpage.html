@@ -58,7 +58,7 @@
                 <li class="blog-post">
                     <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a></h4>
                     <small>{% trans "by" %} Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>
-                    <p>{{ blogpost.body|safe|truncatechars:350 }}</p>
+                    <p>{{ blogpost.body|safe|truncatechars:100 }}</p>
                     {% trans 'Tags:' %} {% for tag in blogpost.tags.all %} {% if not tag.slug == "" %}
                     <a href="{% url 'tag_lookup' slug=tag.slug %}"><span class="md-chip">{{ tag }}</span></a> {% endif %} {% endfor %}
                     <hr />
