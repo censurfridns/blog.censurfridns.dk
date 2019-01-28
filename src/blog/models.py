@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
 from taggit.managers import TaggableManager
 

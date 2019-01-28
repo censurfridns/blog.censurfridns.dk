@@ -2,6 +2,7 @@ commonmark==0.8.1
 Django==2.1.5
 django-bootstrap3==11.0.0
 django-classy-tags==0.8.0
+django-modeltranslation==0.12.2
 django-taggit==0.23.0
 django-taggit-templatetags2==1.6.1
 future==0.17.1

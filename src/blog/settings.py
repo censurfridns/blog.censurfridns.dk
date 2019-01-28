@@ -1,5 +1,5 @@
 import os
-from environment_settings import *
+from .environment_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +16,6 @@ INSTALLED_APPS = (
     'bootstrap3',
     'taggit',
     'taggit_templatetags2',
-    'haystack',
     'blog',
 )
 
@@ -116,13 +115,4 @@ LOGGING = {
 
 # taggit
 TAGGIT_FORCE_LOWERCASE = True
-
-# haystack
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': os.path.join(os.path.dirname(__file__), '../../whoosh_index'),
-    },
-}
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
