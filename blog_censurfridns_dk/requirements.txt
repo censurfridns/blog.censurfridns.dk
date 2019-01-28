@@ -1,9 +1,0 @@
-Django==1.9.4
-django-bootstrap3>=7.0.0
-django-taggit>=0.18.0
-django-taggit-templatetags2>=1.5.1
-django-modeltranslation>=0.11
-django-haystack>=2.4.1
-CommonMark>=0.6.3
-psycopg2>=2.6.1
-Whoosh>=2.7.3
