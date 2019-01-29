@@ -2,7 +2,9 @@ commonmark==0.8.1
 Django==2.1.5
 django-bootstrap3==11.0.0
 django-classy-tags==0.8.0
-django-modeltranslation==0.12.2
+# use master of django-modeltranslation because 0.12.x doesn't work with py3+django2
+# https://github.com/deschler/django-modeltranslation/issues/472 https://github.com/deschler/django-modeltranslation/issues/489 and more
+-e git+https://github.com/deschler/django-modeltranslation@1a17f995cd6cb01275bcf4801546f8083ebcaaad#egg=django_modeltranslation
 django-taggit==0.23.0
 django-taggit-templatetags2==1.6.1
 future==0.17.1
