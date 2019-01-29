@@ -54,7 +54,7 @@
         </div>
         <div class="mdl-cell mdl-cell--12-col">
             <ul class="blog-list">
-                {% for blogpost in blogposts %}
+                {% for blogpost in blogpost_list %}
                 <li class="blog-post">
                     <h4 class="blogpost-title"><a class="roboto-light" href="{% url 'blogpost_detail' slug=blogpost.slug %}">{{ blogpost.title }}</a></h4>
                     <small>{% trans "by" %} Tykling @ {{ blogpost.created_date |date:"F d, Y" }}</small>

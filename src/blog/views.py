@@ -8,11 +8,10 @@ from .forms import SetLanguageForm
 from taggit.models import Tag
 
 
-def frontpage(request):
-    latest_blogposts = BlogPost.objects.all()[:10]
-    return render(request, 'frontpage.html', {
-        'blogposts': latest_blogposts,
-    })
+class FrontpageView(ListView):
+    model = BlogPost
+    pagenate_by = 10
+    template_name = 'frontpage.html'
 
 
 def feeds(request):

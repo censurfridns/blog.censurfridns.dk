@@ -1,18 +1,18 @@
 from django import template
-from django.core.urlresolvers import resolve, reverse
+from django.urls import resolve, reverse
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from django.utils import translation
 from blog.models import BlogPost
-import CommonMark
+import commonmark
 from taggit.models import Tag
 
 register = template.Library()
 
 @register.filter(is_safe=True)
 def markdown(input):
-    parser = CommonMark.Parser()
-    renderer = CommonMark.HtmlRenderer()
+    parser = commonmark.Parser()
+    renderer = commonmark.HtmlRenderer()
     ast = parser.parse(input)
     return renderer.render(ast)
 

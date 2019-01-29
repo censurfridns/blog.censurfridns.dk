@@ -17,7 +17,7 @@ urlpatterns = [
     path('i18n/setlang/', blog.views.setlang, name='set_language'),
 
     ### frontpage
-    path('', blog.views.frontpage, name='frontpage'),
+    path('', blog.views.FrontpageView.as_view(), name='frontpage'),
 
     ### blog
     path('blog/', blog.views.BlogPostList.as_view(), name='blog'),
