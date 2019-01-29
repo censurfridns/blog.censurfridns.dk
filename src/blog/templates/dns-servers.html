@@ -9,7 +9,7 @@
             <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
             <p class="code">91.239.100.100
                 <br>2001:67c:28a4::</p>
-            <p>{% trans "Anycast from multiple locations." %}</p>
+            <p>{% trans "Anycast from multiple locations - see the table below." %}</p>
             <hr />
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
@@ -18,6 +18,189 @@
              <br>2a01:3a0:53:53::</p>
             <p>{% trans "This node is hosted at AS9167 in Copenhagen, Denmark." %}</p>
             <hr />
+        </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</section>
+
+<section class="faq mdl-color--blue-grey-50">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop dns-header-container mdl-typography--text-center flex-centered">
+            <h1 class="mdl-typography--display-1 roboto-light">{% trans 'Anycast Details' %}</h1>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-desktop mdl-typography--text-center">
+        <table style="width: 100%;" class="mdl-data-table">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Server</th>
+              <th class="mdl-data-table__cell--non-numeric">Sponsor</th>
+              <th class="mdl-data-table__cell--non-numeric">IPv4</th>
+              <th class="mdl-data-table__cell--non-numeric">IPv6</th>
+              <th class="mdl-data-table__cell--non-numeric">Location</th>
+              <th class="mdl-data-table__cell--non-numeric">AS</th>
+              <th class="mdl-data-table__cell--non-numeric">TLS Public Key</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>bornfiber.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric"><a href="https://bornfiber.dk">BornFiber</a></td>
+              <td class="mdl-data-table__cell--non-numeric">185.109.89.254</td>
+              <td class="mdl-data-table__cell--non-numeric">2a00:4820:fa::53</td>
+              <td class="mdl-data-table__cell--non-numeric">Ballerup, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS24800</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw1K3iGpvN1F/2T6/0BuT
++w0yzrLIoZek9BUUKBwkmWL9+VR3z9Q9lUArsDyFUg52O8WsuO7Kcgd67JqAuawG
+ynkGfz/MQDKSxtmFqudKI+hbr5S/qAfUfExH4XtboDyrRreFnqeexqK+uerT+1rh
+eHFcaGvH1705mObZTJ9JBbiU6+i+leNLIqavcRfVUYWzY+xYWVqo/lkw5mmJO8Cq
+XEK5d00ML6kn+nQWaOw11qyrFimzmy2J28ylkeYHrIidh37zrx30aMuD9q6iISci
+BhWQZFRgLYVY9W4sMp7xur3UimYAmdpG1HXuLB5/AzsexdBHW7w06BQrTimURR8v
+063eMbb2K9tpyMiUz1ORH10ybgGMN1Gag5+VnYs0rxZcsd1+wSMVsZF2Eg70IRQT
+7lBtJFUavFPu+/rUHrcyI1VEOXrI8K5XSYNkKsQuvyx6rwLVmF9G8oVXIIK/Irg9
+6azTNaLxUh7roEtiTqjy981r9APGQxH+jZ313uwA15c9v66kZ04WaX41CbudPq4w
+75WlPPefnRM2sqxHSl59r5Oq8XYK9FGziSiIRey12BoECGzxpB2Mo4KrWUvqOe4S
+D2wLhT9RTx7/jATQNLLaB9HZEM1qhegFEVlYYLjvtBIMPj1K4GcFqAkpK7XngE4B
+7JSqiu6CMKpIM+jjgnKDTiUCAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>deic-lgb.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric"><a href="https://www.deic.dk/">DeiC</a></td>
+              <td class="mdl-data-table__cell--non-numeric">130.225.244.166</td>
+              <td class="mdl-data-table__cell--non-numeric">2001:878:0:e000:82:e1:f4:a6</td>
+              <td class="mdl-data-table__cell--non-numeric">Lyngby, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS1835</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5llrzIwmRk+A9qINr3Ow
+11A0/wozr6tZG/eVL376vRBMwaz4/AW1RRR6I6RIpAMib4bxi/AGeDdNXjW8Bpoy
+4s0y6ePv0BPH/HUFGWIrhtpP1fjc0HHfztRkU8jlqf7c9X7EGUjWzEQWN2aFsV13
+1NmFEdiHovC5sAnCVznXxftYdSacaWhzf8X6RDXVGynOqDUJR5238TXRieuKS2vM
+8FXPpH6bTE6LqvCpaZzQM0RW2tF8A/WcqQOCpjZHI4scZaAVERzHr0O97bon4RuA
+Uj8QV+Is7m5n02eS9fWs1yhlK3ULLTbbXjkFBbXcUos83DTE5/indp01euARQwDM
+OhgIxeQS/AmgtVY8JIA202wR9CMWvIQkEwOdH145keNDveoBhPEihnd0bVl22zyc
+AblSA3M481w8BwMu6wsuhiXbtHlTK+C9Z9QxTxTVV3heaLcBvvZZhxSvIG+NT8QC
+lScDuu/Vc1lssPd2wIQBuAHm9MWCcVq+1rJxjAStU6LtT1BdSDU+30J3TEfWJG6f
+GgfQHBgj3yfGxN+7I49leGGcOlGR1MlFs7XHMlQ5TSOXHVAlXBuqt95xvGG61h6d
+N79qFs1bbaT1fMG7Aol695mKGVBKB62OB5lHbJPeZRhPCva7N1UFtTmEdtU1p0ya
+5lRtROahy0EtnSj9tZaeIjUCAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>deic-ore.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric"><a href="https://www.deic.dk/">DeiC</a></td>
+              <td class="mdl-data-table__cell--non-numeric">130.226.161.34</td>
+              <td class="mdl-data-table__cell--non-numeric">2001:878:0:e000:82:e2:a1:22</td>
+              <td class="mdl-data-table__cell--non-numeric">Lyngby, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS1835</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA85Hkb173I4sdw9e7KNOa
+hUIbMHrTC0OWcQQt+TB719qH9wELDfja4YVviKdrV5MdouDms4qWuCCHKFropaG1
+yIZOqf+6VhY2g7WyQyRDVmD5dFZUTyz2WLjO1KkpcmHNUc3H4cBX6fk7xLRKPLba
+5KlN2HF9zwqL4oMXsJNTuNyFgaRDaiZBPAXDLdUCGz4LZuXbp901Isw/5eM3nFEi
+1NeM1j8qWuy8dy1VaG9kl4+/2ooDpXZImna4EgmnhNaAnHmpyFY0550lmSywhwv6
+1grzQGpJOyumJMrZZeSRqfKYhdv/OXcJjnhUP14prb3EGQb96wVgERBH37YZb2Gv
+scel6rcMiKmVHVX5dczNan6YzlGEisNUWeoE2K8m4obh093tBzsG3lRj9IT68VQp
+Y+o9CJEGz7iskp/8GG912YtLnVGxBVUSBJ+OfKY7mZwlp45Uz9t917Uwqslota6u
+gQqqbl90wjC+J8kdPNdAZx8JylsIjwL97GoEjHnN/EFlONzEbb1bk1FoLB+xqFQl
+24/zA1Vge6UvB4XtU5bkKrbG5O8y5vhbs3KxvC7J0CyeH9DAfhDeU7qumTqBWjAx
+NPXPM9QyXdJTDmUIdBP1UnuLSEg24wvHFWGocwvYqWpDa4GLZsOMYbmsmRz+2Wlq
+TVW/u8L/N9LH1Mr4KD0DUh0CAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>kracon.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric"><a href="https://kracon.dk/">KRACON</a></td>
+              <td class="mdl-data-table__cell--non-numeric">185.38.24.52</td>
+              <td class="mdl-data-table__cell--non-numeric">2a00:fbe0:12::52</td>
+              <td class="mdl-data-table__cell--non-numeric">Copenhagen, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS62113</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsFNB0mxlukRa5zB3PzmQ
+UFT65fPADjXQpHBQVbGgNYPvJn7Uz8UIckgcb2N6hVAQyarvRqbPG80x6D00iW/O
+jhD0DQXlNf5rDl9pV4bgl3U4tznIe0M6lGAd6e+UJYHAebbrxbYyu5TBIWdjSLeV
+4hXr8pjgH46xOE/M8A00le/+Z5uypf5+0uvYPq7pjHe0RQRadPuIvCBnYuaG8r0S
+QBygA+cyYwPKazVJH3PkEvJj02slCJvn+3zew4NWPaNFLD9kdAyJ/zzNQCbsBqbH
+7QY3/3b+sTMQL6hKB0Kzbca+wwaCqGxzJNEgaQHy+TtZ2mjS1w2l9/xWDZT0hmCr
+ffS1Sfy/ZOarBuLGbowDwF4D9f9F1hbVpv0+NdGkgoIW0uq3HQ6l7BgmH6S+HreX
+1c95DfNRUPBj47cx+0jC8mK+71r6rUVoK8zaIR6G0ylauLqyI6saJNzNrZxqlCNV
+ZQcx2v6y+z92vvFVM8qBEPCfM4ICUzbqzGIfgbczPnSuV38R2JI5FJZrPI55tFv5
+/OegsgWJPYFQHzh0t9GQcpp7R3A++WJH3DlxYy2oPlG5MNz2vp4y5aCBxIj/7hnr
+iMg3UFGCdM4yWQNuXQRVGROi02Ad3YgBspfZs13AXDYrZFKv82orI448HoACD1OF
+lGqNhXiWteL1QBXQz9Z/EdkCAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>rgnet-iad.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric">rgnet</td>
+              <td class="mdl-data-table__cell--non-numeric">198.180.150.12</td>
+              <td class="mdl-data-table__cell--non-numeric">2001:418:8006::12</td>
+              <td class="mdl-data-table__cell--non-numeric">Washington, USA</td>
+              <td class="mdl-data-table__cell--non-numeric">AS3927</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxcNzM5uxAnj+0MmxGNum
+b1BqEYhkUos/4qwxdyHtnYuFxOLSVCr6fQU/g4Jw5gXtM2D+Ws2i2mWtOVUTnzz+
+4WIiYW9aIqKFg8F/B8ct7CeWCF7h/bY362iFLVv5qVvjrQLOQrDzD2fpNWELPJoV
+JLcYP1kPU4E7Q5I0BKNWwu9VgkDEZx2rQR3FBs8RAkrYCdxhuhWzevKyjduDn5SD
+B3F71EB17ufOCwvQVTQ47yltGAuykK74BmE4CGNUnjjdgQ9Gld27py3laz7M7SSt
+hapV87VbiCb9B75W8YfGjxB3xQLIGXmRiHFEspUkrF0ENRkm7LbXp6iDsVDExNau
+DgyFz0WS0AGBFIYxR5B2vOudqs2yTyPDRogl0Qt/yI235zYgCf6g3MwMhsxVcGzl
+WbAUpJ99p6//3jlOj+VAVTRsN35AQ8tlSuO+/dVyf/AkHkXaYNH35t5TXfWj0QkR
+s7whrMSlqjDuBJatx5nPA0O6XcrZbfD337X7Fwt6jqesDiByUwyCBFCIGXKm4DVZ
+ZDPoPskpW7CkkNqTKoz6fdsOAIzwG+kkJS89miy5QWNt3FxhxcQEJiv+7yrMsvI4
+GlOtTHqM1F/4PWV87h3WOiRU8dgc1bW7q6DkoXQEv1viKuvQExyRCdAjgDhyDpo0
+3KRYwKBLXBXd3OHXY982PI8CAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><b>solido.anycast.censurfridns.dk</b></td>
+              <td class="mdl-data-table__cell--non-numeric">Solido / Kramse</td>
+              <td class="mdl-data-table__cell--non-numeric">94.126.178.9</td>
+              <td class="mdl-data-table__cell--non-numeric">2a03:a480:1000:3029::2</td>
+              <td class="mdl-data-table__cell--non-numeric">Ballerup, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS59469</td>
+              <td class="mdl-data-table__cell--non-numeric">
+<pre>
+-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzguXzsPRDaDBjnI62y+W
+qE4KT1Zj9XH4VS+sq07+kOyPW26FzV4sGUiHfy7lq56TajJfiJjGuWE1wxMq3v24
+kHiHrKnojk4jgqO5n4HPVQF+ButrhP0+nINhPwrlhr2QEovTMsxPaa9Jh3UPB9Zj
+rc+SLeRL+bZYLUy4cFfx/WL1aL7I21MH6p5wryMig+LUi5LkN0LJZXHH7rhIJEWH
+9LZ6IBC3KQ4O2J0HPLMDeStXxDXp2JXRFt8Po4/IZGSpeO0B4mkhv4EGWj/Eyhfb
+cESwdoiHdQ1cAxC2+d5DOY1bezf5+8+lcZBczlJyonxqWrIduui/wDjIlDa0B3gC
+EmDm/ZbEdAd+QEXrcpqdOpkVYTRzHPxVCAagETl7qBuohVft0gbWqdQMf+YltYew
+18aOD42SsDiueXKk1dS5/FqnSvKDJoQ0YjewhYv/k63RkKp7hbVfddVNLQuJ3Zt4
+oeY/nTDUT1xTAWnVEpdE5mhLNx5QhYJPlJuuKVigQqXH1+ytJae46AjYmSfiJZ8/
+D/ihvDc7YBCqZhGl9b7imTugP323jX61gExWj+asFvBQSoW9V8VzpuNYSCoJ9ciZ
+uwwyluxacwQPGy2M0JzxHKSeYkWEJ1PTZXZaHFEIlNMiQIwvQ2unNnRXoaLcQ7+3
+2sDHjeVWtqpsvHcc9MMGbSkCAwEAAQ==
+-----END PUBLIC KEY-----
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>

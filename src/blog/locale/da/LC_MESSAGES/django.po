@@ -1,13 +1,12 @@
 # Translation for UncensoredDNS blog
 # This file is distributed under the same license as the rest of the blog.
-# Thomas Steen Rasmussen <thomas@gibfest.dk>, 2016.
+# Thomas Steen Rasmussen <thomas@gibfest.dk>, 2016-2019.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-26 16:14+0100\n"
+"POT-Creation-Date: 2019-01-29 23:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +16,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: feeds.py:11
+#: blog/feeds.py:11
 msgid "UncensoredDNS Blog Posts"
 msgstr "CensurfriDNS blogindlæg"
 
-#: feeds.py:13
+#: blog/feeds.py:13
 msgid "Blog posts and system information from UncensoredDNS"
 msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
 
-#: feeds.py:31
+#: blog/feeds.py:31
 msgid "UncensoredDNS Blog Posts by tag"
 msgstr "CensurfriDNS blogindlæg efter kategori"
 
-#: feeds.py:33
+#: blog/feeds.py:33
 msgid "Blog posts from UncensoredDNS tagged with a specific tag"
 msgstr "Blogindlæg fra CensurfriDNS med en bestemt kategori"
 
-#: forms.py:15
+#: blog/forms.py:15
 msgid "Invalid language"
 msgstr "Ugyldigt sprog"
 
-#: settings.py:67
+#: blog/settings.py:64
 msgid "English"
 msgstr "Engelsk"
 
-#: settings.py:68
+#: blog/settings.py:65
 msgid "Danish"
 msgstr "Dansk"
 
-#: templates/about.html:1 templates/about.html:5
+#: blog/templates/about.html:1 blog/templates/about.html:5
 msgid "About this service"
 msgstr "Om denne tjeneste"
 
-#: templates/about.html:6
+#: blog/templates/about.html:6
 msgid ""
 "UncensoredDNS was started in November 2009 shortly after I began working at "
 "an ISP where one of my responsibilities was to administer the censored DNS "
@@ -60,7 +59,7 @@ msgstr ""
 "censurerede DNS servere som alle danske internetudbydere kører til deres "
 "kunder."
 
-#: templates/about.html:7
+#: blog/templates/about.html:7
 msgid ""
 "I had never been a fan of the Danish DNS censorship system, and working with "
 "it first hand didn't exactly help. At the time OpenDNS was kind of new and "
@@ -72,7 +71,7 @@ msgstr ""
 "og Google DNS fandtes ikke endnu. Familie og venner spurgte efter "
 "anbefalinger til alternativer til internetudbydernes censurerede DNS servere."
 
-#: templates/about.html:8
+#: blog/templates/about.html:8
 msgid ""
 "Back then OpenDNS did NXDOMAIN redirection, an advertising trick where "
 "misspelled nonexistant domains are redirected to a search page with ads "
@@ -88,7 +87,7 @@ msgstr ""
 "pind. De havde desuden hverken ipv6 eller DNSSEC, begge dele var selv i 2009 "
 "nødvendige dele af en moderne DNS server."
 
-#: templates/about.html:9
+#: blog/templates/about.html:9
 msgid ""
 "Even if Google DNS had existed back then I wouldn't have felt comfortable "
 "recommending them either. While they do run a stable, fast and uncensored "
@@ -102,7 +101,7 @@ msgstr ""
 "alle ens DNS opslag til dem. De har allerede alle ens søgninger, og mange "
 "har en af deres telefoner i lommen, og så videre."
 
-#: templates/about.html:10
+#: blog/templates/about.html:10
 msgid ""
 "All this prompted me to do something about the situation so I started "
 "UncensoredDNS with help from friends. After a while I also started giving "
@@ -115,88 +114,98 @@ msgstr ""
 "naturligt har lettere ved at stole på en tjeneste hvis de ved hvem der står "
 "bag. Du kan se nogen af mine gamle foredrag online, for eksempel fra"
 
-#: templates/base.html:9 templates/blog/blogpost_list.html:1
-#: templates/blog/blogpost_list.html:19
+#: blog/templates/base.html:9 blog/templates/blog/blogpost_list.html:1
+#: blog/templates/blog/blogpost_list.html:19
 msgid "UncensoredDNS Blog"
 msgstr "CensurfriDNS Blog"
 
-#: templates/base.html:11
+#: blog/templates/base.html:11
 msgid "uncensoreddns blog"
 msgstr "censurfridns blog"
 
-#: templates/base.html:30 templates/base.html:62 templates/frontpage.html:1
+#: blog/templates/base.html:41 blog/templates/base.html:73
+#: blog/templates/frontpage.html:1 blog/templates/frontpage.html:13
 msgid "UncensoredDNS"
 msgstr "CensurfriDNS"
 
-#: templates/base.html:32 templates/base.html:64 templates/base.html:95
+#: blog/templates/base.html:43 blog/templates/base.html:75
+#: blog/templates/base.html:106
 msgid "Blog"
 msgstr ""
 
-#: templates/base.html:33 templates/base.html:65 templates/base.html:96
-#: templates/dns-servers.html:1
+#: blog/templates/base.html:44 blog/templates/base.html:76
+#: blog/templates/base.html:107 blog/templates/dns-servers.html:1
 msgid "DNS Servers"
 msgstr "DNS Servere"
 
-#: templates/base.html:34 templates/base.html:66 templates/base.html:97
+#: blog/templates/base.html:45 blog/templates/base.html:77
+#: blog/templates/base.html:108
 msgid "About"
 msgstr "Om"
 
-#: templates/base.html:35 templates/base.html:67 templates/base.html:98
+#: blog/templates/base.html:46 blog/templates/base.html:78
+#: blog/templates/base.html:109
 msgid "FAQ"
 msgstr "OSS"
 
-#: templates/base.html:36 templates/base.html:68 templates/base.html:99
+#: blog/templates/base.html:47 blog/templates/base.html:79
+#: blog/templates/base.html:110
 msgid "RSS+Atom"
 msgstr ""
 
-#: templates/base.html:37 templates/base.html:69 templates/base.html:100
-#: templates/contact.html:1 templates/contact.html:5
+#: blog/templates/base.html:48 blog/templates/base.html:80
+#: blog/templates/base.html:111 blog/templates/contact.html:1
+#: blog/templates/contact.html:5
 msgid "Contact"
 msgstr "Kontakt"
 
-#: templates/base.html:127
+#: blog/templates/base.html:138
 msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
 msgstr ""
 
-#: templates/blog/blogpost_detail.html:7 templates/blog/blogpost_list.html:27
-#: templates/frontpage.html:62
+#: blog/templates/blog/blogpost_detail.html:7
+#: blog/templates/blog/blogpost_list.html:27 blog/templates/frontpage.html:62
 msgid "Tags:"
 msgstr "Kategorier:"
 
-#: templates/blog/blogpost_list.html:5
+#: blog/templates/blog/blogpost_list.html:5
 msgid "Tags used on this blog"
 msgstr "Kategorier brugt på denne blog"
 
-#: templates/blog/blogpost_list.html:20
+#: blog/templates/blog/blogpost_list.html:20
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
-#: templates/contact.html:6
+#: blog/templates/contact.html:6
 msgid "You have a few options for getting in touch with me:"
 msgstr "Der er forskellige muligheder for at komme i kontakt med mig:"
 
-#: templates/dns-servers.html:6 templates/frontpage.html:23
+#: blog/templates/dns-servers.html:6 blog/templates/frontpage.html:23
 msgid "DNS servers"
 msgstr "DNS servere"
 
-#: templates/dns-servers.html:12 templates/frontpage.html:29
-msgid "Anycast from multiple locations."
-msgstr "Anycastet fra flere locationer."
+#: blog/templates/dns-servers.html:12
+msgid "Anycast from multiple locations - see the table below."
+msgstr "Anycastet fra flere locationer - se tabellen nedenfor."
 
-#: templates/dns-servers.html:19 templates/frontpage.html:36
+#: blog/templates/dns-servers.html:19 blog/templates/frontpage.html:36
 msgid "This node is hosted at AS9167 in Copenhagen, Denmark."
 msgstr "Denne node sidder på AS9167 i København, Danmark."
 
-#: templates/faq.html:1 templates/faq.html:5
+#: blog/templates/dns-servers.html:30
+msgid "Anycast Details"
+msgstr "Anycast detaljer"
+
+#: blog/templates/faq.html:1 blog/templates/faq.html:5
 msgid "Frequently Asked Questions"
 msgstr "Ofte stillede spørgsmål"
 
-#: templates/faq.html:7
+#: blog/templates/faq.html:7
 msgid "Why have you started UncensoredDNS? Why run uncensored DNS servers?"
 msgstr ""
 "Hvorfor har du lavet CensurfriDNS? Hvorfor drive censur fri DNS servere?"
 
-#: templates/faq.html:8
+#: blog/templates/faq.html:8
 msgid ""
 "I am strongly against using DNS as a tool to filter content on the internet. "
 "Many people do not have the technical know-how to setup their own DNS "
@@ -208,11 +217,11 @@ msgstr ""
 "deres egen DNS server op, så jeg har lavet CensurfriDNS så der er et dansk "
 "censurfrit alternativ til internetudbydernes DNS servere."
 
-#: templates/faq.html:10
+#: blog/templates/faq.html:10
 msgid "Why not just use OpenDNS or Google DNS?"
 msgstr "Hvorfor ikke bruge OpenDNS eller Google DNS?"
 
-#: templates/faq.html:11
+#: blog/templates/faq.html:11
 msgid ""
 "I dislike any form of abuse of the DNS system, and OpenDNS' entire business "
 "model is to manipulate DNS. They used to do NXDOMAIN redirection, an "
@@ -230,11 +239,11 @@ msgstr ""
 "ide at aflevere alle ens DNS opslag hos dem, oveni alt det andet data de har "
 "om alle folk i forvejen."
 
-#: templates/faq.html:13
+#: blog/templates/faq.html:13
 msgid "Do the UncensoredDNS DNS servers log any personal information?"
 msgstr "Logger CensurfriDNS DNS serverne nogen private oplysninger?"
 
-#: templates/faq.html:14
+#: blog/templates/faq.html:14
 msgid ""
 "Absolutely nothing is being logged, neither about the users nor the usage of "
 "this service. I do keep graphs of the total number of queries, but no "
@@ -246,27 +255,27 @@ msgstr ""
 "tilbageføres til den enkelte bruger. De data der gemmes vil aldrig blive "
 "solgt videre, eller brugt til andet end kapacitetsplanlægning af servicen."
 
-#: templates/faq.html:16
+#: blog/templates/faq.html:16
 msgid "Where are the servers located?"
 msgstr "Hvor står serverne?"
 
-#: templates/faq.html:17
+#: blog/templates/faq.html:17
 msgid ""
-"The servers are physically located in Denmark. They are placed on fast "
+"See the details on the DNS Servers page. They are placed on fast "
 "uplinks in professional data centers. I am actively looking for places to "
 "host anycast nodes, especially outside of Denmark or even outside of Europe. "
 "Please contact me if you can help."
 msgstr ""
-"Serverne står fysisk i Danmark. De står på hurtige linier i professionelle "
+"Se detaljerne på DNS Servere siden. De står på hurtige linier i professionelle "
 "datacentre. Jeg leder aktivt efter flere steder som kan hoste en anycast "
 "node. Særligt steder udenfor Danmark eller Europa har interesse. Kontakt mig "
 "endelig hvis du kan hjælpe."
 
-#: templates/faq.html:19
+#: blog/templates/faq.html:19
 msgid "Are the IP addresses likely to change?"
 msgstr "Kommer IP adresserne til at skifte?"
 
-#: templates/faq.html:20
+#: blog/templates/faq.html:20
 msgid ""
 "The DNS server IP addresses will never change if I can prevent it. The "
 "anycast server in particular is unlikely to ever change since the v4 and v6 "
@@ -276,11 +285,11 @@ msgstr ""
 "det. Især anycast serveren kommer sandsynligvis aldrig til at ændre IP da "
 "dens IPer er fra CensurfriDNS' egne provider independent IP ranges."
 
-#: templates/faq.html:22
+#: blog/templates/faq.html:22
 msgid "Who is behind this service?"
 msgstr "Hvem er bag denne tjeneste?"
 
-#: templates/faq.html:24
+#: blog/templates/faq.html:24
 #, python-format
 msgid ""
 "My name is Thomas Steen Rasmussen. I operate this DNS service as an "
@@ -291,14 +300,14 @@ msgstr ""
 "privatperson for mine egne penge. Hvis du har spørgsmål eller kommentarer "
 "kan du kigge på <a href=\"%(contacturl)s\">kontakt</a> siden."
 
-#: templates/faq.html:26
+#: blog/templates/faq.html:26
 msgid ""
 "Have you ever been contacted by authorities or law enforcement about this "
 "service?"
 msgstr ""
 "Er du nogensinde blevet kontaktet af myndighederne omkring denne tjeneste?"
 
-#: templates/faq.html:27
+#: blog/templates/faq.html:27
 msgid ""
 "No, I have never been contacted by authorities or law enforcement regarding "
 "this service. This message will be updated if it happens."
@@ -306,26 +315,26 @@ msgstr ""
 "Nej, jeg er aldrig blevet kontaktet af myndighederne omkring denne tjeneste. "
 "Denne besked bliver opdateret hvis det sker."
 
-#: templates/feeds.html:1
+#: blog/templates/feeds.html:1
 msgid "RSS/Atom"
 msgstr ""
 
-#: templates/feeds.html:6
+#: blog/templates/feeds.html:6
 msgid "The following two RSS/Atom feeds contain all blogposts:"
 msgstr "De følgende to RSS/Atom feeds indeholder alle blogindlæg:"
 
-#: templates/feeds.html:11
+#: blog/templates/feeds.html:11
 msgid ""
 "This list contains RSS/Atom feeds for each of the tags used on this blog:"
 msgstr ""
 "Denne liste indeholder RSS/Atom feeds for hver af kategorierne brugt på "
 "denne blog:"
 
-#: templates/frontpage.html:7
+#: blog/templates/frontpage.html:7
 msgid "Welcome to UncensoredDNS"
 msgstr "Velkommen til CensurfriDNS"
 
-#: templates/frontpage.html:8
+#: blog/templates/frontpage.html:8
 msgid ""
 "UncensoredDNS is the name of a DNS service which consists of two uncensored "
 "DNS servers. The servers are available for use by anyone, free of charge."
@@ -333,7 +342,7 @@ msgstr ""
 "CensurfriDNS er navnet på en DNS tjeneste som består af to ucensurerede DNS "
 "servere. Serverne er frit tilgængelige og kan benyttes gratis af alle."
 
-#: templates/frontpage.html:9
+#: blog/templates/frontpage.html:9
 msgid ""
 "This service is run by Thomas Steen Rasmussen. I am a system administrator "
 "with a Danish internet provider, I was born in 1979. I run this service as a "
@@ -343,7 +352,7 @@ msgstr ""
 "en dansk internet udbyder. Jeg er født i 1979. Jeg driver denne tjeneste som "
 "privatperson for mine egne penge."
 
-#: templates/frontpage.html:10
+#: blog/templates/frontpage.html:10
 msgid ""
 "You can read more using the menu above, or if you just want the server IP "
 "addresses you can see them below."
@@ -351,7 +360,11 @@ msgstr ""
 "Du kan læse mere ved hjælp af menuen i toppen, eller hvis du bare vil have "
 "server IPerne kan du se dem længere nede."
 
-#: templates/frontpage.html:45
+#: blog/templates/frontpage.html:29
+msgid "Anycast from multiple locations."
+msgstr "Anycastet fra flere locationer."
+
+#: blog/templates/frontpage.html:45
 msgid ""
 " Follow <a href=\"https://twitter.com/censurfridns\" class=\"roboto-light"
 "\">@censurfridns</a> on twitter for updates and information on the project. "
@@ -359,63 +372,64 @@ msgstr ""
 " Følg <a href=\"https://twitter.com/censurfridns\" class=\"roboto-light"
 "\">@censurfridns</a> på twitter for nyheder og information om projektet."
 
-#: templates/frontpage.html:53
+#: blog/templates/frontpage.html:53
 msgid "Latest blogposts"
 msgstr "Seneste blogindlæg"
 
-#: templates/frontpage.html:60
+#: blog/templates/frontpage.html:60
 msgid "by"
 msgstr "af"
 
-#: templates/searchpanel.html:3
+#: blog/templates/searchpanel.html:3
 msgid "Search this blog"
 msgstr "Søg denne blog"
 
-#: templates/tag_lookup.html:1 templates/tag_lookup.html:6
+#: blog/templates/tag_lookup.html:1 blog/templates/tag_lookup.html:6
 #, python-format
 msgid "Blogposts tagged %(name)s"
 msgstr "Blogindlæg i kategorien %(name)s"
 
-#: templates/tag_lookup.html:1 templates/tag_lookup.html:19
+#: blog/templates/tag_lookup.html:1 blog/templates/tag_lookup.html:19
 msgid "Tag not found"
 msgstr "Kategori ikke fundet"
 
-#: urls.py:31
-msgid "^tags/(?P<slug>[\\w-]+)/$"
-msgstr "^kategorier/(?P<slug>[\\w-]+)/$"
-
-#: urls.py:34
-msgid "^feeds/rss/all/$"
+#: blog/urls.py:27
+msgid "tags/<slug:slug>/"
 msgstr ""
 
-#: urls.py:35
-msgid "^feeds/atom/all/$"
+#: blog/urls.py:30
+msgid "feeds/rss/all/"
 msgstr ""
 
-#: urls.py:36
-msgid "^feeds/rss/tag/(?P<slug>[\\w-]+)/$"
-msgstr "^feeds/rss/kategorier/(?P<slug>[\\w-]+)/$"
-
-#: urls.py:37
-msgid "^feeds/atom/tag/(?P<slug>[\\w-]+)/$"
-msgstr "^feeds/atom/kategorier/(?P<slug>[\\w-]+)/$"
-
-#: urls.py:38
-msgid "^feeds/$"
+#: blog/urls.py:31
+msgid "feeds/atom/all/"
 msgstr ""
 
-#: urls.py:47
-msgid "^dns-servers/$"
-msgstr "^dns-servere/$"
+#: blog/urls.py:32
+msgid "feeds/rss/tag/<slug:slug>"
+msgstr "feeds/rss/kategorier/<slug:slug>"
 
-#: urls.py:48
-msgid "^contact/$"
-msgstr "^kontakt/$"
+#: blog/urls.py:33
+msgid "feeds/atom/tag/<slug:slug>"
+msgstr "feeds/atom/kategorier/<slug:slug>/"
 
-#: urls.py:49
-msgid "^faq/$"
-msgstr "^oss/$"
+#: blog/urls.py:34
+msgid "feeds/"
+msgstr ""
 
-#: urls.py:50
-msgid "^about/$"
-msgstr "^om/$"
+#: blog/urls.py:43
+msgid "dns-servers/"
+msgstr "dns-servere/"
+
+#: blog/urls.py:44
+msgid "contact/"
+msgstr "kontakt/"
+
+#: blog/urls.py:45
+msgid "faq/"
+msgstr "oss/"
+
+#: blog/urls.py:46
+msgid "about/"
+msgstr "om/"
+
