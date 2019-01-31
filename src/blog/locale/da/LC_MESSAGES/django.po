@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 23:19+0000\n"
+"POT-Creation-Date: 2019-01-31 06:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,15 +261,15 @@ msgstr "Hvor står serverne?"
 
 #: blog/templates/faq.html:17
 msgid ""
-"See the details on the DNS Servers page. They are placed on fast "
-"uplinks in professional data centers. I am actively looking for places to "
-"host anycast nodes, especially outside of Denmark or even outside of Europe. "
-"Please contact me if you can help."
+"See the details on the DNS Servers page. They are placed on fast uplinks in "
+"professional data centers. I am actively looking for places to host anycast "
+"nodes, especially outside of Denmark or even outside of Europe. Please "
+"contact me if you can help."
 msgstr ""
-"Se detaljerne på DNS Servere siden. De står på hurtige linier i professionelle "
-"datacentre. Jeg leder aktivt efter flere steder som kan hoste en anycast "
-"node. Særligt steder udenfor Danmark eller Europa har interesse. Kontakt mig "
-"endelig hvis du kan hjælpe."
+"Se detaljerne på DNS Servere siden. De står på hurtige linier i "
+"professionelle datacentre. Jeg leder aktivt efter flere steder som kan hoste "
+"en anycast node. Særligt steder udenfor Danmark eller Europa har interesse. "
+"Kontakt mig endelig hvis du kan hjælpe."
 
 #: blog/templates/faq.html:19
 msgid "Are the IP addresses likely to change?"
@@ -393,43 +393,42 @@ msgstr "Blogindlæg i kategorien %(name)s"
 msgid "Tag not found"
 msgstr "Kategori ikke fundet"
 
-#: blog/urls.py:27
+#: blog/urls.py:28
 msgid "tags/<slug:slug>/"
 msgstr ""
 
-#: blog/urls.py:30
+#: blog/urls.py:31
 msgid "feeds/rss/all/"
 msgstr ""
 
-#: blog/urls.py:31
+#: blog/urls.py:32
 msgid "feeds/atom/all/"
 msgstr ""
 
-#: blog/urls.py:32
+#: blog/urls.py:33
 msgid "feeds/rss/tag/<slug:slug>"
 msgstr "feeds/rss/kategorier/<slug:slug>"
 
-#: blog/urls.py:33
+#: blog/urls.py:34
 msgid "feeds/atom/tag/<slug:slug>"
 msgstr "feeds/atom/kategorier/<slug:slug>/"
 
-#: blog/urls.py:34
+#: blog/urls.py:35
 msgid "feeds/"
 msgstr ""
 
-#: blog/urls.py:43
+#: blog/urls.py:44
 msgid "dns-servers/"
 msgstr "dns-servere/"
 
-#: blog/urls.py:44
+#: blog/urls.py:45
 msgid "contact/"
 msgstr "kontakt/"
 
-#: blog/urls.py:45
+#: blog/urls.py:46
 msgid "faq/"
 msgstr "oss/"
 
-#: blog/urls.py:46
+#: blog/urls.py:47
 msgid "about/"
 msgstr "om/"
-

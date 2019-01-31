@@ -48,7 +48,7 @@
                     <a class="mdl-navigation__link mdl-typography--text-uppercase{% if "/contact/" in request.path %} menu-active{% endif %}" href="{% url 'contact' %}">{% trans 'Contact' %}</a>
                 </nav>
                 <div class="mdl-layout-spacer"></div>
-                {% if LANGUAGE_CODE == 'da' %}
+                {% if 'da-' in LANGUAGE_CODE|lower or LANGUAGE_CODE == 'da' %}
                 <form action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}
                     <div>
@@ -57,7 +57,7 @@
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="enlanguage" type="submit"><img class="lang-flag" src="{% static 'images/en.png' %}" alt="english"> English</button>
                     </div>
                 </form>
-                {% elif LANGUAGE_CODE == 'en' %}
+                {% elif 'en-' in LANGUAGE_CODE|lower or LANGUAGE_CODE == 'en' %}
                 <form action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}
                     <div>
