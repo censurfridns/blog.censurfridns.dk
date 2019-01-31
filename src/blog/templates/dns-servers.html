@@ -23,23 +23,22 @@
     <div class="mdl-layout-spacer"></div>
 </section>
 
+<h1 class="mdl-typography--display-1 roboto-light mdl-typography--text-center">{% trans 'Anycast Server Details' %}</h1>
+
 <section class="faq mdl-color--blue-grey-50">
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--10-col mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop dns-header-container mdl-typography--text-center flex-centered">
-            <h1 class="mdl-typography--display-1 roboto-light">{% trans 'Anycast Details' %}</h1>
-        </div>
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-desktop mdl-typography--text-center">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-typography--text-center">
         <table style="width: 100%;" class="mdl-data-table">
           <thead>
             <tr>
-              <th class="mdl-data-table__cell--non-numeric">Server</th>
-              <th class="mdl-data-table__cell--non-numeric">Sponsor</th>
-              <th class="mdl-data-table__cell--non-numeric">IPv4</th>
-              <th class="mdl-data-table__cell--non-numeric">IPv6</th>
-              <th class="mdl-data-table__cell--non-numeric">Location</th>
-              <th class="mdl-data-table__cell--non-numeric">AS</th>
-              <th class="mdl-data-table__cell--non-numeric">TLS Public Key</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'Server' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'Sponsor' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'IPv4' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'IPv6' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'Location' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'AS' %}</th>
+              <th class="mdl-data-table__cell--non-numeric">{% trans 'TLS Public Key' %}</th>
             </tr>
           </thead>
           <tbody>
