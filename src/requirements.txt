@@ -1,12 +1,10 @@
-commonmark==0.8.1
-Django==2.1.5
-django-bootstrap3==11.0.0
-django-classy-tags==0.8.0
-# use master of django-modeltranslation because 0.12.x doesn't work with py3+django2
-# https://github.com/deschler/django-modeltranslation/issues/472 https://github.com/deschler/django-modeltranslation/issues/489 and more
--e git+https://github.com/deschler/django-modeltranslation@1a17f995cd6cb01275bcf4801546f8083ebcaaad#egg=django_modeltranslation
-django-taggit==0.23.0
-django-taggit-templatetags2==1.6.1
-future==0.17.1
-psycopg2-binary==2.7.7
-pytz==2018.9
+commonmark>=0.9.1
+Django>=2.2.7
+django-bootstrap3>=11.1.0
+django-taggit>=1.1.0
+django-taggit-templatetags2>=1.6.1
+django-modeltranslation>=0.14
+psycopg2-binary>=2.8.4
+
+# missing dep for modeltranslations
+six>=1.13.0
