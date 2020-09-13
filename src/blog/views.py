@@ -4,7 +4,6 @@ from django.utils import translation
 from django.http import HttpResponseRedirect
 from django.views.decorators.http import require_POST
 from .models import BlogPost
-from .forms import SetLanguageForm
 from taggit.models import Tag
 
 
