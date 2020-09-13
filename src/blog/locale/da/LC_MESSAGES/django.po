@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-31 07:06+0000\n"
+"POT-Creation-Date: 2020-09-13 18:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
@@ -32,15 +32,11 @@ msgstr "CensurfriDNS blogindlæg efter kategori"
 msgid "Blog posts from UncensoredDNS tagged with a specific tag"
 msgstr "Blogindlæg fra CensurfriDNS med en bestemt kategori"
 
-#: blog/forms.py:15
-msgid "Invalid language"
-msgstr "Ugyldigt sprog"
-
-#: blog/settings.py:64
+#: blog/settings.py:63
 msgid "English"
 msgstr "Engelsk"
 
-#: blog/settings.py:65
+#: blog/settings.py:64
 msgid "Danish"
 msgstr "Dansk"
 
@@ -115,7 +111,7 @@ msgstr ""
 "bag. Du kan se nogen af mine gamle foredrag online, for eksempel fra"
 
 #: blog/templates/base.html:9 blog/templates/blog/blogpost_list.html:1
-#: blog/templates/blog/blogpost_list.html:19
+#: blog/templates/blog/blogpost_list.html:5
 msgid "UncensoredDNS Blog"
 msgstr "CensurfriDNS Blog"
 
@@ -164,15 +160,11 @@ msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
 msgstr ""
 
 #: blog/templates/blog/blogpost_detail.html:7
-#: blog/templates/blog/blogpost_list.html:27 blog/templates/frontpage.html:62
+#: blog/templates/blog/blogpost_list.html:13 blog/templates/frontpage.html:62
 msgid "Tags:"
 msgstr "Kategorier:"
 
-#: blog/templates/blog/blogpost_list.html:5
-msgid "Tags used on this blog"
-msgstr "Kategorier brugt på denne blog"
-
-#: blog/templates/blog/blogpost_list.html:20
+#: blog/templates/blog/blogpost_list.html:6
 msgid "Rants and service information"
 msgstr "Brok og driftsinformation"
 
@@ -197,8 +189,6 @@ msgid "Anycast Server Details"
 msgstr "Anycast server detaljer"
 
 #: blog/templates/dns-servers.html:35
-#, fuzzy
-#| msgid "DNS Servers"
 msgid "Server"
 msgstr ""
 

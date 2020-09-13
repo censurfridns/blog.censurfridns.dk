@@ -21,16 +21,6 @@ def feeds(request):
     })
 
 
-@require_POST
-def setlang(request):
-    form = SetLanguageForm(request.POST or None)
-    if form.is_valid():
-        user_language = form.cleaned_data['language']
-        translation.activate(user_language)
-        request.session[translation.LANGUAGE_SESSION_KEY] = user_language
-        return HttpResponseRedirect(form.cleaned_data['next'])
-
-
 def tag_lookup(request, slug):
     try:
         tag = Tag.objects.get(slug=slug)
