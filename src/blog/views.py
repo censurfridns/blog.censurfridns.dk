@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.views.decorators.http import require_POST
 from .models import BlogPost
 from taggit.models import Tag
+from .forms import SetLanguageForm
 
 
 class FrontpageView(ListView):
@@ -61,3 +62,12 @@ def blogpost_detail(request, slug):
         'blogpost': blogpost,
     })
 
+@require_POST
+def setlang(request):
+    """A custom set_language view which permits redirect to other domains."""
+    form = SetLanguageForm(request.POST or None)
+    if form.is_valid():
+        user_language = form.cleaned_data['language']
+        translation.activate(user_language)
+        request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+        return HttpResponseRedirect(form.cleaned_data['next'])

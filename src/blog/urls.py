@@ -14,7 +14,7 @@ urlpatterns = [
     path('%s/' % settings.ADMIN_PREFIX, admin.site.urls),
 
     ### i18n
-    path('i18n/', include('django.conf.urls.i18n')),
+    path('i18n/setlang/', blog.views.setlang, name='set_language'),
 
     ### frontpage
     path('', blog.views.FrontpageView.as_view(), name='frontpage'),
