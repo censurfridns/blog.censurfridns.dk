@@ -15,7 +15,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap3',
     'taggit',
-    'taggit_templatetags2',
     'blog',
 )
 

@@ -1,18 +1,4 @@
-{% extends "base.html" %} {% load blog_filters i18n taggit_templatetags2_tags %} {% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %} {% block content %}
-<section class="tagcloud mdl-color--blue-grey-100">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--10-col mdl-grid mdl-typography--text-center cloud-container">
-     <h1 class="mdl-typography--display-1 roboto-light">{% trans 'Tags used on this blog' %}</h1> {% get_taglist as tags %}
-        <div>
-            {% for tag in tags %} {% if not tag.slug == "" %}
-            <a href="{% url 'tag_lookup' slug=tag.slug %}" class="blog-tag blog-tag-count-{{tag.num_times}}">
-                {{tag}}
-            </a>
-            {% endif %} {% endfor %}
-        </div>
-    </div>
-    <div class="mdl-layout-spacer"></div>
-</section>
+{% extends "base.html" %} {% load blog_filters i18n %} {% block head_title %}{% trans 'UncensoredDNS Blog' %}{% endblock head_title %} {% block content %}
 <section class="blogposts mdl-color--blue-grey-50">
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--10-col mdl-grid">
