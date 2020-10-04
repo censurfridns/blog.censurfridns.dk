@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 18:53+0000\n"
+"POT-Creation-Date: 2020-10-04 17:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
@@ -31,6 +31,10 @@ msgstr "CensurfriDNS blogindlæg efter kategori"
 #: blog/feeds.py:33
 msgid "Blog posts from UncensoredDNS tagged with a specific tag"
 msgstr "Blogindlæg fra CensurfriDNS med en bestemt kategori"
+
+#: blog/forms.py:15
+msgid "Invalid language"
+msgstr ""
 
 #: blog/settings.py:63
 msgid "English"
@@ -130,7 +134,8 @@ msgid "Blog"
 msgstr ""
 
 #: blog/templates/base.html:44 blog/templates/base.html:76
-#: blog/templates/base.html:107 blog/templates/dns-servers.html:1
+#: blog/templates/base.html:91 blog/templates/base.html:107
+#: blog/templates/dns-servers.html:1
 msgid "DNS Servers"
 msgstr "DNS Servere"
 
@@ -150,8 +155,8 @@ msgid "RSS+Atom"
 msgstr ""
 
 #: blog/templates/base.html:48 blog/templates/base.html:80
-#: blog/templates/base.html:111 blog/templates/contact.html:1
-#: blog/templates/contact.html:5
+#: blog/templates/base.html:111 blog/templates/base.html:126
+#: blog/templates/contact.html:1 blog/templates/contact.html:5
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -185,34 +190,22 @@ msgid "This node is hosted at AS9167 in Copenhagen, Denmark."
 msgstr "Denne node sidder på AS9167 i København, Danmark."
 
 #: blog/templates/dns-servers.html:26
-msgid "Anycast Server Details"
-msgstr "Anycast server detaljer"
+msgid "Server Details"
+msgstr "Server detaljer"
 
 #: blog/templates/dns-servers.html:35
-msgid "Server"
+msgid "Server / Sponsor"
 msgstr ""
 
 #: blog/templates/dns-servers.html:36
-msgid "Sponsor"
+msgid "IPv4 / IPv6"
 msgstr ""
 
 #: blog/templates/dns-servers.html:37
-msgid "IPv4"
-msgstr ""
+msgid "AS / Location"
+msgstr "AS / Placering"
 
-#: blog/templates/dns-servers.html:38
-msgid "IPv6"
-msgstr ""
-
-#: blog/templates/dns-servers.html:39
-msgid "Location"
-msgstr "Placering"
-
-#: blog/templates/dns-servers.html:40
-msgid "AS"
-msgstr ""
-
-#: blog/templates/dns-servers.html:41
+#: blog/templates/dns-servers.html:38 blog/templates/dns-servers.html:39
 msgid "TLS Public Key"
 msgstr "TLS Offentlig Nøgle"
 
