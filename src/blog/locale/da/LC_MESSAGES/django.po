@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-04 17:59+0000\n"
+"POT-Creation-Date: 2020-10-04 18:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
@@ -185,27 +185,34 @@ msgstr "DNS servere"
 msgid "Anycast from multiple locations - see the table below."
 msgstr "Anycastet fra flere locationer - se tabellen nedenfor."
 
-#: blog/templates/dns-servers.html:19 blog/templates/frontpage.html:36
+#: blog/templates/dns-servers.html:13 blog/templates/dns-servers.html:21
+msgid ""
+"Listens on port 53 and 5353 for plaintext DNS queries, as well as DoH on "
+"port 443 and DoT on port 853."
+msgstr "Lytter på port 53 og 5353 for klartekst DNS opslag, samt efter DoH på "
+"port 443 og DoT på port 853."
+
+#: blog/templates/dns-servers.html:20 blog/templates/frontpage.html:36
 msgid "This node is hosted at AS9167 in Copenhagen, Denmark."
 msgstr "Denne node sidder på AS9167 i København, Danmark."
 
-#: blog/templates/dns-servers.html:26
+#: blog/templates/dns-servers.html:28
 msgid "Server Details"
 msgstr "Server detaljer"
 
-#: blog/templates/dns-servers.html:35
+#: blog/templates/dns-servers.html:37
 msgid "Server / Sponsor"
 msgstr ""
 
-#: blog/templates/dns-servers.html:36
+#: blog/templates/dns-servers.html:38
 msgid "IPv4 / IPv6"
 msgstr ""
 
-#: blog/templates/dns-servers.html:37
+#: blog/templates/dns-servers.html:39
 msgid "AS / Location"
 msgstr "AS / Placering"
 
-#: blog/templates/dns-servers.html:38 blog/templates/dns-servers.html:39
+#: blog/templates/dns-servers.html:40 blog/templates/dns-servers.html:41
 msgid "TLS Public Key"
 msgstr "TLS Offentlig Nøgle"
 
