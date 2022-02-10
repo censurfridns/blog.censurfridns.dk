@@ -113,3 +113,4 @@ LOGGING = {
 # taggit
 TAGGIT_FORCE_LOWERCASE = True
 
+DEFAULT_AUTO_FIELD="django.db.models.AutoField"
