@@ -6,6 +6,7 @@ from django.views.decorators.http import require_POST
 from .models import BlogPost
 from taggit.models import Tag
 from .forms import SetLanguageForm
+from django.conf import settings
 
 
 class FrontpageView(ListView):
@@ -47,20 +48,22 @@ def blogpost_detail(request, slug):
     ### is this a danish slug?
     try:
         blogpost = BlogPost.objects.get(slug_da=slug)
-        translation.activate('da')
-        request.session[translation.LANGUAGE_SESSION_KEY] = 'da'
+        language = "da"
+        translation.activate(language)
     except BlogPost.DoesNotExist:
         pass
 
     ### last chance, is it an english slug?
     if not blogpost:
         blogpost = get_object_or_404(BlogPost, slug_en=slug)
-        translation.activate('en')
-        request.session[translation.LANGUAGE_SESSION_KEY] = 'en'
+        language = "en"
+        translation.activate(language)
 
-    return render(request, 'blog/blogpost_detail.html', {
+    response = render(request, 'blog/blogpost_detail.html', {
         'blogpost': blogpost,
     })
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    return response
 
 @require_POST
 def setlang(request):
@@ -69,5 +72,6 @@ def setlang(request):
     if form.is_valid():
         user_language = form.cleaned_data['language']
         translation.activate(user_language)
-        request.session[translation.LANGUAGE_SESSION_KEY] = user_language
-        return HttpResponseRedirect(form.cleaned_data['next'])
+        response = HttpResponseRedirect(form.cleaned_data['next'])
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
+        return response
