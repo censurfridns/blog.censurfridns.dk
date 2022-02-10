@@ -1,7 +1,7 @@
 from django import template
 from django.urls import resolve, reverse
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.utils import translation
 from blog.models import BlogPost
 import commonmark
