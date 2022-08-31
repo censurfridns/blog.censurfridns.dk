@@ -1,9 +1,9 @@
 asgiref==3.5.0
 commonmark==0.9.1
-Django==4.0.2
-django-bootstrap3==21.2
-django-modeltranslation==0.17.5
-django-taggit==2.1.0
+Django==4.1
+django-bootstrap3==22.1
+django-modeltranslation==0.18.4
+django-taggit==3.0.0
 importlib-metadata==4.10.1
 psycopg2-binary==2.9.3
 pytz==2021.3
