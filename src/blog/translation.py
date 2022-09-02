@@ -7,10 +7,3 @@ from taggit.models import Tag
 class BlogPostTranslationOptions(TranslationOptions):
     fields = ('title', 'body', 'slug')
     required_languages = ('en', 'da')
-
-
-@register(Tag)
-class TaggitTranslations(TranslationOptions):
-    fields = ('name','slug')
-    required_languages = ('en', 'da')
-

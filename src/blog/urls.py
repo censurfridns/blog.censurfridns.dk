@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from .feeds import AllBlogPostRssFeed, AllBlogPostAtomFeed, TagBlogPostRssFeed, TagBlogPostAtomFeed
+from .feeds import AllBlogPostRssFeed, AllBlogPostAtomFeed
 import blog.views
 
 
@@ -29,14 +29,10 @@ urlpatterns = [
     ### syndication
     path(_('feeds/rss/all/'), AllBlogPostRssFeed(), name='allrssfeed'),
     path(_('feeds/atom/all/'), AllBlogPostAtomFeed(), name='allatomfeed'),
-    path(_('feeds/rss/tag/<slug:slug>'), TagBlogPostRssFeed(), name='tagrssfeed'),
-    path(_('feeds/atom/tag/<slug:slug>'), TagBlogPostAtomFeed(), name='tagatomfeed'),
     path(_('feeds/'), blog.views.feeds, name='feeds'),
 
     ### old rss feed url redirects
-    path('en/taxonomy/term/4/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'system-status'}))),
     path('en/rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed'))),
-    path('taxonomy/term/2/0/feed', RedirectView.as_view(url=reverse_lazy('tagrssfeed', kwargs={'slug': 'driftinfo'}))),
     path('rss.xml', RedirectView.as_view(url=reverse_lazy('allrssfeed'))),
 
     ### static pages

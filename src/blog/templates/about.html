@@ -1,13 +1,24 @@
 {% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans 'About this service' %}{% endblock head_title %} {% block content %}
 <section class="tagcloud mdl-color--blue-grey-50">
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--10-col mdl-grid">
-        <h1 class="mdl-typography--display-1 roboto-light">{% trans "About this service" %}</h1>
-        <p>{% trans "UncensoredDNS was started in November 2009 shortly after I began working at an ISP where one of my responsibilities was to administer the censored DNS servers that all Danish ISPs run for their customers." %}</p>
-        <p>{% trans "I had never been a fan of the Danish DNS censorship system, and working with it first hand didn't exactly help. At the time OpenDNS was kind of new and Google DNS didn't exist yet. Friends and family were coming to me asking for a recommendation for an alternative to the censored ISP DNS servers." %}</p>
-        <p>{% trans "Back then OpenDNS did NXDOMAIN redirection, an advertising trick where misspelled nonexistant domains are redirected to a search page with ads instead of returning an NXDOMAIN error. To a DNS purist like myself this made OpenDNS as appealing as a turd on a stick. They also didn't have ipv6 or DNSSEC, both of which were mandatory on a modern DNS server, even back in 2009." %}</p>
-        <p>{% trans "Even if Google DNS had existed back then I wouldn't have felt comfortable recommending them either. While they do run a stable, fast and uncensored service, I am not convinced that it is a good idea to hand over all your DNS lookups to Google. They already have all your searches, you might have one of their phones in your pocket, and so on." %}</p>
-        <p>{% trans "All this prompted me to do something about the situation so I started UncensoredDNS with help from friends. After a while I also started giving talks about the service at various conferences, since people naturally have an easier time trusting a service if they know who is behind it. You can see some of my old talks online, for example from" %} <a href="https://ripe65.ripe.net/archives/video/4/">RIPE65</a>.</p>
+    <div class="mdl-cell mdl-cell--6-col mdl-grid">
+        <p>{% trans "UncensoredDNS was started in November 2009. At the time I was working at an ISP where one of my (reluctant) responsibilities was to administer the censored DNS servers that all Danish ISPs have to run for their customers. I have never been a fan of the Danish DNS censorship system, and working with it first hand didn't exactly help." %}</p>
+
+        <p>{% trans "The 2009 DNS ecosystem was different from today. Google, Cloudflare, and Quad9 DNS services didn't exist yet. Friends and family were asking for a recommendation for an alternative to the censored ISP DNS servers and I didn't have a good answer for them." %}</p>
+
+        <p>{% trans "OpenDNS (now owned by Cisco) did exist in 2009, but back then they did <i>NXDOMAIN redirection</i>, an advertising trick where misspelled nonexistant domains are redirected to a search page with ads instead of returning an NXDOMAIN error. They've since stopped doing it, but it showed what kind of company it was. They also didn't have ipv6 or DNSSEC, both of which are mandatory on a modern DNS server, even back in 2009." %}</p>
+
+        <p>{% trans "Even if Google, Cloudflare or Quad9 DNS had existed back then I still wouldn't have felt comfortable recommending them. While they do run stable, fast and largely uncensored services, I am not convinced that it is a good idea to hand over all your DNS lookups to Google (or any other major corporation). The internet would be much better off with a bunch of smaller community-run decentral services." %}</p>
+
+        <p>{% trans "I was fortunate to be in a position to do something about it, so in October 2009 I started UncensoredDNS with help from friends. After a while I also started giving talks about the service at various conferences, since people naturally have an easier time trusting a service if they know who is behind it. You can see some of my old talks online, for example from" %} <a href="https://ripe65.ripe.net/archives/video/4/">RIPE65</a>.</p>
+
+        <p>{% trans "In 2014 I got an IP allocation from RIPE leading to the introduction of anycast.uncensoreddns.org - initially just with two locations. Anycasting one of the nodes meant much better redundancy and performance, and also allowed me to do maintaince without interrupting service." %}</p>
+
+        <p>{% trans "Since mid 2017 it has been possible to do encrypted DNS lookups. DNS-over-TLS support (RFC7858) was added using nginx (proxying to bind tcp 53), and at the same time the TLS public keys were published in TLSA records and on the website, making it possible to pin the servers public keys." %}</p>
+
+        <p>{% trans "In 2020 DNS-over-HTTPS (RFC8484) support was introduced using dnsdist, and at the same time DoT was switched from nginx to dnsdist, still using bind as a backend. The introduction of dnsdist means it will be possible in the future to switch to a different backend recursor, or use different recursors on different anycast nodes for added redundancy." %}</p>
+
+        <p>{% trans "In October 2022 plaintext UDP/TCP port 53 DNS was switched off, 13 years after the inception of the service. Only the modern encrypted protocols DNS-over-TLS (RFC7858) and DNS-over-HTTPS (RFC8484) will be supported going forward." %}</p>
     </div>
     <div class="mdl-layout-spacer"></div>
 </section>

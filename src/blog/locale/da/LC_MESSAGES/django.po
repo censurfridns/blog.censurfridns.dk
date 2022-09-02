@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-04 21:39+0000\n"
+"POT-Creation-Date: 2022-09-02 14:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
 "Language-Team: Thomas Steen Rasmussen <thomas@gibfest.dk>\n"
@@ -16,25 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/feeds.py:11
+#: blog/feeds.py:10
 msgid "UncensoredDNS Blog Posts"
 msgstr "CensurfriDNS blogindlæg"
 
-#: blog/feeds.py:13
+#: blog/feeds.py:12
 msgid "Blog posts and system information from UncensoredDNS"
 msgstr "Blogindlæg og driftsinformation fra CensurfriDNS"
 
-#: blog/feeds.py:31
-msgid "UncensoredDNS Blog Posts by tag"
-msgstr "CensurfriDNS blogindlæg efter kategori"
-
-#: blog/feeds.py:33
-msgid "Blog posts from UncensoredDNS tagged with a specific tag"
-msgstr "Blogindlæg fra CensurfriDNS med en bestemt kategori"
-
 #: blog/forms.py:15
 msgid "Invalid language"
-msgstr ""
+msgstr "Ugyldigt sprog"
 
 #: blog/settings.py:63
 msgid "English"
@@ -44,75 +36,125 @@ msgstr "Engelsk"
 msgid "Danish"
 msgstr "Dansk"
 
-#: blog/templates/about.html:1 blog/templates/about.html:5
+#: blog/templates/about.html:1
 msgid "About this service"
 msgstr "Om denne tjeneste"
 
-#: blog/templates/about.html:6
+#: blog/templates/about.html:5
 msgid ""
-"UncensoredDNS was started in November 2009 shortly after I began working at "
-"an ISP where one of my responsibilities was to administer the censored DNS "
-"servers that all Danish ISPs run for their customers."
+"UncensoredDNS was started in November 2009. At the time I was working at an "
+"ISP where one of my (reluctant) responsibilities was to administer the "
+"censored DNS servers that all Danish ISPs have to run for their customers. I "
+"have never been a fan of the Danish DNS censorship system, and working with "
+"it first hand didn't exactly help."
 msgstr ""
-"CensurfriDNS blev startet i november 2009 kort tid efter jeg begyndte at "
-"arbejde hos en ISP hvor et af mine ansvarsområder var at administrere de "
-"censurerede DNS servere som alle danske internetudbydere kører til deres "
-"kunder."
+"CensurfriDNS blev startet i november 2009. På det tidspunkt arbejdede jeg "
+"hos en ISP hvor et af mine (modvillige) ansvarsområder var at administrere "
+"de censurerede DNS servere som alle danske internetudbydere skal køre for deres "
+"kunder. Jeg har aldrig været en stor fan af det danske DNS censur system, og "
+"det hjalp bestemt ikke at arbejde med det."
 
 #: blog/templates/about.html:7
 msgid ""
-"I had never been a fan of the Danish DNS censorship system, and working with "
-"it first hand didn't exactly help. At the time OpenDNS was kind of new and "
-"Google DNS didn't exist yet. Friends and family were coming to me asking for "
-"a recommendation for an alternative to the censored ISP DNS servers."
+"The 2009 DNS ecosystem was different from today. Google, Cloudflare, and "
+"Quad9 DNS services didn't exist yet. Friends and family were asking for a "
+"recommendation for an alternative to the censored ISP DNS servers and I "
+"didn't have a good answer for them."
 msgstr ""
-"Jeg havde aldrig været tilhænger af det danske DNS censursystem, og det "
-"hjalp bestemt ikke at arbejde med det. På tidspunktet var OpenDNS ret nye, "
-"og Google DNS fandtes ikke endnu. Familie og venner spurgte efter "
-"anbefalinger til alternativer til internetudbydernes censurerede DNS servere."
-
-#: blog/templates/about.html:8
-msgid ""
-"Back then OpenDNS did NXDOMAIN redirection, an advertising trick where "
-"misspelled nonexistant domains are redirected to a search page with ads "
-"instead of returning an NXDOMAIN error. To a DNS purist like myself this "
-"made OpenDNS as appealing as a turd on a stick. They also didn't have ipv6 "
-"or DNSSEC, both of which were mandatory on a modern DNS server, even back in "
-"2009."
-msgstr ""
-"Dengang lavede OpenDNS NXDOMAIN redirection, en reklameteknik hvor domæner "
-"der ikke findes (f.eks. grundet en stavefejl) bliver viderestillet til en "
-"søgeside med reklamer istedet for at give en NXDOMAIN fejl. For en DNS "
-"puritaner som mig gjorde det OpenDNS omtrent så tiltalende som en lort på en "
-"pind. De havde desuden hverken ipv6 eller DNSSEC, begge dele var selv i 2009 "
-"nødvendige dele af en moderne DNS server."
+"I 2009 var DNS økosystemet på internettet meget anderledes fra i dag. Googles, "
+"Cloudflares og Quad9s DNS tjenester eksisterede ikke endnu. Venner og familie "
+"spurgte efter anbefalinger til et alternativ til internetudbydernes censurerede DNS servere."
 
 #: blog/templates/about.html:9
 msgid ""
-"Even if Google DNS had existed back then I wouldn't have felt comfortable "
-"recommending them either. While they do run a stable, fast and uncensored "
-"service, I am not convinced that it is a good idea to hand over all your DNS "
-"lookups to Google. They already have all your searches, you might have one "
-"of their phones in your pocket, and so on."
+"OpenDNS (now owned by Cisco) did exist in 2009, but back then they did "
+"<i>NXDOMAIN redirection</i>, an advertising trick where misspelled "
+"nonexistant domains are redirected to a search page with ads instead of "
+"returning an NXDOMAIN error. They've since stopped doing it, but it showed "
+"what kind of company it was. They also didn't have ipv6 or DNSSEC, both of "
+"which are mandatory on a modern DNS server, even back in 2009."
 msgstr ""
-"Selv hvis Google DNS havde eksisteret dengang ville jeg ikke have det godt "
-"med at anbefale dem heller. De kører en stabil, hurtig og ucensureret DNS "
-"tjeneste, men jeg er ikke overbevist om at det er en god ide at aflevere "
-"alle ens DNS opslag til dem. De har allerede alle ens søgninger, og mange "
-"har en af deres telefoner i lommen, og så videre."
+"OpenDNS (som i dag er ejet af Cisco) fandtes i 2009, men dengang lavede de <i>NXDOMAIN "
+"redirection</i>, en lusket reklameteknik hvor domæner der ikke findes (f.eks. "
+"grundet en stavefejl) bliver viderestillet til en søgeside med reklamer istedet "
+"for at give en NXDOMAIN fejl. De er siden stoppet med at gøre det, men det viste "
+"ret tydeligt hvilket slags firma det var. De havde desuden hverken ipv6 eller "
+"DNSSEC, begge dele var selv i 2009 nødvendige dele af en moderne DNS server."
 
-#: blog/templates/about.html:10
+#: blog/templates/about.html:11
 msgid ""
-"All this prompted me to do something about the situation so I started "
-"UncensoredDNS with help from friends. After a while I also started giving "
-"talks about the service at various conferences, since people naturally have "
-"an easier time trusting a service if they know who is behind it. You can see "
-"some of my old talks online, for example from"
+"Even if Google, Cloudflare or Quad9 DNS had existed back then I still "
+"wouldn't have felt comfortable recommending them. While they do run stable, "
+"fast and largely uncensored services, I am not convinced that it is a good "
+"idea to hand over all your DNS lookups to Google (or any other major "
+"corporation). The internet would be much better off with a bunch of smaller "
+"community-run decentral services."
 msgstr ""
-"Alt dette gjorde at jeg startede CensurfriDNS med hjælp fra venner. Efter "
-"lidt tid begyndte jeg også at holde foredrag på diverse konferencer, da folk "
+"Selv hvis Google, Cloudflare eller Quad9 havde eksisteret dengang ville jeg "
+"stadig ikke have haft det godt med at anbefale dem. De kører stabile, "
+"hurtige og rimeligt ucensurerede DNS tjenester, men jeg er ikke overbevist om at "
+"det er en god ide at aflevere alle ens DNS opslag til Google (eller nogen andre "
+"store virksomheder). Internettet ville være langt bedre tjent med en masse mindre "
+"community-drevne decentrale tjenester."
+
+#: blog/templates/about.html:13
+msgid ""
+"I was fortunate to be in a position to do something about it, so in October "
+"2009 I started UncensoredDNS with help from friends. After a while I also "
+"started giving talks about the service at various conferences, since people "
+"naturally have an easier time trusting a service if they know who is behind "
+"it. You can see some of my old talks online, for example from"
+msgstr ""
+"Jeg var heldig at være i en position hvor jeg kunne gøre noget ved det, så i "
+"oktober 2009 startede jeg CensurfriDNS med hjælp fra venner. Efter noget tid "
+"begyndte jeg også at holde foredrag om projektet på diverse konferencer, da folk "
 "naturligt har lettere ved at stole på en tjeneste hvis de ved hvem der står "
 "bag. Du kan se nogen af mine gamle foredrag online, for eksempel fra"
+
+#: blog/templates/about.html:15
+msgid ""
+"In 2014 I got an IP allocation from RIPE leading to the introduction of "
+"anycast.uncensoreddns.org - initially just with two locations. Anycasting "
+"one of the nodes meant much better redundancy and performance, and also "
+"allowed me to do maintaince without interrupting service."
+msgstr "I 2014 fik jeg en IP allokering fra RIPE som førte til introduktionen "
+"af anycast.censurfridns.dk - til at begynde med bare med to lokationer. At "
+"anycaste den ene node giver langt bedre redundans og performance, og samtidig "
+"giver det mig mere frihed til at lave maintenance uden at have nedetid."
+
+#: blog/templates/about.html:17
+msgid ""
+"Since mid 2017 it has been possible to do encrypted DNS lookups. DNS-over-"
+"TLS support (RFC7858) was added using nginx (proxying to bind tcp 53), and "
+"at the same time the TLS public keys were published in TLSA records and on "
+"the website, making it possible to pin the servers public keys."
+msgstr "Siden medio 2017 har det været muligt at lave krypterede DNS opslag. "
+"DNS-over-TLS (RFC7858) support blev tilføjet med nginx (som proxy til bind tcp "
+"port 53), og på samme tid blev de offentlige TLS nøgler publiceret i TLSA records "
+"og på dette website. Det gav mulighed for at pinne de offentlige nøgler."
+
+
+#: blog/templates/about.html:19
+msgid ""
+"In 2020 DNS-over-HTTPS (RFC8484) support was introduced using dnsdist, and "
+"at the same time DoT was switched from nginx to dnsdist, still using bind as "
+"a backend. The introduction of dnsdist means it will be possible in the "
+"future to switch to a different backend recursor, or use different recursors "
+"on different anycast nodes for added redundancy."
+msgstr "I 2020 blev DNS-over-HTTPS (RFC8484) support introduceret med dnsdist, "
+"og på samme tid blev DoT skiftet fra nginx til dnsdist, stadig med bind som backend. "
+"Introduktionen af dnsdist gør det muligt senere at skifte backend rekursiv software, "
+"eller at køre forskellige backends på forskellige anycast noder."
+
+#: blog/templates/about.html:21
+msgid ""
+"In October 2022 plaintext UDP/TCP port 53 DNS was switched off, 13 years "
+"after the inception of the service. Only the modern encrypted protocols DNS-"
+"over-TLS (RFC7858) and DNS-over-HTTPS (RFC8484) will be supported going "
+"forward."
+msgstr "I oktober 2022 blev klartekst UDP/TCP port 53 DNS opslag slået fra, 13 år "
+"efter tjenestens fødsel. Kun de moderne DNS-over-TLS og DNS-over-HTTPS protokoller "
+"vil være understøttet fremover."
 
 #: blog/templates/base.html:9 blog/templates/blog/blogpost_list.html:1
 #: blog/templates/blog/blogpost_list.html:5
@@ -131,7 +173,7 @@ msgstr "CensurfriDNS"
 #: blog/templates/base.html:43 blog/templates/base.html:75
 #: blog/templates/base.html:106
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: blog/templates/base.html:44 blog/templates/base.html:76
 #: blog/templates/base.html:91 blog/templates/base.html:107
@@ -160,12 +202,16 @@ msgstr ""
 msgid "Contact"
 msgstr "Kontakt"
 
+#: blog/templates/base.html:130 blog/templates/contact.html:8
+msgid "uncensoreddns"
+msgstr "censurfridns"
+
 #: blog/templates/base.html:138
 msgid "Copyright &copy; Thomas Steen Rasmussen 2009-"
 msgstr ""
 
 #: blog/templates/blog/blogpost_detail.html:7
-#: blog/templates/blog/blogpost_list.html:13 blog/templates/frontpage.html:62
+#: blog/templates/blog/blogpost_list.html:13 blog/templates/frontpage.html:66
 msgid "Tags:"
 msgstr "Kategorier:"
 
@@ -181,27 +227,23 @@ msgstr "Der er forskellige muligheder for at komme i kontakt med mig:"
 msgid "DNS servers"
 msgstr "DNS servere"
 
-#: blog/templates/dns-servers.html:12
+#: blog/templates/dns-servers.html:10
 msgid "Anycast from multiple locations - see the table below."
 msgstr "Anycastet fra flere locationer - se tabellen nedenfor."
 
-#: blog/templates/dns-servers.html:13 blog/templates/dns-servers.html:22
-msgid ""
-"Listens on port 53 and 5353 for plaintext DNS queries, as well as DoH on "
-"port 443 and DoT on port 853."
-msgstr ""
-"Lytter på port 53 og 5353 for klartekst DNS opslag, samt efter DoH på port "
-"443 og DoT på port 853."
+#: blog/templates/dns-servers.html:11 blog/templates/dns-servers.html:20
+msgid "Listens on port 853 for DoT and on port 443 for DoH."
+msgstr "Lytter på port 853 for DoT og på port 443 for DoH."
 
-#: blog/templates/dns-servers.html:14
+#: blog/templates/dns-servers.html:12
 msgid "DNS-over-HTTPS URL is https://anycast.uncensoreddns.org/dns-query"
 msgstr "DNS-over-HTTPS URL er https://anycast.censurfridns.dk/dns-query"
 
-#: blog/templates/dns-servers.html:21 blog/templates/frontpage.html:36
+#: blog/templates/dns-servers.html:19 blog/templates/frontpage.html:36
 msgid "This node is hosted at AS9167 in Copenhagen, Denmark."
 msgstr "Denne node sidder på AS9167 i København, Danmark."
 
-#: blog/templates/dns-servers.html:23
+#: blog/templates/dns-servers.html:21
 msgid "DNS-over-HTTPS URL is https://unicast.uncensoreddns.org/dns-query"
 msgstr "DNS-over-HTTPS URL er https://unicast.censurfridns.dk/dns-query"
 
@@ -225,16 +267,16 @@ msgstr "AS / Placering"
 msgid "TLS Public Key"
 msgstr "TLS Offentlig Nøgle"
 
-#: blog/templates/faq.html:1 blog/templates/faq.html:5
+#: blog/templates/faq.html:1
 msgid "Frequently Asked Questions"
 msgstr "Ofte stillede spørgsmål"
 
-#: blog/templates/faq.html:7
+#: blog/templates/faq.html:6
 msgid "Why have you started UncensoredDNS? Why run uncensored DNS servers?"
 msgstr ""
 "Hvorfor har du lavet CensurfriDNS? Hvorfor drive censur-fri DNS servere?"
 
-#: blog/templates/faq.html:8
+#: blog/templates/faq.html:7
 msgid ""
 "I am strongly against using DNS as a tool to filter content on the internet. "
 "Many people do not have the technical know-how to setup their own DNS "
@@ -246,33 +288,24 @@ msgstr ""
 "deres egen DNS server op, så jeg har lavet CensurfriDNS så der er et dansk "
 "censurfrit alternativ til internetudbydernes DNS servere."
 
+#: blog/templates/faq.html:9
+msgid "Why not just use OpenDNS/Google DNS/Cloudflare/Quad9?"
+msgstr "Hvorfor ikke bare bruge OpenDNS/Google DNS/Cloudflare/Quad9?"
+
 #: blog/templates/faq.html:10
-msgid "Why not just use OpenDNS or Google DNS?"
-msgstr "Hvorfor ikke bruge OpenDNS eller Google DNS?"
-
-#: blog/templates/faq.html:11
 msgid ""
-"I dislike any form of abuse of the DNS system, and OpenDNS' entire business "
-"model is to manipulate DNS. They used to do NXDOMAIN redirection, an "
-"advertising trick where misspelled domains get redirected to a search page. "
-"Now they make a living blocking malware and other things in DNS. Google runs "
-"a decent DNS service but I don't think it is a good idea to give dem all DNS "
-"lookups in addition to all the other data they have on everyone."
-msgstr ""
-"Jeg bryder mig ikke om nogen former for misbrug af DNS systemet, og OpenDNS "
-"har en forretningsmodel der drejer sig om manipulering af DNS. De har førhen "
-"lavet NXDOMAIN redirection, som er et reklame trick hvor ikke eksisterende "
-"domæner (f.eks. ved stavefejl) bliver viderestillet til en søgeside med "
-"reklamer på. Nu om dage tjener de penge på at blokere malware og andet i "
-"DNS. Google driver en udemærket DNS tjeneste men jeg tror ikke det er en god "
-"ide at aflevere alle ens DNS opslag hos dem, oveni alt det andet data de har "
-"om alle folk i forvejen."
+"The internet should have more small decentral community-run non-profit "
+"services and fewer huge corporations running services with massive "
+"userbases. This is also true when picking email/IM/SoMe services."
+msgstr "Internettet burde bestå af flere små decentrale community-drevne "
+"non-profit tjenester og færre kæmpe virksomheder som driver tjenester "
+"med enorme brugerbaser. Det samme er sandt når man vælger email/IM/SoMe tjenester."
 
-#: blog/templates/faq.html:13
+#: blog/templates/faq.html:12
 msgid "Do the UncensoredDNS DNS servers log any personal information?"
 msgstr "Logger CensurfriDNS DNS serverne nogen private oplysninger?"
 
-#: blog/templates/faq.html:14
+#: blog/templates/faq.html:13
 msgid ""
 "Absolutely nothing is being logged, neither about the users nor the usage of "
 "this service. I do keep graphs of the total number of queries, but no "
@@ -284,11 +317,11 @@ msgstr ""
 "tilbageføres til den enkelte bruger. De data der gemmes vil aldrig blive "
 "solgt videre, eller brugt til andet end kapacitetsplanlægning af servicen."
 
-#: blog/templates/faq.html:16
+#: blog/templates/faq.html:15
 msgid "Where are the servers located?"
 msgstr "Hvor står serverne?"
 
-#: blog/templates/faq.html:17
+#: blog/templates/faq.html:16
 msgid ""
 "See the details on the DNS Servers page. They are placed on fast uplinks in "
 "professional data centers. I am actively looking for places to host anycast "
@@ -300,11 +333,11 @@ msgstr ""
 "en anycast node. Særligt steder udenfor Danmark eller Europa har interesse. "
 "Kontakt mig endelig hvis du kan hjælpe."
 
-#: blog/templates/faq.html:19
+#: blog/templates/faq.html:18
 msgid "Are the IP addresses likely to change?"
 msgstr "Kommer IP adresserne til at skifte?"
 
-#: blog/templates/faq.html:20
+#: blog/templates/faq.html:19
 msgid ""
 "The DNS server IP addresses will never change if I can prevent it. The "
 "anycast server in particular is unlikely to ever change since the v4 and v6 "
@@ -314,11 +347,11 @@ msgstr ""
 "det. Især anycast serveren kommer sandsynligvis aldrig til at ændre IP da "
 "dens IPer er fra CensurfriDNS' egne provider independent IP ranges."
 
-#: blog/templates/faq.html:22
+#: blog/templates/faq.html:21
 msgid "Who is behind this service?"
 msgstr "Hvem er bag denne tjeneste?"
 
-#: blog/templates/faq.html:24
+#: blog/templates/faq.html:23
 #, python-format
 msgid ""
 "My name is Thomas Steen Rasmussen. I operate this DNS service as an "
@@ -329,14 +362,14 @@ msgstr ""
 "privatperson for mine egne penge. Hvis du har spørgsmål eller kommentarer "
 "kan du kigge på <a href=\"%(contacturl)s\">kontakt</a> siden."
 
-#: blog/templates/faq.html:26
+#: blog/templates/faq.html:25
 msgid ""
 "Have you ever been contacted by authorities or law enforcement about this "
 "service?"
 msgstr ""
 "Er du nogensinde blevet kontaktet af myndighederne omkring denne tjeneste?"
 
-#: blog/templates/faq.html:27
+#: blog/templates/faq.html:26
 msgid ""
 "No, I have never been contacted by authorities or law enforcement regarding "
 "this service. This message will be updated if it happens."
@@ -352,13 +385,6 @@ msgstr ""
 msgid "The following two RSS/Atom feeds contain all blogposts:"
 msgstr "De følgende to RSS/Atom feeds indeholder alle blogindlæg:"
 
-#: blog/templates/feeds.html:11
-msgid ""
-"This list contains RSS/Atom feeds for each of the tags used on this blog:"
-msgstr ""
-"Denne liste indeholder RSS/Atom feeds for hver af kategorierne brugt på "
-"denne blog:"
-
 #: blog/templates/frontpage.html:7
 msgid "Welcome to UncensoredDNS"
 msgstr "Velkommen til CensurfriDNS"
@@ -373,27 +399,44 @@ msgstr ""
 
 #: blog/templates/frontpage.html:9
 msgid ""
-"This service is run by Thomas Steen Rasmussen. I am a system administrator "
-"with a Danish internet provider, I was born in 1979. I run this service as a "
-"private individual, with my own money."
+"This service is run by Thomas Steen Rasmussen, born 1979. I am a system "
+"architect and developer in a Danish company, and I also teach and consult in "
+"my spare time. I run UncensoredDNS as a private individual, with my own "
+"money."
 msgstr ""
-"Tjenesten drives af Thomas Steen Rasmussen. Jeg er system administrator hos "
-"en dansk internet udbyder. Jeg er født i 1979. Jeg driver denne tjeneste som "
-"privatperson for mine egne penge."
+"Denne tjeneste drives af Thomas Steen Rasmussen, født 1979. Jeg er system arkitekt og "
+"udvikler i en dansk virksomhed, og jeg underviser og klovnsulenter i min fritid. "
+"Jeg driver CensurfriDNS som privat-person med mine egne penge."
 
 #: blog/templates/frontpage.html:10
 msgid ""
-"You can read more using the menu above, or if you just want the server IP "
-"addresses you can see them below."
+"You can read more using the menu above, or if you just want the DNS server "
+"info can get it below."
 msgstr ""
 "Du kan læse mere ved hjælp af menuen i toppen, eller hvis du bare vil have "
-"server IPerne kan du se dem længere nede."
+"DNS server info så kan du se det længere nede."
 
-#: blog/templates/frontpage.html:29
+#: blog/templates/frontpage.html:27
 msgid "Anycast from multiple locations."
 msgstr "Anycastet fra flere locationer."
 
-#: blog/templates/frontpage.html:45
+#: blog/templates/frontpage.html:28
+msgid "DNS-over-TLS anycast.uncensoreddns.org:853"
+msgstr "DNS-over-TLS anycast.censurfridns.dk:853"
+
+#: blog/templates/frontpage.html:29
+msgid "DNS-over-HTTPS https://anycast.uncensoreddns.org/dns-query"
+msgstr "DNS-over-HTTPS https://anycast.censurfridns.dk/dns-query"
+
+#: blog/templates/frontpage.html:37
+msgid "DNS-over-TLS unicast.uncensoreddns.org:853"
+msgstr "DNS-over-TLS unicast.censurfridns.dk:853"
+
+#: blog/templates/frontpage.html:38
+msgid "DNS-over-HTTPS https://unicast.uncensoreddns.org/dns-query"
+msgstr "DNS-over-HTTPS https://unicast.censurfridns.dk/dns-query"
+
+#: blog/templates/frontpage.html:49
 msgid ""
 " Follow <a href=\"https://twitter.com/censurfridns\" class=\"roboto-light"
 "\">@censurfridns</a> on twitter for updates and information on the project. "
@@ -401,17 +444,13 @@ msgstr ""
 " Følg <a href=\"https://twitter.com/censurfridns\" class=\"roboto-light"
 "\">@censurfridns</a> på twitter for nyheder og information om projektet."
 
-#: blog/templates/frontpage.html:53
+#: blog/templates/frontpage.html:57
 msgid "Latest blogposts"
 msgstr "Seneste blogindlæg"
 
-#: blog/templates/frontpage.html:60
+#: blog/templates/frontpage.html:64
 msgid "by"
 msgstr "af"
-
-#: blog/templates/searchpanel.html:3
-msgid "Search this blog"
-msgstr "Søg denne blog"
 
 #: blog/templates/tag_lookup.html:1 blog/templates/tag_lookup.html:6
 #, python-format
@@ -435,29 +474,21 @@ msgid "feeds/atom/all/"
 msgstr ""
 
 #: blog/urls.py:32
-msgid "feeds/rss/tag/<slug:slug>"
-msgstr "feeds/rss/kategorier/<slug:slug>"
-
-#: blog/urls.py:33
-msgid "feeds/atom/tag/<slug:slug>"
-msgstr "feeds/atom/kategorier/<slug:slug>/"
-
-#: blog/urls.py:34
 msgid "feeds/"
 msgstr ""
 
-#: blog/urls.py:43
+#: blog/urls.py:39
 msgid "dns-servers/"
 msgstr "dns-servere/"
 
-#: blog/urls.py:44
+#: blog/urls.py:40
 msgid "contact/"
 msgstr "kontakt/"
 
-#: blog/urls.py:45
+#: blog/urls.py:41
 msgid "faq/"
 msgstr "oss/"
 
-#: blog/urls.py:46
+#: blog/urls.py:42
 msgid "about/"
 msgstr "om/"

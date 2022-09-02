@@ -8,16 +8,6 @@
             <li><a href="{% url 'allrssfeed' %}">RSS</a></li>
             <li><a href="{% url 'allatomfeed' %}">Atom</a></li>
         </ul>
-        <p>{% trans 'This list contains RSS/Atom feeds for each of the tags used on this blog:' %}</p>
-        <ul class="list-unstyled">
-            {% for tag in tags %}
-            <li>
-                <strong>{{ tag }}</strong>:
-                <a href="{% url 'tagrssfeed' slug=tag.slug %}">RSS</a>
-                <a href="{% url 'tagatomfeed' slug=tag.slug %}">Atom</a>
-            </li>
-            {% endfor %}
-        </ul>
     </div>
     <div class="mdl-layout-spacer"></div>
 </section>

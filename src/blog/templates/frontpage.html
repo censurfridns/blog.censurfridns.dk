@@ -6,8 +6,8 @@
         <div class="mdl-cell mdl-cell--10-col">
             <h1 class="mdl-typography--display-1 section-header roboto-light">{% trans "Welcome to UncensoredDNS" %}</h1>
             <p>{% trans "UncensoredDNS is the name of a DNS service which consists of two uncensored DNS servers. The servers are available for use by anyone, free of charge." %}</p>
-            <p>{% trans "This service is run by Thomas Steen Rasmussen. I am a system administrator with a Danish internet provider, I was born in 1979. I run this service as a private individual, with my own money." %}</p>
-            <p>{% trans "You can read more using the menu above, or if you just want the server IP addresses you can see them below." %}</p>
+            <p>{% trans "This service is run by Thomas Steen Rasmussen, born 1979. I am a system architect and developer in a Danish company, and I also teach and consult in my spare time. I run UncensoredDNS as a private individual, with my own money." %}</p>
+            <p>{% trans "You can read more using the menu above, or if you just want the DNS server info can get it below." %}</p>
         </div>
         <div class="mdl-cell mdl-cell--2-col mdl-layout--large-screen-only">
             <img src="{% static 'images/censurfridns_logo_250x250.png' %}" alt="{% trans 'UncensoredDNS' %} Logo">
@@ -24,16 +24,20 @@
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
             <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
+            <p>{% trans "Anycast from multiple locations." %}</p>
+            <p>{% trans "DNS-over-TLS anycast.uncensoreddns.org:853" %}</p>
+            <p>{% trans "DNS-over-HTTPS https://anycast.uncensoreddns.org/dns-query" %}</p>
             <p class="code">91.239.100.100
                 <br>2001:67c:28a4::</p>
-            <p>{% trans "Anycast from multiple locations." %}</p>
             <hr />
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
             <p class="mdl-typography--headline code section-header roboto-light">unicast.censurfridns.dk</p>
+            <p>{% trans "This node is hosted at AS9167 in Copenhagen, Denmark." %}</p>
+            <p>{% trans "DNS-over-TLS unicast.uncensoreddns.org:853" %}</p>
+            <p>{% trans "DNS-over-HTTPS https://unicast.uncensoreddns.org/dns-query" %}</p>
             <p class="code">89.233.43.71
                 <br>2a01:3a0:53:53::</p>
-            <p>{% trans "This node is hosted at AS9167 in Copenhagen, Denmark." %}</p>
             <hr />
         </div>
     </div>
