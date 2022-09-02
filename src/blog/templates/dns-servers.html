@@ -6,7 +6,7 @@
             <h1 class="mdl-typography--display-1 roboto-light">{% trans 'DNS servers' %}</h1>
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
-            <p class="mdl-typography--headline code section-header roboto-light">anycast.censurfridns.dk</p>
+            <p class="mdl-typography--headline code section-header roboto-light">{% trans 'anycast.uncensoreddns.org' %}</p>
             <p>{% trans "Anycast from multiple locations - see the table below." %}</p>
             <p>{% trans "Listens on port 853 for DoT and on port 443 for DoH." %}</p>
             <p>{% trans "DNS-over-HTTPS URL is https://anycast.uncensoreddns.org/dns-query" %}</p>
@@ -15,7 +15,7 @@
             <hr />
         </div>
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-desktop mdl-typography--text-center">
-            <p class="mdl-typography--headline code section-header roboto-light">unicast.censurfridns.dk</p>
+            <p class="mdl-typography--headline code section-header roboto-light">{% trans 'unicast.uncensoreddns.org' %}</p>
             <p>{% trans "This node is hosted at AS9167 in Copenhagen, Denmark." %}</p>
             <p>{% trans "Listens on port 853 for DoT and on port 443 for DoH." %}</p>
             <p>{% trans "DNS-over-HTTPS URL is https://unicast.uncensoreddns.org/dns-query" %}</p>
@@ -45,7 +45,7 @@
           </thead>
           <tbody>
             <tr>
-              <td class="mdl-data-table__cell--non-numeric"><b>deic-lgb.anycast.censurfridns.dk</b><br><a href="https://www.deic.dk/">DeiC</a></td>
+              <td class="mdl-data-table__cell--non-numeric"><b>deic-lgb.{% trans 'anycast.uncensoreddns.org' %}</b><br><a href="https://www.deic.dk/">DeiC</a></td>
               <td class="mdl-data-table__cell--non-numeric">130.225.244.166<br>2001:878:0:e000:82:e1:f4:a6</td>
               <td class="mdl-data-table__cell--non-numeric">AS1835<br>Lyngby, Denmark</td>
               <td class="mdl-data-table__cell--non-numeric">
@@ -77,7 +77,7 @@ qr1T9LpeQroR/xdNyRRe4xWv00GRcG8F
               </td>
             </tr>
             <tr>
-              <td class="mdl-data-table__cell--non-numeric"><b>deic-ore.anycast.censurfridns.dk</b><br><a href="https://www.deic.dk/">DeiC</a></td>
+              <td class="mdl-data-table__cell--non-numeric"><b>deic-ore.{% trans 'anycast.uncensoreddns.org' %}</b><br><a href="https://www.deic.dk/">DeiC</a></td>
               <td class="mdl-data-table__cell--non-numeric">130.226.161.34<br>2001:878:0:e000:82:e2:a1:22</td>
               <td class="mdl-data-table__cell--non-numeric">AS1835<br>Lyngby, Denmark</td>
               <td class="mdl-data-table__cell--non-numeric">
@@ -109,7 +109,7 @@ i1TC+o2WRX1ZTZujheRLd7n1FqDUb+zX
               </td>
             </tr>
             <tr>
-              <td class="mdl-data-table__cell--non-numeric"><b>kracon.anycast.censurfridns.dk</b><br><a href="https://kracon.dk/">KRACON</a></td>
+              <td class="mdl-data-table__cell--non-numeric"><b>kracon.{% trans 'anycast.uncensoreddns.org' %}</b><br><a href="https://kracon.dk/">KRACON</a></td>
               <td class="mdl-data-table__cell--non-numeric">185.38.27.139<br>2a00:fbe0:1:3802::3</td>
               <td class="mdl-data-table__cell--non-numeric">AS62113<br>Copenhagen, Denmark</td>
               <td class="mdl-data-table__cell--non-numeric">
@@ -141,7 +141,7 @@ QVQSEsR1FpjtTFiIxsVscQljSER+q6GL
               </td>
             </tr>
             <tr>
-              <td class="mdl-data-table__cell--non-numeric"><b>rgnet-iad.anycast.censurfridns.dk</b><br>rgnet</td>
+              <td class="mdl-data-table__cell--non-numeric"><b>rgnet-iad.{% trans 'anycast.uncensoreddns.org' %}</b><br>rgnet</td>
               <td class="mdl-data-table__cell--non-numeric">198.180.150.12<br>2001:418:8006::12</td>
               <td class="mdl-data-table__cell--non-numeric">3927<br>Washington, USA</td>
               <td class="mdl-data-table__cell--non-numeric">
@@ -173,9 +173,9 @@ MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEKbYM1dFl681svIklK4n0kmqV96DEUXUu
               </td>
             </tr>
             <tr>
-              <td class="mdl-data-table__cell--non-numeric"><b>unicast.censurfridns.dk</b><br>tyktech</td>
+              <td class="mdl-data-table__cell--non-numeric"><b>{% trans 'unicast.uncensoreddns.org' %}</b><br>tyktech</td>
               <td class="mdl-data-table__cell--non-numeric">89.233.43.71<br>2a01:3a0:53:53::</td>
-              <td class="mdl-data-table__cell--non-numeric">AS3308<br>Høje Tåstrup, Denmark</td>
+              <td class="mdl-data-table__cell--non-numeric">AS9167<br>Høje Tåstrup, Denmark</td>
               <td class="mdl-data-table__cell--non-numeric">
 <pre>
 -----BEGIN PUBLIC KEY-----
