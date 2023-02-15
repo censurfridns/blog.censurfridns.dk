@@ -1,6 +1,6 @@
 asgiref==3.5.2
 commonmark==0.9.1
-Django==4.1
+Django==4.1.7
 django-bootstrap3==22.1
 django-modeltranslation==0.18.4
 django-taggit==3.0.0
